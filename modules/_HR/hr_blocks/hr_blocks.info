@@ -1,0 +1,6 @@
+name = HR Blocks
+package = HR
+description = "Defines different blocks for the site including ones for side bars and MegaMenu"
+core = 7.x
+tags[] = HR
+files[] = hr_blocks.module

@@ -1895,13 +1895,13 @@ function hr_pages_access($type = null) {
 function hr_pages_buildHome($name = NULL, $data  = NULL) {
   $out = '';
     
-//  $seo_welcome_node = hr_misc_getPrefaceByKey('front');
-//  $seo_welcome_node->title_no_link = TRUE;
-//  $seo_welcome_node->title_h2 = TRUE;
-//  $seo_welcome_node_view = node_view($seo_welcome_node, 'full');
-//
-//  $out .= render($seo_welcome_node_view);
-//  $out .= render($seo_welcome_node_view['field_preface_bottom']);
+  $seo_welcome_node = hr_misc_getPrefaceByKey('front');
+  $seo_welcome_node->title_no_link = TRUE;
+  $seo_welcome_node->title_h2 = TRUE;
+  $seo_welcome_node_view = node_view($seo_welcome_node, 'full');
+
+  $out .= render($seo_welcome_node_view);
+  $out .= render($seo_welcome_node_view['field_preface_bottom']);
   
   return $out;
 }

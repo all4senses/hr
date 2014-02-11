@@ -542,7 +542,7 @@ function hr_misc_flush_caches() {
   if (!empty($view->result)) {
     foreach ($view->result as $item) {
       $url = preg_replace('/^(.*)(....)(..)$/', '$1$2/$3', $item->url);
-      $url = str_replace('http://bestwebhosting.ca/', '', $url);
+      $url = str_replace('http://hostingreview.org/', '', $url);
       $blog_summary .= '<li><a href="/' . $url . '">' . $item->link . '</a></li>';
     }
 
@@ -835,7 +835,7 @@ function hr_misc_setReferer_ajax() {
     $post[$key] = check_plain(strip_tags($value));
   }
   
-  if (!empty($post['referer']) && strpos($post['referer'], 'http://bestwebhosting.ca') === FALSE) {
+  if (!empty($post['referer']) && strpos($post['referer'], 'http://hostingreview.org') === FALSE) {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
   }
   
@@ -1787,7 +1787,7 @@ function hr_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     $body_full_markup = preg_replace('/<img[^>]+>/i', '', $body_full_markup);
     
     // Set No image for externally linked image.
-    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'bestwebhosting.ca')) || (!file_exists(ltrim(str_replace('http://bestwebhosting.ca/', '', $main_image['src']), '/') ) )  ) {
+    if ( (strpos($main_image['src'], 'http') !== FALSE && !strpos($main_image['src'], 'hostingreview.org')) || (!file_exists(ltrim(str_replace('http://hostingreview.org/', '', $main_image['src']), '/') ) )  ) {
       $found_image = FALSE;
       //dpm($main_image);
       //dpm('$found_image = FALSE');
@@ -1809,7 +1809,7 @@ function hr_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
     
     // Replace the old WP path for images with the new drupal img path.
     if (strpos($main_image['src'], 'http') !== FALSE) {
-      $main_image['src'] = str_replace('http://bestwebhosting.ca/wp-content', 'f/img/wp-content', $main_image['src']);
+      $main_image['src'] = str_replace('http://hostingreview.org/wp-content', 'f/img/wp-content', $main_image['src']);
     }
     
     $main_image['src'] = str_replace('%20', ' ', $main_image['src']);
@@ -2023,7 +2023,7 @@ function hr_misc_getStreamUriFromRelativePath($path) {
   $file_default_scheme = file_default_scheme();
   $default_file_path = variable_get('file_' . $file_default_scheme . '_path', conf_path() . '/f');
 
-  $stream_path = str_replace('http://bestwebhosting.ca', '', $path);
+  $stream_path = str_replace('http://hostingreview.org', '', $path);
   $stream_path = ltrim($stream_path, '/');
   return $file_default_scheme . '://' . str_replace($default_file_path . '/', '', $stream_path);
 }
@@ -2115,8 +2115,8 @@ function hr_misc_addSocialShareData_toPage($node) {
         '#attributes' => array( 
             'rel' => 'alternate',
             'type' => 'application/rss+xml',
-            'title' => 'Articles from bestwebhosting.ca',
-            'href' => 'http://bestwebhosting.ca/rss.xml',
+            'title' => 'Articles from hostingreview.org',
+            'href' => 'http://hostingreview.org/rss.xml',
         ),
       ),
       'blog_rss' => array(
@@ -2124,8 +2124,8 @@ function hr_misc_addSocialShareData_toPage($node) {
         '#attributes' => array( 
             'rel' => 'alternate',
             'type' => 'application/rss+xml',
-            'title' => 'bestwebhosting.ca Blog',
-            'href' => 'http://bestwebhosting.ca/blog/rss.xml',
+            'title' => 'hostingreview.org Blog',
+            'href' => 'http://hostingreview.org/blog/rss.xml',
         ),
       ),
         
@@ -2204,7 +2204,7 @@ function hr_misc_addSocialShareData_toPage($node) {
     
   }
   
-  //$title = str_replace('[site:name]', 'bestwebhosting.ca', $title);
+  //$title = str_replace('[site:name]', 'hostingreview.org', $title);
   $title = token_replace($title);
   
   
@@ -2213,8 +2213,8 @@ function hr_misc_addSocialShareData_toPage($node) {
     $image = '/sites/all/themes/ch/css/images/hr-logo-t.png';
   }
 
-  if (!strpos($image, 'bestwebhosting.ca')) {
-    $image = 'http://bestwebhosting.ca/' . ltrim($image, '/');
+  if (!strpos($image, 'hostingreview.org')) {
+    $image = 'http://hostingreview.org/' . ltrim($image, '/');
   }
 
   
@@ -2361,8 +2361,8 @@ function hr_misc_addSocialShareData_toPage($node) {
       '#attributes' => array( 
           'rel' => 'alternate',
           'type' => 'application/rss+xml',
-          'title' => 'Latest Articles from bestwebhosting.ca',
-          'href' => 'http://bestwebhosting.ca/rss.xml',
+          'title' => 'Latest Articles from hostingreview.org',
+          'href' => 'http://hostingreview.org/rss.xml',
       ),
     ),
       
@@ -2662,7 +2662,7 @@ function hr_misc_makeRequestCapture_ajax() {
               'Start Submission Time' => date('Y-m-d, H:i:s', $_SESSION['ucaptured_timestamp']),
             );
             
-            if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://bestwebhosting.ca')) {
+            if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://hostingreview.org')) {
               $ucaptured_data['Referrer'] = $_SERVER['HTTP_REFERER'];
             }
             
@@ -2670,7 +2670,7 @@ function hr_misc_makeRequestCapture_ajax() {
             global $language;
             
             // Normal send if not a test from a4s
-            drupal_mail('hr_misc', 'request_quote', 'leads@bestwebhosting.ca', $language->language, $params);
+            drupal_mail('hr_misc', 'request_quote', 'leads@hostingreview.org', $language->language, $params);
             // Test letter to the root
             drupal_mail('hr_misc', 'request_quote_ucaptured_data', 'all4senses@gmail.com', $language->language, $params);
             
@@ -2864,7 +2864,7 @@ function hr_misc_setUcapturedVariable($post, $ucaptured = NULL, $combine_phone =
       $ucaptured['Referrer'] = $post['referrer'];
     }
     /*
-    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://bestwebhosting.ca')) {
+    if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://hostingreview.org')) {
       $ucaptured['Referrer'] = $_SERVER['HTTP_REFERER'];
     }
     */
@@ -2992,7 +2992,7 @@ function hr_misc_makeRequest_ajax() {
       }
       $save_submission['Sumbission page'] = $post['url'];
       /*
-      if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://bestwebhosting.ca')) {
+      if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] && !strpos($_SERVER['HTTP_REFERER'], '://hostingreview.org')) {
         $save_submission['Referrer'] = $_SERVER['HTTP_REFERER'];
       }
       */
@@ -3131,7 +3131,7 @@ function hr_misc_makeRequest_ajax() {
     /*
     if ($submission['First Name'] == 'Nextiva' || $submission['First Name'] == 'nextiva') {
       // Test for Nextiva
-      drupal_mail('hr_misc', 'request_quote', 'leads@bestwebhosting.ca', $language->language, $params);
+      drupal_mail('hr_misc', 'request_quote', 'leads@hostingreview.org', $language->language, $params);
       
       // Send a lead to Remote providers.
       if ($submission['Source'] != 'block') {
@@ -3213,16 +3213,16 @@ function hr_misc_makeRequest_ajax() {
          
     
     if($submission['Version'] == 1) {
-      $output = '<a class="guide" href="/pdfs/VoIP-Buyers-Guide-Questions.pdf" target="_blank">Download Your Free VoIP Buyer\'s Guide<img src="/sites/all/themes/ch/css/images/click-here-button.png" /></a><div class="quote-final">' . t('<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://bestwebhosting.ca">bestwebhosting.ca</a></p>') . '</div>';
+      $output = '<a class="guide" href="/pdfs/VoIP-Buyers-Guide-Questions.pdf" target="_blank">Download Your Free VoIP Buyer\'s Guide<img src="/sites/all/themes/ch/css/images/click-here-button.png" /></a><div class="quote-final">' . t('<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://hostingreview.org">hostingreview.org</a></p>') . '</div>';
     }
     else {
-      $output = '<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://bestwebhosting.ca">bestwebhosting.ca</a></p>'; 
+      $output = '<p><strong>Thank you</strong> for taking your time to complete our form. A VoIP Expert will be contacting you shortly to provide you with a personalized VoIP Service quote.</p><p>In the meantime, you can gain a great deal of VoIP information right here at <a href="http://hostingreview.org">hostingreview.org</a></p>'; 
     }
     
     if ($post['source'] == 'page') {
       switch ($post['version']) {
         case '1':
-          //$output .= '<script>top.location.href="http://bestwebhosting.ca/request-voip-phone-system-quote-final";</script>';
+          //$output .= '<script>top.location.href="http://hostingreview.org/request-voip-phone-system-quote-final";</script>';
           break;
         
       }
@@ -4000,7 +4000,7 @@ To faster verify and publish your review, please click on the email verification
 
 Best Wishes,
 bestwebhosting Team
-', array('!url' => 'http://bestwebhosting.ca/approve/email/' . $params['verification_code']));
+', array('!url' => 'http://hostingreview.org/approve/email/' . $params['verification_code']));
       
       break;
     
@@ -4026,7 +4026,7 @@ Please, don\'t forget to log in to access this page.
 
 Best wishes,
 bestwebhosting Team
-', array('!pending_reviews' => 'http://bestwebhosting.ca/admin/content/approve-reviews', '!provider' => $params['provider_name']));
+', array('!pending_reviews' => 'http://hostingreview.org/admin/content/approve-reviews', '!provider' => $params['provider_name']));
       
       break;
     
@@ -4108,7 +4108,7 @@ function hr_misc_mail_alter(&$message){
   $default_from = variable_get('site_mail', ini_get('sendmail_from'));
   
   if($message['from'] == $default_from){
-    $message['from'] = '"'. variable_get('site_name', 'www.bestwebhosting.ca') .'" <'. $default_from .'>';
+    $message['from'] = '"'. variable_get('site_name', 'www.hostingreview.org') .'" <'. $default_from .'>';
     $message['headers']['From'] = $message['headers']['Sender'] = $message['headers']['Return-Path'] = $message['headers']['Errors-To'] = $message['headers']['Reply-To'] = $message['from'];
   }
 }
@@ -4125,7 +4125,7 @@ function hr_misc_sendMessage($tag, $data = NULL) {
     case 'new_phone_review_admin_notify':
       global $language;
       $params['phone_name'] = $data['phone_name'];
-      drupal_mail('hr_misc', 'new_phone_review_admin_notify', 'ry@bestwebhosting.ca', $language->language, $params);
+      drupal_mail('hr_misc', 'new_phone_review_admin_notify', 'ry@hostingreview.org', $language->language, $params);
       drupal_mail('hr_misc', 'new_phone_review_admin_notify', 'all4senses@gmail.com', $language->language, $params);
       
       break;
@@ -4144,7 +4144,7 @@ function hr_misc_sendMessage($tag, $data = NULL) {
       $params['spam'] = $data['spam'];
       $params['review'] = $data['review'];
       
-      drupal_mail('hr_misc', 'new_review_admin_notify', 'ry@bestwebhosting.ca', $language->language, $params);
+      drupal_mail('hr_misc', 'new_review_admin_notify', 'ry@hostingreview.org', $language->language, $params);
       drupal_mail('hr_misc', 'new_review_admin_notify', 'all4senses@gmail.com', $language->language, $params);
       
       
@@ -4156,7 +4156,7 @@ function hr_misc_sendMessage($tag, $data = NULL) {
       
       global $language;
       $params['verification_code'] = $data['verification_code'];
-      drupal_mail('hr_misc', 'email_verification', $data['email'], $language, $params, 'bestwebhosting.ca <contact@bestwebhosting.ca>');
+      drupal_mail('hr_misc', 'email_verification', $data['email'], $language, $params, 'hostingreview.org <contact@hostingreview.org>');
       
       break;
     
@@ -4168,8 +4168,8 @@ function hr_misc_sendMessage($tag, $data = NULL) {
       $params['lname'] = $data['lname'];
       $params['email'] = $data['email'];
       $params['subscribed'] = $data['subscribed'];
-      drupal_mail('hr_misc', 'user_message', 'all4senses@gmail.com', $language, $params, 'bestwebhosting.ca <contact@bestwebhosting.ca>');
-      drupal_mail('hr_misc', 'user_message', 'ry@getvoip.com', $language, $params, 'bestwebhosting.ca <contact@bestwebhosting.ca>');
+      drupal_mail('hr_misc', 'user_message', 'all4senses@gmail.com', $language, $params, 'hostingreview.org <contact@hostingreview.org>');
+      drupal_mail('hr_misc', 'user_message', 'ry@getvoip.com', $language, $params, 'hostingreview.org <contact@hostingreview.org>');
       
       break;
     
@@ -4395,7 +4395,7 @@ function theme_hr_misc_image_style(array $variables) {
 
 function theme_hr_misc_image(array $variables) {
   
-//  if (!file_exists(str_replace(array('http://bestwebhosting.ca/', '%20'), array('', ' '), $variables['path']))) {
+//  if (!file_exists(str_replace(array('http://hostingreview.org/', '%20'), array('', ' '), $variables['path']))) {
 //    return NULL;
 //  }
   
@@ -5189,7 +5189,7 @@ function hr_misc_views_pre_render(&$view) {
           '#value' => $provider_isset ? $providers[$_GET['provider']] : $providers[''],
           ////'#default_value' => 'VoIPo',
           ////'#value' => 'VoIPo',
-          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://bestwebhosting.ca/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
+          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://hostingreview.org/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
 
       ); 
       
@@ -5235,7 +5235,7 @@ function hr_misc_views_pre_render(&$view) {
           '#value' => $provider_isset ? $providers[$_GET['provider']] : $providers[''],
           ////'#default_value' => 'VoIPo',
           ////'#value' => 'VoIPo',
-          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://bestwebhosting.ca/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
+          '#attributes' => array('id' => 'select_provider',  'onChange' => "top.location.href='http://hostingreview.org/" . $_GET['q'] . "?provider=' + encodeURIComponent(document.getElementById('select_provider').options[document.getElementById('select_provider').selectedIndex].value) + '$url'"),
 
       ); 
       
@@ -6366,7 +6366,7 @@ function hr_misc_sortArrayByNameReverse($a, $b) {
 function hr_blocks_getSocialiteButtons($url = NULL, $title = NULL) {
 
   if (!$url) {
-    $url = 'http://bestwebhosting.ca' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
+    $url = 'http://hostingreview.org' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
   }
   
   drupal_add_js('sites/all/libraries/jquery.plugins/socialite/socialite.min.js');

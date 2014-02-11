@@ -153,7 +153,7 @@ Edit index.html to change or remove this example content that will <strong>not a
                   $share_title = $title;
                 }
 
-                $url = 'http://cloudhostinghq.com' . $_SERVER['REQUEST_URI']; 
+                $url = 'http://hostingreview.org' . $_SERVER['REQUEST_URI']; 
                 echo hr_blocks_getSocialiteButtons($url, $share_title); 
               
               ?> 

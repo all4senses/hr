@@ -16,7 +16,7 @@
           global $user;
 
 //        if ($user->uid == 1) {
-          echo /*'<a id="itexpo" href="http://cloudhostinghq.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
+          echo /*'<a id="itexpo" href="http://hostingreview.org/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
           
           echo hr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), TRUE, '+31 day', ($user->uid ? '_logged' : NULL));
           
@@ -191,7 +191,7 @@
         ////echo hr_blocks_getBlockThemed(array('module' => 'hr_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
         //echo hr_blocks_getBlockThemed(array('module' => 'hr_blocks', 'delta' => 'footer_menu', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
         
-        echo hr_blocks_get_footerLinks() . '<div class="c">© 2014 CloudHostingHQ.com | All Rights Reserved</div>';
+        echo hr_blocks_get_footerLinks() . '<div class="c">© 2014 hostingreview.org | All Rights Reserved</div>';
         
                 
         //echo '<div id="block-hr-blocks-follow-links"><div class="follow-us">Follow Us</div>', hr_blocks_get_headerLinks(), '</div>';

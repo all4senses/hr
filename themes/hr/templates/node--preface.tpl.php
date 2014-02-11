@@ -32,7 +32,7 @@
       }
   
 
-//        $url = 'http://cloudhostinghq.com' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
+//        $url = 'http://hostingreview.org' . ($_GET['q'] == 'home' ? '' : $_SERVER['REQUEST_URI']);
 //        
 //        $share_title = NULL;
 //                

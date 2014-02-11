@@ -116,7 +116,7 @@
 <?php else: ?>
   <?php
 
-//    $url = 'http://cloudhostinghq.com'. url('node/' . $node->nid);
+//    $url = 'http://hostingreview.org'. url('node/' . $node->nid);
 //    echo '<div class="float share">' . hr_blocks_getSocialiteButtons($url, $node->title) . '</div>';
 
   ?>

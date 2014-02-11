@@ -6,8 +6,8 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'CloudHostingHQ.com'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="CloudHostingHQ.com" title="<?php print 'CloudHostingHQ.com Home'; ?>" />
+        <a href="<?php print $front_page; ?>" title="<?php print 'hostingreview.org'; ?>" id="logo">
+          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="hostingreview.org" title="<?php print 'hostingreview.org Home'; ?>" />
         </a>
         
       </div>
@@ -16,7 +16,7 @@
           global $user;
 
 //        if ($user->uid == 1) {
-          echo /*'<a id="itexpo" href="http://cloudhostinghq.com/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
+          echo /*'<a id="itexpo" href="http://hostingreview.org/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
           
           echo hr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), TRUE, '+31 day', ($user->uid ? '_logged' : NULL));
           
@@ -139,7 +139,7 @@
       <?php 
         
         echo render($page['footer']);
-        echo hr_blocks_get_footerLinks() . '<div class="c">© 2014 CloudHostingHQ.com | All Rights Reserved</div>';
+        echo hr_blocks_get_footerLinks() . '<div class="c">© 2014 hostingreview.org | All Rights Reserved</div>';
         
       ?>
       

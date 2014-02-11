@@ -424,14 +424,14 @@ function hr_blocks_getSidebarShareStaticBlock($node = NULL, $block_title = NULL,
   }
   
   $out = NULL;
-  $source = 'bestwebhosting.ca';
+  $source = 'hostingreview.org';
   $post_url = url($_GET['q'], array('absolute' => TRUE));
   $post_title = $node->title;
   $summary = !empty($node->metatags['description']['value']) ? $node->metatags['description']['value'] : drupal_substr(strip_tags($node->body['und'][0]['value']), 0, 200);
 
   $link_open = 'href="javascript:void(window.open(' . "'";
   $links = array(
-      'Twitter' => array('social_url' => 'http://twitter.com/share', 'query' => array('text' => $post_title, 'via' => 'bestwebhosting.ca')),
+      'Twitter' => array('social_url' => 'http://twitter.com/share', 'query' => array('text' => $post_title, 'via' => 'hostingreview.org')),
       'Facebook' => array('social_url' => 'http://www.facebook.com/sharer.php', 'query' => array('u' => $post_url), 'link_close' => "','ShareThis','toolbar=0,status=0,width=626,height=436'))"),
       //array('social_url' => 'http://www.facebook.com/sharer.php', 'query' => array('p[title]' => $post_title, 'p[url]' => $post_url, 'p[summary]' => $summary, 'p[images]' => $image, )),
       'GooglePlus' => array('social_url' => 'https://plus.google.com/share', 'query' => array('url' => $post_url)),
@@ -581,7 +581,7 @@ function hr_blocks_get_footerMenu() {
   else 
     {
     $menu = menu_build_tree('menu-footer-menu');
-    $out = theme('hr_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">© 2014 bestwebhosting.ca | All Rights Reserved</div>';
+    $out = theme('hr_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">© 2014 hostingreview.org | All Rights Reserved</div>';
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
   

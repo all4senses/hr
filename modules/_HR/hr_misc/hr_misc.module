@@ -12,6 +12,10 @@
 
 //module_load_include('inc', 'hr_misc', 'inc/constants');
 
+ function ch_pages_buildHome() {
+   return '';
+ }
+
 
 /**
  * Implements hook_menu().

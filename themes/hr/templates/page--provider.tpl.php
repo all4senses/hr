@@ -6,8 +6,8 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" title="<?php print 'hostingreview.org'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="hostingreview.org" title="<?php print 'hostingreview.org Home'; ?>" />
+        <a href="<?php print $front_page; ?>" id="logo">
+          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="HostingReview.org" title="<?php print 'HostingReview.org Home'; ?>" />
         </a>
         
       </div>

@@ -5,10 +5,27 @@
     <nav id="navigation" role="navigation" class="clearfix">
       <div id="header-menu-back"></div>
       
-      <div id="logo-block">
+      <?php
+      if ($_SERVER['REDIRECT_URL'] == '/top10') {
+            echo '<div id="logo">',
+                  '<img src="/sites/all/themes/ch/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                 '</div>';
+          }
+          else {
+            echo '<a href="', $front_page, '" id="logo">',
+                   '<img src="/sites/all/themes/ch/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                 '</a>';
+          }
+          
+        ?>
+        
+        <?php 
+        /*
         <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
+          <img src="<?php echo '/sites/all/themes/ch/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
         </a>
+        */
+        ?>
         
       </div>
       

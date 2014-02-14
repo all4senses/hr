@@ -6,14 +6,14 @@
       <div id="header-menu-back"></div>
       
       <?php
-      if ($_SERVER['REDIRECT_URL'] == '/top10') {
+          if ($_SERVER['REDIRECT_URL'] == '/top10') {
             echo '<div id="logo">',
-                  '<img src="/sites/all/themes/ch/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                  '<img src="/sites/all/themes/hr/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
                  '</div>';
           }
           else {
             echo '<a href="', $front_page, '" id="logo">',
-                   '<img src="/sites/all/themes/ch/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                   '<img src="/sites/all/themes/hr/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
                  '</a>';
           }
           

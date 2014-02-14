@@ -5,6 +5,7 @@
     <nav id="navigation" role="navigation" class="clearfix">
       <div id="header-menu-back"></div>
       
+      <div id="logo-block">
       <?php
           if ($_SERVER['REDIRECT_URL'] == '/top10') {
             echo '<div id="logo">',

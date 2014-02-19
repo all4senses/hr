@@ -627,7 +627,7 @@ function hr_misc_trackClick_ajax() {
       global $user;
       $data = NULL;
 //      $data = serialize(array(
-//        'referer' => @$_SESSION['gv_current_http_referer'],
+//        'referer' => @$_SESSION['hr_current_http_referer'],
 //        'click_page' => $post['click_page'],
 //        'user' => array('name' => $user->name, 'hostname' => $user->hostname),
 //      ));
@@ -699,7 +699,7 @@ function hr_misc_goToExternalUrl2() {
     if (@$url) {
           
             global $user;
-            if (!empty($args[2])) {
+            if (!empty($args[2]) && !empty($service_types[$args[2]])) {
               $service_types = unserialize(SERVICE_TYPES);
               $data = array('Service type' => $service_types[$args[2]]);
             }
@@ -708,7 +708,7 @@ function hr_misc_goToExternalUrl2() {
             }
             
 //            $data = serialize(array(
-//              'referer' => @$_SESSION['gv_current_http_referer'],
+//              'referer' => @$_SESSION['hr_current_http_referer'],
 //              'click_on_page' => @$_SERVER['HTTP_REFERER'],
 //              'user' => array('name' => $user->name, 'hostname' => $user->hostname),
 //            ));
@@ -721,7 +721,7 @@ function hr_misc_goToExternalUrl2() {
                 'url' => $url,
                 'timestamp' => time(),
                   
-                'referer' => @$_SESSION['gv_current_http_referer'],
+                'referer' => @$_SESSION['hr_current_http_referer'],
                 'click_page' => @$_SERVER['HTTP_REFERER'],
                 'uname' => isset($user->name) ? $user->name : '',
                 'ip' => $user->hostname,
@@ -747,7 +747,7 @@ function hr_misc_goToExternalUrl2() {
  */
 function hr_misc_goToExternalUrl() {
   
-  //dpm($_SESSION['gv_current_http_referer']);
+  //dpm($_SESSION['hr_current_http_referer']);
   //dpm($_GET);
   
   // Save a tracked redirection.
@@ -777,7 +777,7 @@ function hr_misc_goToExternalUrl() {
             global $user;
             $data = NULL;
 //            $data = serialize(array(
-//              'referer' => @$_SESSION['gv_current_http_referer'],
+//              'referer' => @$_SESSION['hr_current_http_referer'],
 //              'click_on_page' => @$_SERVER['HTTP_REFERER'],
 //              'user' => array('name' => $user->name, 'hostname' => $user->hostname),
 //            ));
@@ -821,10 +821,11 @@ function hr_misc_setReferer_ajax() {
   $output = '';
   
   $post = array();
-  foreach ($_POST as $key => $value) {
-    $post[$key] = check_plain(strip_tags($value));
-  }
+//  foreach ($_POST as $key => $value) {
+//    $post[$key] = check_plain(strip_tags($value));
+//  }
   
+  $post['referer'] = check_plain(strip_tags($_POST['referer']));
   if (!empty($post['referer']) && strpos($post['referer'], 'http://hostingreview.org') === FALSE) {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
   }

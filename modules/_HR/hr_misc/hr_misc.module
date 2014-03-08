@@ -21,6 +21,13 @@ function hr_misc_menu() {
   hr_misc_setPagesToShow410($items);
  
   //dpm($items);
+  $items['upd-titles-date'] = array(
+    'title' => 'Update prefaces dates in titles',
+    'page callback' => 'hr_misc_updatePrefacesTitlesDate',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
   
   $items['cc'] = array(
     'title' => 'Flush the cache and redirect to the Home page',
@@ -176,6 +183,74 @@ function hr_misc_menu_alter(&$items) {
   //unset($items['taxonomy/term/%taxonomy_term']);
   unset($items['taxonomy/term/%taxonomy_term/view']);
   unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
+}
+
+
+
+/**
+ * Update prefaces dates in titles at /upd-titles-date
+ */
+function hr_misc_updatePrefacesTitlesDate() {
+  
+  //$current_time = date('F d, Y \a\t g:ia', time());
+  $current_time = date('F j, Y', time());
+  $prefaces_nids = array(80, 137);
+  
+  foreach ($prefaces_nids as $nid) {
+    //$node = node_load($nid);
+    //$node->title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $node->title);
+    //dpm($node->title);
+    
+    //dpm($node);
+    //node_save($node);
+    
+    
+    
+    $query = db_select('node', 'n');
+    $query->fields('n', array('title'))
+        ->condition('nid', $nid);
+    
+    $title = $query->execute()->fetchField();
+  
+    $title = preg_replace('|^(.*) - Last Updated (.*)$|', '$1 - Last Updated ' . $current_time, $title);
+    //dpm($title);
+    db_update('node')
+      ->fields(array(
+        'title' => $title,
+      ))
+      ->condition('nid', $nid)
+      ->execute();
+  
+    db_update('node_revision')
+      ->fields(array(
+        'title' => $title,
+      ))
+      ->condition('nid', $nid)
+      ->execute();
+  
+  }
+  
+  
+  //drupal_flush_all_caches();
+  
+  // Not so hard reset...
+
+  // The code from function views_invalidate_cache()
+  // Clear the views cache.
+  cache_clear_all('*', 'cache_views', TRUE);
+  // Clear the page and block cache.
+  cache_clear_all();
+  // Allow modules to respond to the Views cache being cleared.
+  module_invoke_all('views_invalidate_cache');
+  
+  cache_clear_all('*', 'cache_views_data', TRUE);
+  
+  // Function from the module boost.
+  boost_flush_caches();
+  
+  
+  drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
+  drupal_goto('');
 }
 
 

@@ -62,7 +62,7 @@ The nitty-gritty:
 	 their arguments are identical. However, it is a good idea to give all TVI 
 	 views that provide page displays a path other than the default 
 	 taxonomy/term/*. Alternatively, you may remove the page displays and simply 
-	 use the default or block view for TVI views: this is recommended.
+	 use a block view for TVI views: this is recommended.
 	 
 5: TVI uses hook_menu_alter to replace the taxonomy/term/* callback. Unlike 
    the re-direct method, which causes your server to be queried 2 or more 

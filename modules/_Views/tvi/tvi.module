@@ -198,7 +198,17 @@ function tvi_render_view($tid = '', $depth = 0, $op = 'page') {
 
   list($view, $display, $term, $settings) = tvi_get_view_info($tid);
   if (is_object($view) && $display) {
-    return $view->execute_display($display, array($tid, $depth));
+    if ($view->display[$display]->display_plugin == 'block') {
+      // If it's a block display, views returns a block array which won't work
+      // as a page callback so we need to explicitly set the page title
+      // and just return the $block['content']
+      $block = $view->execute_display($display, array($tid, $view->display_handler->display->display_options["arguments"]["term_node_tid_depth"]["depth"]));
+      drupal_set_title($block['subject']);
+      return $block['content'];
+    }
+    else {
+      return $view->execute_display($display, array($tid, $view->display_handler->display->display_options["arguments"]["term_node_tid_depth"]["depth"]));
+    }
   }
 
   // Taxonomy is last resort - used if no standard views are found
@@ -245,7 +255,7 @@ function tvi_get_view_info($tid) {
   $display  = NULL;
   $settings = isset($info->settings) ? $info->settings : NULL;
 
-  if (is_object($view) && is_object($settings) && $settings->status) {
+  if (is_object($view) && is_object($settings) && isset($settings->status) && $settings->status) {
     $display = $settings->display;
   }
 

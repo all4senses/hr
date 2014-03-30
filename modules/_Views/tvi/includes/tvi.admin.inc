@@ -101,16 +101,14 @@ function tvi_taxonomy_admin_form(&$form, $settings) {
     '#value' => $settings->xid,
   );
 
-  if ($settings->type != TVI_TYPE_ALL) {
-    // Status toggle switch
-    $form['tvi']['status'] = array(
-      '#id' => 'tvi-status-check',
-      '#type' => 'checkbox',
-      '#title' => t('Use view override.'),
-      '#default_value' => $settings->status,
-      '#description' => t('Unchecking this field will disable the use of the view when displaying this taxonomy page.'),
-    );
-  }
+  // Status toggle switch
+  $form['tvi']['status'] = array(
+    '#id' => 'tvi-status-check',
+    '#type' => 'checkbox',
+    '#title' => t('Use view override.'),
+    '#default_value' => $settings->status,
+    '#description' => t('Unchecking this field will disable the use of the view when displaying this taxonomy page.'),
+  );
 
   if ($settings->type == TVI_TYPE_TERM) {
     // Inheritance switch

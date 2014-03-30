@@ -213,6 +213,8 @@ class views_plugin_cache extends views_plugin {
     // https://drupal.org/node/2018737
     // https://drupal.org/files/issues/views-asset-diff-2018737-21.patch
     
+    // https://drupal.org/node/1850798
+    
     //$this->storage['css'] = $array_mapping_func($css, $css_start);
     $this->storage['css'] = $this->assetDiff($css, $css_start, $array_mapping_func);
     
@@ -270,6 +272,15 @@ class views_plugin_cache extends views_plugin {
     }
     return $diff;
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

@@ -261,6 +261,7 @@ class views_plugin_cache extends views_plugin {
     $this->storage['headers'] = array_diff_assoc(drupal_get_http_header(), $this->storage['headers']);
   }
   /* complementary function due PHP 5.4 issue 1511396 */
+  /*
   function array_diff_assoc_recursive($array1, $array2) {
     foreach ($array1 as $key => $value) {
       if (is_array($value)) {
@@ -280,6 +281,26 @@ class views_plugin_cache extends views_plugin {
     }
     return !isset($difference) ? 0 : $difference;
   }
+  */
+  function array_diff_assoc_recursive($array1, $array2) {
+  foreach ($array1 as $key => $value) {
+    if (is_array($value)) {
+      if (!isset($array2[$key])) {
+        $difference[$key] = $value;
+      } elseif (!is_array($array2[$key])) {
+        $difference[$key] = $value;
+      } else {
+        $new_diff = array_diff_assoc_recursive($value, $array2[$key]);
+        if (count($new_diff) > 0) {
+          $difference[$key] = $new_diff;
+        }
+      }
+    } elseif (!array_key_exists($key, $array2) || $array2[$key] != $value) {
+      $difference[$key] = $value;
+    }
+  }
+  return !isset($difference) ? array() : $difference;
+}
   
   
   

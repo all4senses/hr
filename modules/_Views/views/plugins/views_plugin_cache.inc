@@ -290,7 +290,7 @@ class views_plugin_cache extends views_plugin {
       } elseif (!is_array($array2[$key])) {
         $difference[$key] = $value;
       } else {
-        $new_diff = array_diff_assoc_recursive($value, $array2[$key]);
+        $new_diff = $this->array_diff_assoc_recursive($value, $array2[$key]);
         if (count($new_diff) > 0) {
           $difference[$key] = $new_diff;
         }

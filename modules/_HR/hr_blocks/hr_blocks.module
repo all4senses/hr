@@ -487,7 +487,7 @@ function hr_blocks_getReviewsRotated() {
   drupal_add_library('system', 'ui.widget');
   drupal_add_library('system', 'ui.tabs');
 
-  $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
+  $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
   drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
 
   $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';

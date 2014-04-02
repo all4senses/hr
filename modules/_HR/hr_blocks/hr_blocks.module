@@ -99,6 +99,11 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
   
+  $blocks['home_banner2'] = array(
+    'info' => 'Home banner 2',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  
   $blocks['home_services'] = array(
     'info' => 'Home services select',
     'cache' => DRUPAL_CACHE_GLOBAL,
@@ -195,6 +200,11 @@ function hr_blocks_block_view($delta = '') {
     case 'home_banner':
       $block['subject'] = '';
       $block['content'] = hr_blocks_getAdBlock('home_banner');
+      break;
+    
+    case 'home_banner2':
+      $block['subject'] = '';
+      $block['content'] = hr_blocks_getAdBlock('home_banner2');
       break;
     
     case 'home_services':
@@ -329,6 +339,28 @@ function hr_blocks_block_configure($delta = '') {
       break;
 
     
+    
+    case 'home_banner2':
+      $data = unserialize(variable_get('hr_home_banner2_block_data', NULL));
+    
+      //dpm($recommendedSites_block);
+
+      $form['hr_main_title'] = array(
+        '#type' => 'textfield', 
+        '#title' => 'Main title',
+        '#default_value' => isset($data['main_title']) ? $data['main_title'] : $data['title'], 
+      );
+      
+      $form['hr_main_body'] = array(
+        '#type' => 'text_format', 
+        '#title' => 'Main body',
+        '#default_value' => isset($data['main_body']) ? $data['main_body']['value'] : $data['body']['value'],
+      );
+      
+      break;
+
+    
+    
     case 'home_services':
       $data = unserialize(variable_get('hr_home_services_block_data', NULL));
       
@@ -380,6 +412,12 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
     case 'home_banner':
       $data = array('main_title' => $edit['hr_main_title'], 'main_body' => $edit['hr_main_body'], 'right_title' => $edit['hr_right_title'], 'right_body' => $edit['hr_right_body']);
       variable_set('hr_home_banner_block_data', serialize($data));
+      break;
+    
+    
+    case 'home_banner2':
+      $data = array('main_title' => $edit['hr_main_title'], 'main_body' => $edit['hr_main_body']);
+      variable_set('hr_home_banner2_block_data', serialize($data));
       break;
     
     case 'home_services':
@@ -511,6 +549,20 @@ function hr_blocks_getAdBlock($ad_name) {
       }
       //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
       return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner-pic.png" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
+      
+    
+    case 'home_banner2':
+      $data = unserialize(variable_get('hr_home_banner2_block_data', NULL));
+      if (!isset($data['main_title'])) {
+        $data['main_title'] = $data['title'];
+      }
+      if (!isset($data['main_body'])) {
+        $data['main_body'] = $data['body'];
+      }
+      //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
+      return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div>';
+      
+      
       
     case 'home_services':
       $data = unserialize(variable_get('hr_home_services_block_data', NULL));

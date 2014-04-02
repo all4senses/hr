@@ -214,7 +214,7 @@ function hr_blocks_block_view($delta = '') {
     
     case 'editor_note':
       $block['subject'] = 'Editor\'s Note';
-      $block['content'] = hr_blocks_getAdBlock('editor_note');
+      $block['content'] = ' ss' . hr_blocks_getAdBlock('editor_note');
       break;
     
     case 'home_services':

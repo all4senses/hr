@@ -134,7 +134,16 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
-      
+  $blocks['home_flag_header'] = array(
+    'info' => 'Home Flag Header',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  $blocks['reviews_rotated'] = array(
+    'info' => 'Reviews rotated',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   return $blocks;
 }
 
@@ -243,6 +252,11 @@ function hr_blocks_block_view($delta = '') {
       $block['content'] = hr_blocks_getHomeFlagHeader();
       break;
     
+    
+    case 'reviews_rotated':
+      $block['subject'] = '';
+      $block['content'] = hr_blocks_getReviewsRotated();
+      break;
     
     
     default:
@@ -461,6 +475,85 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
   }
   
 }
+
+
+/**
+ * Block with Rotated reviews.
+ */
+function hr_blocks_getReviewsRotated() {
+  
+
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.tabs');
+
+  $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
+  drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
+
+  $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+  drupal_add_css($path_to_current_theme . 'hr_bannerRotator.css');
+
+  
+  $reviews = array('1111', '22222', '3333', '44444', '55555', '66666');
+  
+  $ui_tabs_nav = '';
+  $fragments = '';
+  //$middles = element_children($content['field_preface_middle']);
+  foreach ($reviews as $key => $value) {
+
+      //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
+      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $key . '</a></li>';
+      $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value . '</div></div>';
+
+
+  }
+  //$key += 1; 
+  //$blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
+  //$blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . vr_misc_getHomeBlogPostsForBannerRotator() . '</div></div>';
+  //return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';  
+  return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';  
+}
+
+
+/*
+
+function hr_blocks_getReviewsRotated() {
+  
+
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.tabs');
+
+  $path_to_custom_js = drupal_get_path('module', 'vr_misc') . '/js/';
+  drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
+
+  $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+  drupal_add_css($path_to_current_theme . 'hr_bannerRotator.css');
+
+  
+  
+  
+  $ui_tabs_nav = '';
+  $fragments = '';
+  $middles = element_children($content['field_preface_middle']);
+  foreach ($middles as $key) {
+
+    foreach($content['field_preface_middle'][$key]['entity']['field_collection_item'] as $value) {
+      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
+      $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value['field_preface_b_body'][0]['#markup'] . '</div></div>';
+
+      break; // Here should be just one item, but with an undefined key.
+    }
+
+  }
+  $key += 1; 
+  $blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
+  $blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . vr_misc_getHomeBlogPostsForBannerRotator() . '</div></div>';
+  return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';  
+}
+ 
+*/
+
 
 
 /**

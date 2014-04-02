@@ -104,6 +104,11 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
   
+  $blocks['editor_note'] = array(
+    'info' => 'Editor Note',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  
   $blocks['home_services'] = array(
     'info' => 'Home services select',
     'cache' => DRUPAL_CACHE_GLOBAL,
@@ -205,6 +210,11 @@ function hr_blocks_block_view($delta = '') {
     case 'home_banner2':
       $block['subject'] = '';
       $block['content'] = hr_blocks_getAdBlock('home_banner2');
+      break;
+    
+    case 'editor_note':
+      $block['subject'] = '';
+      $block['content'] = hr_blocks_getAdBlock('editor_note');
       break;
     
     case 'home_services':
@@ -360,6 +370,23 @@ function hr_blocks_block_configure($delta = '') {
       break;
 
     
+    case 'editor_note':
+      $data = unserialize(variable_get('hr_editor_note_block_data', NULL));
+    
+      $form['hr_main_title'] = array(
+        '#type' => 'textfield', 
+        '#title' => 'Main title',
+        '#default_value' => isset($data['main_title']) ? $data['main_title'] : $data['title'], 
+      );
+      
+      $form['hr_main_body'] = array(
+        '#type' => 'text_format', 
+        '#title' => 'Main body',
+        '#default_value' => isset($data['main_body']) ? $data['main_body']['value'] : $data['body']['value'],
+      );
+      
+      break;
+
     
     case 'home_services':
       $data = unserialize(variable_get('hr_home_services_block_data', NULL));
@@ -415,15 +442,22 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
       break;
     
     
+    case 'home_services':
+      $data = array('hr_text' => $edit['hr_text'], 'vps_text' => $edit['vps_text'], 'ds_text' => $edit['ds_text']);
+      variable_set('hr_home_services_block_data', serialize($data));
+      break;
+    
     case 'home_banner2':
       $data = array('main_title' => $edit['hr_main_title'], 'main_body' => $edit['hr_main_body']);
       variable_set('hr_home_banner2_block_data', serialize($data));
       break;
     
-    case 'home_services':
-      $data = array('hr_text' => $edit['hr_text'], 'vps_text' => $edit['vps_text'], 'ds_text' => $edit['ds_text']);
-      variable_set('hr_home_services_block_data', serialize($data));
+    
+    case 'editor_note':
+      $data = array('main_title' => $edit['hr_main_title'], 'main_body' => $edit['hr_main_body']);
+      variable_set('hr_editor_note_block_data', serialize($data));
       break;
+    
   }
   
 }
@@ -562,7 +596,19 @@ function hr_blocks_getAdBlock($ad_name) {
       //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
       return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div>';
       
+    
+    case 'editor_note':
+      $data = unserialize(variable_get('hr_editor_note_block_data', NULL));
+      if (!isset($data['main_title'])) {
+        $data['main_title'] = $data['title'];
+      }
       
+      if (!isset($data['main_body'])) {
+        $data['main_body'] = $data['body'];
+      }
+      //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
+      return (empty($data['main_title']) ? '' : '<div class="title">' . $data['main_title'] . '</h1>') . '<div class="body">' . $data['main_body']['value'] . '</div>';
+         
       
     case 'home_services':
       $data = unserialize(variable_get('hr_home_services_block_data', NULL));

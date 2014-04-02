@@ -490,7 +490,7 @@ function hr_blocks_getReviewsRotated() {
   $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
   drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
 
-  $path_to_current_theme = drupal_get_path('theme',$GLOBALS['theme']) . '/css/';
+  $path_to_current_theme = drupal_get_path('theme', $GLOBALS['theme']) . '/css/';
   drupal_add_css($path_to_current_theme . 'hr_bannerRotator.css');
 
   
@@ -511,7 +511,7 @@ function hr_blocks_getReviewsRotated() {
   //$blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';
   //$blog_fragment = '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . vr_misc_getHomeBlogPostsForBannerRotator() . '</div></div>';
   //return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';  
-  return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . $blog_tab . '</ul>' . $fragments . $blog_fragment . '</div>';  
+  return '<div id="r-rotator"><ul class="ui-tabs-nav">' . $ui_tabs_nav . '</ul>' . $fragments . '</div>';  
 }
 
 

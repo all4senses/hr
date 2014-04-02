@@ -255,7 +255,7 @@ function hr_blocks_block_view($delta = '') {
     
     case 'reviews_rotated':
       $block['subject'] = '';
-      $block['content'] = 'xxx' . hr_blocks_getReviewsRotated();
+      $block['content'] = hr_blocks_getReviewsRotated();
       break;
     
     

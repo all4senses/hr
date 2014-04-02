@@ -577,7 +577,7 @@ function hr_misc_js_alter(&$javascript) {
 function hr_misc_flush_caches() {
   
   // Remove all minified files from jsmin-hr folder.
-  // Uncomment in case ov changing any js
+  // Uncomment in case of changing any js
   
 //  $dir = 'f/jsmin-hr';
 //  $objects = scandir($dir);

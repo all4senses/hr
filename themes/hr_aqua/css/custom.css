@@ -96,9 +96,7 @@ input.blur, textarea.blur,
 #header, #navigation, #all-content, #footer-inside{width: 1000px; margin: auto;}
 #footer-inside{position: relative;}
 
-#header{padding-top: 80px; z-index: 4;}
-
-#header-menu-back {background: #706e6f; height: 40px;}
+#header{padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back_home.jpg) no-repeat transparent; width: 100%; height: 274px;}
 
 /* Search block */
 #block-search-form{color: lightgray; padding-bottom: 0;position: absolute; right: 0; top: 25px;}
@@ -116,8 +114,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 
 #header #logo-block{color: #C5C5C5; left: 0; position: absolute; top: 0/*6*//*20*/px; z-index: 200;}
-/*#header #logo-block img {width: 220px;}*/
-#header #logo{float: left; margin: 3px 0 0 12px;}
+#header #logo{float: left; margin: 0 0 0 50px;}
 #header #logo-block .descr{float: left;}
 #header #logo-block .title{font-size: 26px; font-weight: bold; margin-top: 10px;}
 #header #logo-block .stars{float: left; height: 20px; margin: 2px 0 0 7px; overflow: hidden; width: 80px; position: relative;}
@@ -227,7 +224,7 @@ div.error{border: none;}
 ul.hr{margin-left: 0px; padding-left: 10px;}
 
 /*.block.block-om-maximenu{right: 0; position: absolute; top: 65px; z-index: 10; height: 45px; border-radius: 10px 10px 0 0;}*/
-.block.block-om-maximenu{position: absolute; top: 80px; z-index: 10; left: 115px/* 145px for 3items 80px for 5 items*/;}
+.block.block-om-maximenu{position: absolute; top: 23px; z-index: 10; right: 60px;}
 
 
 
@@ -241,8 +238,8 @@ ul.hr{margin-left: 0px; padding-left: 10px;}
 .om-maximenu.om-maximenu-block ul.om-menu {overflow: hidden; height: 40px;}
 
 
-/*#om-menu-main-om-menu li.om-leaf{position: relative; height: 42px; z-index: 400; padding: 0 8px 3px 2px; margin: 0 2px; background: url(images/menu-devisor.png) no-repeat scroll right 11px transparent;}*/
-#om-menu-main-om-menu li.om-leaf{position: relative; z-index: 400; padding: 0 10px 0px 8px; margin: 0 99px/* 30px for 4items 70px for 3 items, 5px for 5 items in menu*/ 0 0;}
+
+#om-menu-main-om-menu li.om-leaf{position: relative; z-index: 400; padding: 0 0px 0px 0px; margin: 0 20px 0 0;}
 
 /* For hidden item Submit Review */
 #om-leaf-om-u1-1205284023-11 {display: none;}
@@ -255,25 +252,15 @@ ul.hr{margin-left: 0px; padding-left: 10px;}
 
 #om-menu-main-om-menu li.om-leaf.leaf-about-us .om-maximenu-middle{width: 120px;}
 
-/*
-#om-menu-main-om-menu li.om-leaf.last,
-body.not-admin #om-menu-main-om-menu li.om-leaf.leaf-write-review{background: none;}
-*/
 
 .om-maximenu ul.om-menu li.om-leaf .om-link{line-height: 25px; color: #868686; /*font-weight: bold;*/ padding: 4px 14px 8px 14px;}
 
 .om-maximenu ul.om-menu li.om-leaf .om-link.link-e{padding: 4px 8px 8px 8px;}
 
 
-/*.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 12px 12px 10px; font-size: 15px; color: lightgray; text-shadow: 1px 1px 2px black; display: block; height: 20px !important; border: 1px solid transparent;}*/
-.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 5px 10px 5px; font-size: 17px; color: white; display: block; line-height: 30px; text-transform: uppercase;}
 
-/*.om-maximenu ul.om-menu li.om-leaf.first a.om-link{border-radius: 5px 0 0 0;}*/
+.om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 5px 0px 5px; font-size: 12px; display: block; line-height: 30px;}
 
-
-/*.om-maximenu ul.om-menu li.om-leaf:hover {background: url("images/main-menu-hover-li.png") no-repeat center bottom transparent;}*/
-
-/*#om-menu-main-om-menu li.om-leaf:hover a.om-link {color: black; text-shadow: none; background: url("images/main-menu-hover-a.jpg") repeat-x 0 0; overflow: hidden; border-radius: 0 0 5px 5px; border: 1px solid gray; padding-top: 5px; line-height: 38px; box-shadow: 3px 7px 7px -7px black; border-top: none; margin-top: 3px;}*/
 #om-menu-main-om-menu li.om-leaf:hover a.om-link {color: #706e6f; background: #f3f3f3;}
 
 
@@ -2137,7 +2124,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .node-type-webform input#edit-delete {border: none; background: none; cursor: pointer;} 
 
 /* Writer menu */
-#block-hr-blocks-writer-admin-links {position: absolute; top: 40px; right: /*150*/0px; font-size: 13px;}
+#block-hr-blocks-writer-admin-links {position: absolute; top: 10px; right: 48px; font-size: 13px;}
 #block-hr-blocks-writer-admin-links .content a {color: lightgray; padding: 0 10px;}
 #block-hr-blocks-writer-admin-links .content a:hover {/*text-decoration: underline; font-weight: bold;*/ border: 1px dotted lightgray; border-radius: 5px;}
 #block-hr-blocks-writer-admin-links .contextual-links-wrapper {display: none;}

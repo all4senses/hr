@@ -2162,7 +2162,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /* Reviews rotator */
 #block-hr-blocks-reviews-rotated {text-align: center; overflow: hidden;}
 #r-rotator-wrapper {width: 590px; margin: auto; text-align: center;}
-#r-rotator-wrapper .button {float: left; margin-top: 60px;}
+#r-rotator-wrapper .button {float: left; margin: 60px 3px 0;}
 #r-rotator {width: 500px; float: left;}
 #r-rotator.ui-tabs .ui-tabs-nav {background: none; border: none; margin: auto; width: 200px;}
 #r-rotator.ui-tabs .ui-tabs-nav li {border: none; background: none;}

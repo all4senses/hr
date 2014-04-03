@@ -494,16 +494,32 @@ function hr_blocks_getReviewsRotated() {
   drupal_add_css($path_to_current_theme . 'hr_bannerRotator.css');
 
   
-  $reviews = array('1111', '22222', '3333', '44444', '55555', '66666');
+  $query = db_select('node', 'n');
+  //$query->leftJoin('field_data_field_preface_bottom', 'pb', 'pb.entity_id = n.nid');
+  $query->fields('n', array('nid'));
+  //$query->leftJoin('field_data_field_preface_key', 'pk', 'pk.entity_id = pb.entity_id');
+  //$query->fields('pk', array('field_preface_key_value'));
+  $query->condition('n.type', 'review');
+  //$query->condition('pb.field_preface_bottom_value', 1, '>=');
+  //$query->isNotNull('pk.field_preface_key_value');
+  $query->orderBy('n.created', 'DESC');
+  $query->range(0, 8);
+  
+  $reviews = $query->execute()->fetchCol();
+
+  dpm($reviews);
+  
+  //$reviews = array('1111', '22222', '3333', '44444', '55555', '66666');
   
   $ui_tabs_nav = '';
   $fragments = '';
   //$middles = element_children($content['field_preface_middle']);
-  foreach ($reviews as $key => $value) {
+  //foreach ($reviews as $key => $value) {
+  for($i = 0; $i < 7; $i += 2) {
 
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
-      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $key . '</a></li>';
-      $fragments .= '<div id="fragment-' . $key . '" class="ui-tabs-panel"><div class="info">' . $value . '</div></div>';
+      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
+      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $views[$i] . ' - ' . $views[$i+1] . '</div></div>';
 
 
   }

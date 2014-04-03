@@ -18,7 +18,7 @@
       ); 
         
         
-      $("#next-review").click(function() {
+      $("#r-rotator-wrapper #next").click(function() {
           var active = $( "#r-rotator" ).tabs( "option", "selected" );
           if (active == ltabs - 1 ) {
             active = 0;
@@ -33,7 +33,7 @@
 
       });
       
-      $("#prev-review").click(function() {
+      $("#r-rotator-wrapper #prev").click(function() {
           var active = $( "#r-rotator" ).tabs( "option", "selected" );
           if (active == 0 ) {
             active = ltabs - 1;

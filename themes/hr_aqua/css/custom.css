@@ -147,10 +147,10 @@ ul.header-links a.Submit.Reviews{background: url("images/block-head-red.png") re
 
 .node-teaser footer .share .share-static span {padding: 6px 5px; color: #b6b6b6;}
 .node-teaser .share-static a {width: 25px; height: 25px; margin: 5px 5px 0 0;}
-.node-teaser a.Twitter {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -60px -855px transparent;}
-.node-teaser a.Facebook {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -90px -855px transparent;}
-.node-teaser a.GooglePlus {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -119px -855px transparent;}
-.node-teaser a.LinkedIn {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -148px -855px transparent;}
+.node-teaser a.Twitter {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -60px -855px transparent;}
+.node-teaser a.Facebook {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -90px -855px transparent;}
+.node-teaser a.GooglePlus {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -119px -855px transparent;}
+.node-teaser a.LinkedIn {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -148px -855px transparent;}
 
 
 
@@ -381,7 +381,7 @@ ul.hr{margin-left: 0px; padding-left: 10px;}
 #block-views-providers-block, #block-views-providers-block-1, #block-views-providers-block_1{position: relative; margin-bottom: 15px;}
 
 .block-views .view-id-providers .more-link{position: absolute; right: 16px; top: 0px;}
-.view-id-providers .more-link a {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -100px -234px transparent; display: block; width: 98px; height: 30px; position: relative; top: -6px; text-indent: -9999px; text-align: left;}
+.view-id-providers .more-link a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -100px -234px transparent; display: block; width: 98px; height: 30px; position: relative; top: -6px; text-indent: -9999px; text-align: left;}
 
 
 /*h2, h3{color: gray; font-size: 18px; font-weight: bold; line-height: 18px; margin: 0 0 5px 0; padding: 10px 0 5px 0;}*/
@@ -461,14 +461,14 @@ div.fivestar-widget-static .star span.on{background: url("images/sprite-2.png") 
 */
 div.fivestar-widget-static .star{width: 15px; height: 15px; float: left; background: url("images/sprite-2.png") no-repeat scroll 1px -51px transparent;}
 div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; height: 15px; display: block; background: url("images/sprite-2.png") no-repeat scroll 1px -67px transparent;}
-div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 100%; background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll 0 -51px transparent;}
+div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 100%; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll 0 -51px transparent;}
 
 
 
 
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star{width: 14px; height: 14px; float: left; background: url("images/sprite-2.png") no-repeat scroll -19px -50px transparent;}
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 14px; height: 14px; display: block; background: url("images/sprite-2.png") no-repeat scroll -19px -62px transparent;}
-.view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {display: block; width: 14px; height: 14px; background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -19px -50px transparent;}
+.view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {display: block; width: 14px; height: 14px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -19px -50px transparent;}
 
 
 
@@ -512,9 +512,9 @@ td.active {background-color: transparent;}
 .view-display-id-page_chart_providers tr,
 .view-providers tr {border: none;}
 
-.trend.pos {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -48px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
-.trend.neg {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -17px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
-.trend.neu {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -17px -35px; width: 30px; height: 10px; text-indent: -9999px; margin: auto;} 
+.trend.pos {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -48px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
+.trend.neg {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -17px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
+.trend.neu {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -17px -35px; width: 30px; height: 10px; text-indent: -9999px; margin: auto;} 
 
 
 
@@ -636,10 +636,10 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 
 
 /*.chart a.reviews.visit-site-btn{background: url("images/sprite-2.png") no-repeat -2px -1000px transparent; display: block; width: 140px; height: 38px; margin: auto; text-indent: 0; color: white; font-size: 24px; padding: 5px 0;}*/
-.chart a.reviews.visit-site-btn {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat 1px -1052px transparent; display: block; width: 143px; height: 43px; margin: auto; padding: 5px 0;}
+.chart a.reviews.visit-site-btn {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 1px -1052px transparent; display: block; width: 143px; height: 43px; margin: auto; padding: 5px 0;}
 
 /*.chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}*/
-.chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 125px; border-radius: 7px; background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -7px -1052px transparent;}
+.chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 125px; border-radius: 7px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -7px -1052px transparent;}
 
 .chart a.visit.visit-site-link {font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
 .chart.view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
@@ -711,7 +711,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-row-first .views-field-field-p-listposition-wb div, 
 .views-row-first .views-field-field-p-listposition-vps div,
 .views-row-first .views-field-field-p-listposition-wp div
-{background: url("/sites/all/themes/hr/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -9999px; width: 45px; margin: auto;}
+{background: url("/sites/all/themes/hr_aqua/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -9999px; width: 45px; margin: auto;}
 
 
 .view-providers tr:hover, .view-providers tr.even:hover, .view-providers tr:hover td, .view-providers tr.even:hover td {background: #cfe7ff;}
@@ -728,7 +728,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 .sidebar .block{overflow: hidden; margin: 12px 0; position: relative; z-index: 1; border: 1px solid lightgray;}
 
 /*.sidebar .block-title{padding: 10px 5px 10px 10px; border-bottom: 3px solid lightgray; color: white; background: url("images/main-menu-hover.png") repeat-x 0 0px; font-weight: normal; margin: 0; font-size: 16px; border-radius: 7px 7px 0 0;}*/
-.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 20px; font-family: 'Roboto';} 
+.sidebar .block-title{padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 20px; font-family: 'Roboto';} 
 
 
 .sidebar .block li{list-style: none; clear: both;}
@@ -927,7 +927,7 @@ form .counter.exceeded{color: red;}
 .hr-edit-review-page input, .hr-edit-review-page select {border: 1px solid lightgray;}
 .hr-edit-review-page input {padding: 4px 0 4px 5px;}
 
-.hr-edit-review-page input#edit-submit {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -803px; border: none; text-indent: -9999px; width: 130px; height: 50px; padding: 0; cursor: pointer;}
+.hr-edit-review-page input#edit-submit {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -803px; border: none; text-indent: -9999px; width: 130px; height: 50px; padding: 0; cursor: pointer;}
 .hr-edit-review-page input#edit-delete {border: none; background: none; cursor: pointer;}
 
 /* Node page, including Article */
@@ -955,7 +955,7 @@ form .counter.exceeded{color: red;}
 /*.author {font-weight: bold; color: #7092d1;}*/
 .node-teaser .author {font-weight: bold; color: #979797; margin: 0 40px 0 4px;}
 
-.submitted .time-icon {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat scroll -143px -263px transparent; display: inline-block; width: 20px; height: 20px; position: relative; top: 4px; margin-right: 3px;}
+.submitted .time-icon {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -143px -263px transparent; display: inline-block; width: 20px; height: 20px; position: relative; top: 4px; margin-right: 3px;}
 
 
 .gplus{display: inline-block; background: url("images/gplus16.jpg") no-repeat scroll 0 0 transparent; text-indent: -9999px; width: 20px;}
@@ -1346,10 +1346,10 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
 
-.node-type-provider .site a {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
+.node-type-provider .site a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 
-.node-type-provider #left-col .hr_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
+.node-type-provider #left-col .hr_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
 .node-type-provider #left-col .hr_votes .caption span {float: left; margin-right: 5px;}
 .node-type-provider #left-col .hr_votes .hr_vote {margin-top: 4px;}
 .node-type-provider #left-col .hr_votes .hr_vote.even {background: none;}
@@ -1367,7 +1367,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 /* Top 5 WH provider block on provider page */
 #block-views-providers-block_topwhost_small {clear: both; margin: 20px 0 0 0; border: 1px solid lightgray;}
 
-#block-views-providers-block_topwhost_small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: 'Roboto';}
+#block-views-providers-block_topwhost_small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: 'Roboto';}
 .page-node #main .main-content #block-views-providers-block_topwhost_small.block-views .content {padding: /*0 10px*/0; border: none;}
 #block-views-providers-block_topwhost_small .view-providers {box-shadow: none;}
 #block-views-providers-block_topwhost_small table {border: none;}
@@ -1399,7 +1399,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 #block-views-providers-block-topwhost-small {clear: both; margin: 20px 0 0 0; border: 1px solid lightgray;}
 
-#block-views-providers-block-topwhost-small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 18px; font-family: 'Open Sans';}
+#block-views-providers-block-topwhost-small h2 {padding: 20px 5px 5px 10px; color: gray; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: normal; margin: 0; font-size: 18px; font-family: 'Open Sans';}
 .page-node #main .main-content #block-views-providers-block-topwhost-small.block-views .content {padding: 0 10px; border: none;}
 
 /*#block-views-providers-block-topwhost-small .content {padding: 5px 5px 0;}*/
@@ -2048,7 +2048,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 /* Home banner block */
 #block-hr-blocks-home-banner {position: relative; margin: 0 0 25px; overflow: hidden;}
 
-#block-hr-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
+#block-hr-blocks-home-banner .content {height: 385px; width: 100%; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x scroll 0 -310px #64b6ed;}
 #block-hr-blocks-home-banner img {position: absolute; right: 30px; top: 35px;}
 
 #block-hr-blocks-home-banner h1 {position: absolute; left: 20px; top: 15px; width: 550px; font-weight: 600; font-size: 31px; line-height: 38px; color: white; text-shadow: 1px 3px 2px gray;}
@@ -2057,7 +2057,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-hr-blocks-home-banner ul {padding: 0 0 0 10px;}
 #block-hr-blocks-home-banner li {background: url(images/checkmark-blue.png) no-repeat scroll 0 0 transparent; text-indent: 25px; padding: 0 0 8px 0; font-weight: 600;}
 
-#block-hr-blocks-home-banner .arrow {width: 45px; height: 50px; background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -47px -30px; margin-right: 10px;}
+#block-hr-blocks-home-banner .arrow {width: 45px; height: 50px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -47px -30px; margin-right: 10px;}
 
 #block-hr-blocks-home-banner span:first-child {display: block; margin: 18px 0 5px; font-size: 19px; line-height: 19px; text-shadow: 0px 1px 0px lightgray; color: #444444;}
 #block-hr-blocks-home-banner span:last-child {color: white; font-size: 15px; line-height: 22px; text-shadow: 1px 1px 0px gray;}
@@ -2090,11 +2090,11 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-hr-blocks-home-services {padding: 0 20px;}
 
 #block-hr-blocks-home-services .icon {width: 103px; height: 105px; margin: auto;}
-#block-hr-blocks-home-services .ds {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 3px -187px;}
-#block-hr-blocks-home-services .vps {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x -102px -83px;}
-#block-hr-blocks-home-services .hr {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 1px -83px;}
+#block-hr-blocks-home-services .ds {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 3px -187px;}
+#block-hr-blocks-home-services .vps {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x -102px -83px;}
+#block-hr-blocks-home-services .hr {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 1px -83px;}
 
-.front h2.preface {/*background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat -190px -32px transparent; padding-left: 20px; */overflow: hidden; clear: both;}
+.front h2.preface {/*background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -190px -32px transparent; padding-left: 20px; */overflow: hidden; clear: both;}
 
 
 /* Template page--compare_providers.tpl.php with .page-compare-providers */
@@ -2123,7 +2123,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 /*.node-type-webform .webform-component-textarea {width: 395px;}*/
 .node-type-webform input {border: 1px solid lightgray;}
 .node-type-webform .webform-component-textarea textarea {height: 200px; border: 1px solid lightgray;}
-.node-type-webform input#edit-submit {background: url(/sites/all/themes/hr/css/images/sprite-2.png) repeat-x 0 -803px; border: none; text-indent: -9999px; width: 130px; height: 50px; padding: 0; cursor: pointer;}
+.node-type-webform input#edit-submit {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -803px; border: none; text-indent: -9999px; width: 130px; height: 50px; padding: 0; cursor: pointer;}
 .node-type-webform input#edit-delete {border: none; background: none; cursor: pointer;} 
 
 /* Writer menu */
@@ -2144,10 +2144,10 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 .price.non-crossed {font-size: 24px;}
 
-.price.crossed .cross {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
+.price.crossed .cross {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
 .view-display-id-block_top_ca_p_table .price.crossed .cross {width: 72px; left: 28px;}
 
-.limited-time {background: url(/sites/all/themes/hr/css/images/sprite-2.png) no-repeat 2px -971px transparent; width: 135px; height: 30px; margin: 0 0 0 25px; color: white;}
+.limited-time {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 2px -971px transparent; width: 135px; height: 30px; margin: 0 0 0 25px; color: white;}
 
 
 /* Fix for the listing pages without bottom and sidebar */

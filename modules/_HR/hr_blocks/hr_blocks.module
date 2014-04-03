@@ -516,7 +516,12 @@ function hr_blocks_getReviewsRotated() {
   //$middles = element_children($content['field_preface_middle']);
   //foreach ($reviews as $key => $value) {
   for($i = 0; $i < 7; $i += 2) {
-
+      
+      $nodes = node_load_multiple($reviews[$i], $reviews[$i+1]);
+      $node_views = node_view_multiple($nodes, 'teaser');
+      
+      dpm($node_views);
+    
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
       $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';

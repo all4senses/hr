@@ -2160,6 +2160,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 
 /* Reviews rotator */
+#block-hr-blocks-reviews-rotated {text-align: center; overflow: hidden;}
 #r-rotator-wrapper {width: 590px; margin: auto; text-align: center;}
 #r-rotator-wrapper .button {float: left; margin-top: 60px;}
 #r-rotator {width: 500px; float: left;}

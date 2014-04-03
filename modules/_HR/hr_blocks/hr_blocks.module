@@ -662,9 +662,13 @@ function hr_blocks_getAdBlock($ad_name) {
       if (!isset($data['main_body'])) {
         $data['main_body'] = $data['body'];
       }
+      
+      $user = user_load(47); // 47 - Reuben Yonatan
       //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
       return (empty($data['main_title']) ? '' : '<div class="title">' . $data['main_title'] . '</h1>') . 
-              '<div class="header"><div class="photo"></div><div class="title">Reuben Yonatan<span>VP of Marketing at GetVoIP</span></div></div>' .
+              '<div class="header"><div class="photo">' . 
+              theme('image_style', array( 'path' =>  @$user->field_u_avatar_in_circle['und'][0]['uri'], 'style_name' => 'avatar_in_circle', 'alt' => '', 'title' => '', 'attributes' => array('rel' => 'v:photo'))) .
+              '</div><div class="title">Reuben Yonatan<span>VP of Marketing at GetVoIP</span></div></div>' .
               '<div class="body">' . $data['main_body']['value'] . '</div>';
          
       

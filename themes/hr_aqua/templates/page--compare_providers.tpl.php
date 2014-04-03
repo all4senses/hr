@@ -6,9 +6,27 @@
       <div id="header-menu-back"></div>
       
       <div id="logo-block">
-        <a href="<?php print $front_page; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/hr/css/images/hr-logo-main-top.png'; ?>" alt="HostingReview.org" title="<?php print 'HostingReview.org Home'; ?>" />
+      <?php
+          if ($_SERVER['REDIRECT_URL'] == '/top10') {
+            echo '<div id="logo">',
+                  '<img src="/sites/all/themes/hr_aqua/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                 '</div>';
+          }
+          else {
+            echo '<a href="', $front_page, '" id="logo">',
+                   '<img src="/sites/all/themes/hr_aqua/css/images/hr-logo-main-top.png" alt="HostingReview.org" title="HostingReview.org Home" />',
+                 '</a>';
+          }
+          
+        ?>
+        
+        <?php 
+        /*
+        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
+          <img src="<?php echo '/sites/all/themes/hr/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
         </a>
+        */
+        ?>
         
       </div>
       
@@ -58,7 +76,7 @@
     </div>
   <?php endif; */?>
   
-<div id="all-content-wrapper" class="page-provider">
+<div id="all-content-wrapper" class="page-compare-providers">
   
   <div id="all-content" class="clearfix">
       
@@ -120,8 +138,55 @@
 
           </div>
           
+          <?php 
+            /*
+          $pages_with_timestamp = array(
+            '/compare-business-voip-providers', 
+            '/business-voip-reviews', 
+            '/compare-residential-voip-providers', 
+            '/best-voip-service-providers',
+            '/residential-voip-reviews', 
+            '/sip-trunking-providers',
+            '/internet-fax-service-providers',
+            '/providers/reviews', 
+            '/about-voip-services', 
+            '/blog', 
+            '/news', 
+            '/voip-provider-submit-user-review',
+            '/about-us',
+            '/contact-us',
+            '/advertise',
+            '/press',
+            '/privacy-policy',
+            '/terms-of-use',
+            '/our-team',
+          );
+          //if ($user->uid == 1) {
+          if($is_front || in_array($_SERVER['REDIRECT_URL'], $pages_with_timestamp))
+            echo hr_misc_lastUpdatedStamp();
+              
+          //}
+          */
+          ?>
+          
       </section> <!-- /#main -->
 
+      
+      <?php /*
+      
+      <?php if ($page['sidebar_first']): ?>
+        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
+          <?php print render($page['sidebar_first']); ?>
+        </aside>  <!-- /#sidebar-first -->
+      <?php endif; ?>
+
+      <?php if ($page['sidebar_second']): ?>
+        <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
+          <?php print render($page['sidebar_second']); ?>
+        </aside>  <!-- /#sidebar-second -->
+      <?php endif; ?>
+        
+      */ ?>
 
         
   </div> <!-- /#all-content -->
@@ -139,8 +204,15 @@
       <?php 
         
         echo render($page['footer']);
+        
+        //echo hr_blocks_getBlockThemed(array('module' => 'hr_blocks', 'delta' => 'send_msg_n_subscribe', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        ////echo hr_blocks_getBlockThemed(array('module' => 'hr_blocks', 'delta' => 'social_links', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        //echo hr_blocks_getBlockThemed(array('module' => 'hr_blocks', 'delta' => 'footer_menu', 'no_subject' => TRUE/*, 'class' => 'block-om-maximenu'*/, 'shadow' => FALSE)/*, TRUE, '+31 day'*/ /*, ($user->uid ? '_logged' : NULL)*/);
+        
         echo hr_blocks_get_footerLinks() . '<div class="c">© 2014 hostingreview.org | All Rights Reserved</div>';
         
+                
+        //echo '<div id="block-hr-blocks-follow-links"><div class="follow-us">Follow Us</div>', hr_blocks_get_headerLinks(), '</div>';
       ?>
       
       

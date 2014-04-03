@@ -524,8 +524,10 @@ function hr_blocks_getReviewsRotated() {
     
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
-      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';
+      
+      //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';
 
+      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_views) . '</div></div>';
 
   }
   //$key += 1; 

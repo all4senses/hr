@@ -2163,5 +2163,5 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #r-rotator-wrapper {width: 590px; margin: auto; text-align: center;}
 #r-rotator-wrapper .button {float: left;}
 #r-rotator {width: 500px; float: left;}
-#r-rotator .ui-tabs .ui-tabs-nav {background: none; border: none;}
-#r-rotator .ui-tabs .ui-tabs-nav li {border: none; background: none;}
+#r-rotator.ui-tabs .ui-tabs-nav {background: none; border: none;}
+#r-rotator.ui-tabs .ui-tabs-nav li {border: none; background: none;}

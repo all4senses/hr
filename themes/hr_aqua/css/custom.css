@@ -1287,7 +1287,7 @@ margin-top: 100px;
 /* New provider template for page and node*/
 .node-type-provider .breadcrumb {padding: 2px 0 2px 20px; font-size: 12px;}
 
-.node-type-provider #all-content {background: #f2f2f2;}
+.node-type-provider #all-content {background: #eeeeee;}
 
 .node-type-provider #main .main-content {position: relative; padding: 40px 0 0 0;}
 .node-type-provider #main .main-content .content {border: none; margin-top: 0; padding: 20px 20px 10px 20px; background: white; overflow: hidden;}

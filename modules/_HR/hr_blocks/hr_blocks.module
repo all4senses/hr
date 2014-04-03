@@ -520,7 +520,7 @@ function hr_blocks_getReviewsRotated() {
     
       $node = node_load($reviews[$i]);
       //dpm($node);
-      $node_view = node_view($node, 'teaser');
+      $node_view = node_view($node, 'teaser_on_serviceTypePage');
       $r_view = drupal_render($node_view);
       //dpm($node_view);
       //dpm(drupal_render($node_view));

@@ -522,16 +522,16 @@ function hr_blocks_getReviewsRotated() {
       //dpm($node);
       $node_view = node_view($node, 'teaser_on_serviceTypePage');
       $r_view = drupal_render($node_view);
-      //dpm($node_view);
+      dpm($node_view);
       //dpm(drupal_render($node_view));
     
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
       
-      //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';
+      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';
 
       //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_views) . '</div></div>';
-      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $r_view . '</div></div>';
+      //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $r_view . '</div></div>';
 
   }
   //$key += 1; 

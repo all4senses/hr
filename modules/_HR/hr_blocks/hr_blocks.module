@@ -517,7 +517,7 @@ function hr_blocks_getReviewsRotated() {
   //foreach ($reviews as $key => $value) {
   for($i = 0; $i < 7; $i += 2) {
       
-      $nodes = node_load_multiple($reviews[$i], $reviews[$i+1]);
+      $nodes = node_load_multiple(array($reviews[$i], $reviews[$i+1]));
       $node_views = node_view_multiple($nodes, 'teaser');
       
       //dpm($node_views);

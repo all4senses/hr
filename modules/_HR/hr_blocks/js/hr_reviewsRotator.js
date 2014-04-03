@@ -22,10 +22,34 @@
         
       $("#next-review").click(function() {
         //console.log($("#r-rotator"));
-          console.log('click');
+          //console.log('click');
           var active = $( "#r-rotator" ).tabs( "option", "selected" );
-          console.log(active);
-          rtabs.tabs('select', 2);
+          if (active == ltabs - 1 ) {
+            active = 0;
+          }
+          else {
+            active++;
+          }
+
+          //console.log(active);
+          rtabs.tabs('select', active);
+          //$( "#r-rotator" ).tabs( "option", "active", active + 1 );
+
+      });
+      
+      $("#prev-review").click(function() {
+        //console.log($("#r-rotator"));
+          //console.log('click');
+          var active = $( "#r-rotator" ).tabs( "option", "selected" );
+          if (active == 0 ) {
+            active = ltabs - 1;
+          }
+          else {
+            active--;
+          }
+
+          //console.log(active);
+          rtabs.tabs('select', active);
           //$( "#r-rotator" ).tabs( "option", "active", active + 1 );
 
       });

@@ -91,7 +91,7 @@ input.blur, textarea.blur,
 #footer-inside{position: relative;}
 
 #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back_home.jpg) no-repeat transparent; width: 100%; height: 274px;}
-.not-front #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back.jpg) no-repeat transparent; width: 100%; height: 95px;}
+.not-front #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back.png) no-repeat transparent; width: 100%; height: 95px;}
 
 /* Search block */
 #block-search-form{color: lightgray; padding-bottom: 0;position: absolute; right: 0; top: 25px;}

@@ -4,7 +4,8 @@
     attach: function (context, settings) {
        
       //$("#r-rotator > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true); // for a Version of UI > 1.9
-      $("#r-rotator").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 3000, true);
+      var tabs = $("#r-rotator").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 3000, true);
+       console.log(tabs);
        
       // Pause on hover.
       $("#r-rotator").hover(  
@@ -18,7 +19,7 @@
         
         
       $("#next-review").click(function() {
-        console.log($("#r-rotator"));
+        //console.log($("#r-rotator"));
           console.log('click');
           var active = $( "#r-rotator" ).tabs( "option", "active" );
           console.log(active);

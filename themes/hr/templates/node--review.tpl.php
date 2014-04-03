@@ -1,6 +1,6 @@
 <?php 
 
- $all_data_quick = ch_misc_getProvidersDataQuick();
+ $all_data_quick = hr_misc_getProvidersDataQuick();
  
  if($view_mode == 'teaser_on_serviceTypePage') {
   //dpm($content);
@@ -24,14 +24,14 @@
       //dpm($_SERVER);
       
       // Only for /hosted-pbx don't take thumbs from the current sprite, but generate it with different sizes (bigger than on that page sprite).
-      if (/*$_SERVER['REQUEST_URI'] == '/hosted-pbx' || */!$image = ch_misc_getProviderLogoFromSprite($provider_nid, $sprite_name, $all_data_quick)) {
+      if (/*$_SERVER['REQUEST_URI'] == '/hosted-pbx' || */!$image = hr_misc_getProviderLogoFromSprite($provider_nid, $sprite_name, $all_data_quick)) {
         $image_style_name = 'logo_provider_chart_main'; //'thumbnail';
-        $image = theme('ch_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$provider_nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$provider_nid]['i_logo_alt'], 'title' =>  $all_data_quick[$provider_nid]['i_logo_title'] ));
+        $image = theme('hr_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$provider_nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$provider_nid]['i_logo_alt'], 'title' =>  $all_data_quick[$provider_nid]['i_logo_title'] ));
       }
       
       if (!empty($all_data_quick[$provider_nid]['i_web'])) {
         //$logo_link = $all_data_quick[$provider_nid]['i_web'];
-        echo ch_misc_getTrackingUrl($image, NULL, $provider_nid, NULL, 'logo', NULL, $all_data_quick[$provider_nid]);
+        echo hr_misc_getTrackingUrl($image, NULL, $provider_nid, NULL, 'logo', NULL, $all_data_quick[$provider_nid]);
       }
       else {
         echo '<a class="logo" href="' . url('node/' . $provider_nid) . '">' . $image . '</a>';
@@ -44,7 +44,7 @@
       //echo '<a class="logo" href="' . $logo_link . '">' . $image . '</a>';
       
 
-      $stars = theme('ch_misc_fivestar_static', array('rating' => $node->field_r_rating_overall['und'][0]['value'] * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+      $stars = theme('hr_misc_fivestar_static', array('rating' => $node->field_r_rating_overall['und'][0]['value'] * 20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       echo '<div class="rating">' . $stars . '<span class="count">' . $node->field_r_rating_overall['und'][0]['value'] . '/5</span></div>';
 
   echo '</div>';

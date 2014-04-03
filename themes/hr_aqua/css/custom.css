@@ -2172,3 +2172,11 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #r-rotator .rating {width: 150px; overflow: hidden; float: right;}
 #r-rotator .fivestar {float: left;}
 #r-rotator .logo {float: left;}
+
+
+/* Editor's note block */
+#block-hr-blocks-editor-note .header {width: inherit; overflow: hidden;}
+#block-hr-blocks-editor-note .photo {float: left;}
+#block-hr-blocks-editor-note .title {font-weight: bold; color: gray;}
+#block-hr-blocks-editor-note .title span {display: block; color: #00669e; font-size: 12px;}
+#block-hr-blocks-editor-note .body {font-size: 12px;}

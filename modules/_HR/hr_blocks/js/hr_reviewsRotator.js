@@ -20,7 +20,7 @@
       $("#next-review").click(function() {
           console.log('click');
           var active = $( "#r-rotator" ).tabs( "option", "active" );
-          console.log('active: ' + active);
+          console.log(active);
           $( "#r-rotator" ).tabs( "option", "active", active + 1 );
 
       });

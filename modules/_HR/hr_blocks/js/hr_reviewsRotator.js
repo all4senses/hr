@@ -21,7 +21,7 @@
       $("#next-review").click(function() {
         //console.log($("#r-rotator"));
           console.log('click');
-          var active = $( "#r-rotator" ).tabs( "option", "active" );
+          var active = $( "#r-rotator" ).tabs( "option", "selected" );
           console.log(active);
           rtabs.tabs('select', 2);
           //$( "#r-rotator" ).tabs( "option", "active", active + 1 );

@@ -521,7 +521,7 @@ function hr_blocks_getReviewsRotated() {
       $node = node_load($reviews[$i]);
       dpm($node);
       $node_view = node_view($node, 'teaser');
-      
+      $r_view = drupal_render($node_view);
       dpm($node_view);
       //dpm(drupal_render($node_view));
     
@@ -531,7 +531,7 @@ function hr_blocks_getReviewsRotated() {
       //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $reviews[$i] . ' - ' . $reviews[$i+1] . '</div></div>';
 
       //$fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_views) . '</div></div>';
-      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_view) . '</div></div>';
+      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . $r_view . '</div></div>';
 
   }
   //$key += 1; 

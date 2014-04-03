@@ -495,13 +495,9 @@ function hr_blocks_getReviewsRotated() {
 
   
   $query = db_select('node', 'n');
-  //$query->leftJoin('field_data_field_preface_bottom', 'pb', 'pb.entity_id = n.nid');
   $query->fields('n', array('nid'));
-  //$query->leftJoin('field_data_field_preface_key', 'pk', 'pk.entity_id = pb.entity_id');
-  //$query->fields('pk', array('field_preface_key_value'));
   $query->condition('n.type', 'review');
-  //$query->condition('pb.field_preface_bottom_value', 1, '>=');
-  //$query->isNotNull('pk.field_preface_key_value');
+  $query->condition('n.status', 1);
   $query->orderBy('n.created', 'DESC');
   $query->range(0, 8);
   
@@ -523,6 +519,7 @@ function hr_blocks_getReviewsRotated() {
 //      dpm($node_views);
     
       $node = node_load($reviews[$i]);
+      dpm($node);
       $node_view = node_view($node, 'teaser');
       
       dpm($node_view);

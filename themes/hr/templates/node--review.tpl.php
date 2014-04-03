@@ -12,7 +12,7 @@
  
 
 
-  echo '<div class="header">';
+  echo '<div class="wrapper"><div class="header">';
   
       // Use a logo from providers sprite for minimizing loaded images amount.
   
@@ -67,6 +67,8 @@
   echo '<h3>'. $node->title . '</h3><div class="review">' . $teaser . '</div>';
   
   echo '<div class="submitted"><span class="author">- by ' . $node->field_r_fname['und'][0]['value'] . ' ' . strtoupper($node->field_r_lname['und'][0]['value'][0]) . '.</span> / ' . date('F d, Y', $node->created) . '</div>';
+  
+  echo '</div>';
   
   return;
 }

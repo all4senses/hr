@@ -523,7 +523,7 @@ function hr_blocks_getReviewsRotated() {
       $node_view = node_view($node, 'teaser_on_serviceTypePage');
       $r_view = drupal_render($node_view);
       dpm($node_view);
-      //dpm(drupal_render($node_view));
+      dpm($r_view);
     
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">' . $value['field_preface_b_title'][0]['#markup'] . '</a></li>';
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';

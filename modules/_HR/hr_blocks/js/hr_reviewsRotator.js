@@ -14,7 +14,14 @@
           function() {  
             $("#r-rotator").tabs("rotate",3000,true);  
           }  
-      );  
+      ); 
+        
+        
+      $("#next-review").click(function() {
+          var active = $( "#r-rotator" ).tabs( "option", "active" );
+          $( "#tabs" ).tabs( "option", "active", active + 1 );
+
+      });
        
     }
   };

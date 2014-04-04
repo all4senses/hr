@@ -6245,9 +6245,9 @@ function hr_misc_getProviderQuickData($target, $data) {
         
       } 
       // Add stars
-      elseif ($target == 'logo_small_block' && !empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
-          $out .= '<div class="rating">' . theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
-      }
+//      elseif ($target == 'logo_small_block' && !empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
+//          $out .= '<div class="rating">' . theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
+//      }
       
       
       /*
@@ -6306,6 +6306,17 @@ function hr_misc_getProviderQuickData($target, $data) {
           
       return $out;
     
+   
+     
+    case 'name_n_stars':
+      
+      $all_data_quick = hr_misc_getProvidersDataQuick();
+      $out = '<div class="name">' . $all_data_quick[$data['data']->nid]['name'] . '</div>';
+      // Add stars
+      if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
+          $out .= '<div class="rating">' . theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
+      }
+      return $out;
       
       
       

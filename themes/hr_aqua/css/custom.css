@@ -2157,16 +2157,18 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 /* Reviews rotator */
 #block-hr-blocks-reviews-rotated {/*text-align: center; overflow: hidden;*/}
-#block-hr-blocks-reviews-rotated .block-title {text-align: center; font-weight: 300; font-size: 30px; margin: 50px 0 20px;}
-#r-rotator-wrapper {/*width: 590px; margin: auto; text-align: center;*/}
+#block-hr-blocks-reviews-rotated .block-title {text-align: center; font-weight: 300; font-size: 30px; margin: 50px 0 30px;}
+#r-rotator-wrapper {overflow: hidden; width: 950px; margin: auto;}
 
-#r-rotator-wrapper .button {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -175px -923px transparent; float: left; margin: 120px 3px 0; height: 50px; text-indent: -99999px; width: 27px; cursor: pointer;}
+#r-rotator-wrapper .button {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -175px -923px transparent; float: left; margin: 90px 0 0; height: 50px; text-indent: -99999px; width: 27px; cursor: pointer;}
 #r-rotator-wrapper .button#prev {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -145px -923px transparent !important;}
 
-#r-rotator {width: 900px; float: left; background: transparent; border: none; overflow: hidden;}
-#r-rotator.ui-tabs .ui-tabs-nav {background: none; border: none; margin: auto; width: 200px;}
+#r-rotator {width: 870px; float: left; background: transparent; border: none; overflow: hidden; padding: 0; margin: 0 12px;}
+#r-rotator.ui-tabs .ui-tabs-panel {padding: 0;}
+#r-rotator.ui-tabs .ui-tabs-nav {background: none; border: none; margin: auto; width: 120px;}
 #r-rotator.ui-tabs .ui-tabs-nav li {border: none; background: none; padding: 0; margin: 10px 5px 0;}
-#r-rotator .wrapper {background: white; width: 345px; float: left; margin: 0 10px; overflow: hidden; height: 170px; padding: 20px 30px 30px;}
+#r-rotator .wrapper {background: white; width: 360px; float: left; margin: 0 20px 0 0; overflow: hidden; height: 170px; padding: 20px 30px 30px; border-radius: 5px;}
+#r-rotator .wrapper:last-child {margin: 0; float: right;}
 #r-rotator .header {width: inherit; overflow: hidden; min-height: 70px;}
 #r-rotator .logo {float: left;}
 #r-rotator .rating {width: 120px; overflow: hidden; float: right; margin-top: 15px;}

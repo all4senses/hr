@@ -715,7 +715,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 {background: url("/sites/all/themes/hr_aqua/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 50px; text-indent: -9999px; width: 45px; margin: auto;}
 
 
-.view-providers tr:hover, .view-providers tr.even:hover, .view-providers tr:hover td, .view-providers tr.even:hover td {background: #cfe7ff;}
+/*.view-providers tr:hover, .view-providers tr.even:hover, .view-providers tr:hover td, .view-providers tr.even:hover td {background: #cfe7ff;}*/
 
 
 
@@ -1419,12 +1419,14 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 #block-views-providers-block-topwhost-small .p-links a {color: #32afe7;}
 
 #block-views-providers-block-topwhost-small a.visit-site-btn, 
-#block-views-providers-block-topwhost-small a.review-link {background: none; text-indent: 0; font-size: 13px; float: left; margin: 0; height: inherit; width: inherit; line-height: 14px; padding: 5px 5px 0 10px;}
+#block-views-providers-block-topwhost-small a.review-link {background: none; text-indent: 0; float: left; margin: 0; height: inherit; width: inherit;}
 
-#block-views-providers-block-topwhost-small a.visit-site-btn {padding-left: 4px;}
+#block-views-providers-block-topwhost-small a.review-link {padding: 0; text-align: left; font-size: 10px;}
+
+/*#block-views-providers-block-topwhost-small a.visit-site-btn {padding-left: 4px;}*/
 
 #block-views-providers-block-topwhost-small .rating span {font-size: 14px; float: left; font-weight: normal; color: gray; padding-right: 1px;}
-#block-views-providers-block-topwhost-small .fivestar-stars {position: static !important; padding: 3px 0 0 10px; float: left;}
+#block-views-providers-block-topwhost-small .fivestar-stars {position: static !important; /*padding: 3px 0 0 10px;*/ float: left;}
 #block-views-providers-block-topwhost-small .p-links {clear: both;}
 
 
@@ -1432,8 +1434,9 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 #all-content #block-views-providers-block-topwhost-small .view-providers .views-row-last td {border-bottom: none;}
 
 
-#all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-php {padding-left: 0; padding-right: 3px;}
+#all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-php {padding-left: 0; padding-right: 3px; text-align: left;}
 
+#all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-field-p-listposition-sh {padding: 0 15px 0 5px;}
 
 
 /* Provider edit page */

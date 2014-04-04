@@ -668,7 +668,7 @@ function hr_blocks_getAdBlock($ad_name) {
       return (empty($data['main_title']) ? '' : '<div class="title">' . $data['main_title'] . '</h1>') . 
               '<div class="header"><div class="photo">' . 
               theme('image_style', array( 'path' =>  @$user->field_u_avatar_in_circle['und'][0]['uri'], 'style_name' => 'avatar_in_circle', 'alt' => '', 'title' => '', 'attributes' => array('rel' => 'v:photo'))) .
-              '</div><div class="title">Reuben Yonatan<span>VP of Marketing at GetVoIP</span></div></div>' .
+              '</div><div class="title">Reuben Yonatan<span>Editor-in-Chief</span></div></div>' .
               '<div class="body">' . $data['main_body']['value'] . '</div>';
          
       

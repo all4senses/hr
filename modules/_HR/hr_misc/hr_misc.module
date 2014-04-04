@@ -6310,8 +6310,6 @@ function hr_misc_getProviderQuickData($target, $data) {
      
     case 'name_n_stars':
       
-      return '...';
-      
       $all_data_quick = hr_misc_getProvidersDataQuick();
       $out = '<div class="name">' . $all_data_quick[$data['data']->nid]['name'] . '</div>';
       // Add stars

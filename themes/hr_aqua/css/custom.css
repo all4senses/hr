@@ -2166,11 +2166,19 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #r-rotator {width: 900px; float: left; background: transparent; border: none; overflow: hidden;}
 #r-rotator.ui-tabs .ui-tabs-nav {background: none; border: none; margin: auto; width: 200px;}
 #r-rotator.ui-tabs .ui-tabs-nav li {border: none; background: none; padding: 0; margin: 10px 5px 0;}
-#r-rotator .wrapper {background: white; width: 345px; float: left; margin: 0 10px; overflow: hidden; height: 260px; padding: 30px;}
-#r-rotator .header {width: inherit; overflow: hidden;}
-#r-rotator .rating {width: 150px; overflow: hidden; float: right;}
-#r-rotator .fivestar {float: left;}
+#r-rotator .wrapper {background: white; width: 345px; float: left; margin: 0 10px; overflow: hidden; height: 170px; padding: 20px 30px 30px;}
+#r-rotator .header {width: inherit; overflow: hidden; min-height: 70px;}
 #r-rotator .logo {float: left;}
+#r-rotator .rating {width: 120px; overflow: hidden; float: right; margin-top: 15px;}
+#r-rotator .fivestar {float: left; margin: 2px 4px 0 0;}
+#r-rotator .count {font-size: 13px; float: left;}
+#r-rotator h3 {font-size: 23px; margin: 5px 0; color: #434343;}
+
+#r-rotator .review {font-size: 13px; line-height: 17px; color: #434343;}
+#r-rotator a {color: #478AFD;}
+#r-rotator .submitted {font-family: Raleway; font-weight: 700; font-size: 12px; margin-top: 5px; color: #434343;}
+#r-rotator .submitted span {font-style: italic;}
+
 
 #r-rotator ul a {line-height: inherit; margin: 0; padding: 0; text-indent: -9999px; width: 20px; height: 20px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -182px -980px transparent;}
 #r-rotator .ui-state-active a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -156px -980px transparent;}

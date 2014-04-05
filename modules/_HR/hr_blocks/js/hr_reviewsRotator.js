@@ -4,10 +4,15 @@
     attach: function (context, settings) {
        
       //$("#r-rotator > ul").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 5000, true); // for a Version of UI > 1.9
-      var rtabs = $("#r-rotator").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 10000, true);
+      
+      
+      
+      //var rtabs = $("#r-rotator").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 10000, true);
+      var rtabs = $("#r-rotator").tabs({fx:{opacity: "toggle"}}); // Without auto rotation
       var ltabs = rtabs.tabs('length');
        
-      // Pause on hover.
+      // Pause rotation  on hover.
+      /*
       $("#r-rotator").hover(  
           function() {  
             $("#r-rotator").tabs("rotate",0,true);  
@@ -16,7 +21,7 @@
             $("#r-rotator").tabs("rotate",10000,true);  
           }  
       ); 
-        
+      */  
         
       $("#r-rotator-wrapper #next").click(function() {
           var active = $( "#r-rotator" ).tabs( "option", "selected" );

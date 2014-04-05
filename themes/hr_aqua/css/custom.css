@@ -643,7 +643,7 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 /*.chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 115px; height: 36px; border-radius: 5px;}*/
 .chart.view-display-id-block_top_vps_p_table a.reviews.visit-site-btn {width: 125px; border-radius: 7px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -7px -1052px transparent;}
 
-.chart a.visit.visit-site-link {display: none; font-size: 16px; line-height: 17px; padding: 5px 0; display: block;}
+.chart a.visit.visit-site-link {display: none; font-size: 16px; line-height: 17px; padding: 5px 0; }
 .chart.view-display-id-block_top_vps_p_table a.visit.visit-site-link {font-size: 15px;}
 .chart a.visit.visit-site-link:hover {text-decoration: underline;}
 .chart a.company.visit-site-link {font-size: 15px; display: none;}
@@ -2155,7 +2155,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .price.crossed .cross {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
 .view-display-id-block_top_ca_p_table .price.crossed .cross {width: 72px; left: 28px;}
 
-.limited-time {background: #fe4c29; width: 140px; height: 23px; margin: auto; color: white;}
+.limited-time {background: #fe4c29; width: 140px; height: 23px; margin: auto; color: white; border-radius: 5px;}
 
 
 /* Fix for the listing pages without bottom and sidebar */

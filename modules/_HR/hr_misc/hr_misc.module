@@ -6523,7 +6523,7 @@ function hr_misc_getProviderQuickData($target, $data) {
    case 'visit_n_reviews': // For Top 5 hosting sites block on a provider page/
       
       
-      $out .= '<div class="p-links">' . hr_misc_getTrackingUrl('VISIT', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">READ REVIEWS</a></div>';
+      $out .= '<div class="p-links">' . hr_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">READ REVIEWS</a></div>';
       
       return $out;
     

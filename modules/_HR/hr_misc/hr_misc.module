@@ -6365,13 +6365,14 @@ function hr_misc_getProviderQuickData($target, $data) {
     case 'i_mbg':
       
       
-      $out = NULL;
+      //$out = NULL;
       
 //      global $user;
-//      if (!$user->uid) {
-//        $all_data_quick = hr_misc_getProvidersDataQuick();
-//        $out = @$all_data_quick[$data['data']->nid][$target];
-//      }
+//      if (!$user->uid) 
+        {
+        $all_data_quick = hr_misc_getProvidersDataQuick();
+        $out = @$all_data_quick[$data['data']->nid][$target];
+      }
       
       return $out;
       

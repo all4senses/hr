@@ -1421,7 +1421,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 #block-views-providers-block-topwhost-small a.visit-site-btn, 
 #block-views-providers-block-topwhost-small a.review-link {background: none; text-indent: 0; float: left; margin: 0; height: inherit; width: inherit;}
 
-#block-views-providers-block-topwhost-small a.review-link {padding: 0; text-align: left; font-size: 10px;}
+#block-views-providers-block-topwhost-small a.review-link {margin-top: 3px; font-size: 9px; color: gray; font-family: Raleway;}
 
 /*#block-views-providers-block-topwhost-small a.visit-site-btn {padding-left: 4px;}*/
 
@@ -1438,6 +1438,12 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 #all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-field-p-listposition-sh {padding: 0 15px 0 5px; width: inherit;}
 #block-views-providers-block-topwhost-small .views-field-php-7 {width: 70px;}
+
+
+#block-views-providers-block-topwhost-small .name {font-family: Raleway; font-weight: 700; font-size: 17px; color: #035b8b;}
+#block-views-providers-block-topwhost-small a.visit-site-btn {background: url("/sites/all/themes/hr_aqua/css/images/sprite-2.png") no-repeat -134px -805px transparent; text-indent: -9999px; width: 71px; height: 28px;}
+
+
 
 /* Provider edit page */
 .page-node-edit .form-item-i-web{float: left;}

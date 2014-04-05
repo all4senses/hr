@@ -474,7 +474,7 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 
 
 
-.view-providers .plan{color: #0068d3; font-size: 14px; font-weight: bold; margin: 0 0 1px 2px; font-family: arial;}
+.view-providers .plan{color: gray; font-size: 14px; font-weight: bold; margin: 0 0 1px 2px; font-family: arial;}
 .view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
 
 
@@ -589,7 +589,7 @@ th.views-field-php-1{width: 85px;}
 
 .chart .views-field-php-7 .fivestar {width: 80px; margin: 3px auto 5px; float: none !important; clear: both; overflow: hidden;}
 .chart .views-field-php-7 .count {font-size: 18px; color: red;}
-.chart .views-field-php-7 .count span {font-size: 15px; color: #00325e;}
+.chart .views-field-php-7 .count span {font-size: 15px; color: gray;}
 
 
 
@@ -669,7 +669,7 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 td.views-field-php-3{text-align: left !important; font-size: 10px;}
 
 
-#all-content .view-providers td.views-field-php-2{font-size: 19px; vertical-align: middle; font-weight: bold; /*font-family: arial;*/}
+#all-content .view-providers td.views-field-php-2{font-size: 19px; vertical-align: middle; font-weight: bold; color: #006399;}
 
 .views-field-php-2 .link a{font-size: 14px; color: #004286; background: url(images/read-review-btn.png) no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 10px auto 0;}
 
@@ -689,7 +689,7 @@ td.views-field-php-4 a:hover{text-decoration: underline;}
 
 td.views-field-php-7{font-size: 28px; font-weight: bold;}
 
-td.views-field-php-7 a {color: #0068d3; font-size: 14px; font-weight: normal;}
+td.views-field-php-7 a {color: gray; font-size: 14px; font-weight: normal;}
 td.views-field-php-7 a:hover {text-decoration: underline;}
 
 
@@ -706,7 +706,7 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-field-field-p-listposition-sh div, 
 .views-field-field-p-listposition-wb div, 
 .views-field-field-p-listposition-vps div,
-.views-field-field-p-listposition-wp div {font-size: 25px; font-weight: bold;}
+.views-field-field-p-listposition-wp div {font-size: 25px; font-weight: bold; color: gray;}
 
 .views-row-first .views-field-field-p-listposition-ca div,
 .views-row-first .views-field-field-p-listposition-sh div, 
@@ -2150,7 +2150,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .price.crossed {position: relative; color: black; font-size: 16px; font-weight: normal;}
 .view-display-id-block_top_ca_p_table .price.crossed {font-size: 14px;}
 
-.price.non-crossed {font-size: 24px;}
+.price.non-crossed {font-size: 24px; color: #fe4c29;}
 
 .price.crossed .cross {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
 .view-display-id-block_top_ca_p_table .price.crossed .cross {width: 72px; left: 28px;}

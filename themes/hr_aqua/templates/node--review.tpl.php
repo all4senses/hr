@@ -104,12 +104,7 @@
                   <?php if ($page): /* <span class="pname" property="v:itemreviewed"><?php echo $node->field_r_provider_name['und'][0]['safe_value'] ?></span><span class="pname delim">:</span><h1 property="v:summary" */?>
                     <h1 property="dc:title v:summary" 
                   <?php else: ?>
-
-                      <?php if($full_title): ?>
-                        <h2 class="rcaption" property="dc:title v:summary"
-                      <?php else: ?>
-                        <h3 class="rcaption" property="dc:title v:summary"
-                      <?php endif; ?>
+                    <h3 class="rcaption" property="dc:title v:summary"
                   <?php endif; ?>
 
 
@@ -120,7 +115,7 @@
                   <?php if ($page): ?>
                     </h1>
                   <?php else: ?>
-                    </h2>
+                    </h3>
                   <?php endif; ?>
 
                   <?php print render($title_suffix); ?>

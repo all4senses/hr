@@ -83,7 +83,7 @@
                         //$block = module_invoke('module_name', 'block_view', 'block_delta');
                         $block = module_invoke('views', 'block_view', 'providers-block_topwhost_small');
                         dpm($block);
-                        echo $block['content'];
+                        echo drupal_render($block['content']);
                       
                       ?>
                           

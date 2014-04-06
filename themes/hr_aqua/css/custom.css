@@ -1351,7 +1351,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #left-col .hr_votes .hr_vote {margin-top: 4px;}
 .node-type-provider #left-col .hr_votes .hr_vote.even {background: none;}
 .node-type-provider #left-col .hr_votes .data {padding: 0;}
-.node-type-provider #left-col .hr_votes .voters {margin: 10px 0 0 10px; font-size: 12px; font-weight: normal;}
+.node-type-provider #left-col .hr_votes .voters {margin: 7px 0 0 10px; font-size: 12px; font-weight: normal;}
 .node-type-provider #left-col .hr_votes .voters .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
 .node-type-provider #left-col .hr_votes .recommend {margin: 0 0 10px 10px; font-size: 12px;}
 .node-type-provider #left-col .hr_votes .recommend .title {float: left; margin: 0 5px 0 0; font-weight: normal;}

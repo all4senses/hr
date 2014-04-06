@@ -1337,7 +1337,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 
 .node-type-provider #left-col{float: left; width: 242px;}
-#left-col #main-info {background: white; overflow: hidden;}
+#left-col #main-info {background: white; overflow: hidden; border-radius: 5px;}
 .node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .node-type-provider .image img {width: 220px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
@@ -1505,12 +1505,15 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 
 
-.review-wrapper {font-size: 12px; color: gray; font-weight: normal; width: 400px; float: left;}
+.review-wrapper {font-size: 12px; color: gray; font-weight: normal; width: 350px; float: left;}
 .review-wrapper .submitted {float: none !important;}
 
 
 .node-review .links{float: right !important; margin: 10px 0 0 0;}
-.node-review .reviewer {float: left; width: 100px; height: 100px; background: red;}
+
+.node-review .reviewer {float: left; width: 50px; height: 50px; background: red;}
+
+
 
 .node-type-review .links{bottom: 5px; position: absolute; right: 0; text-align: right; width: 500px;}
 .links .review-provider{white-space: nowrap;}

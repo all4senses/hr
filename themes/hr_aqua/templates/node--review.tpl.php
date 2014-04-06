@@ -88,7 +88,16 @@
 
         <div class="content"<?php print $content_attributes; ?>>
           
-          <div class="reviewer"></div>
+          
+          <?php
+            $reviewer = (isset($node->field_r_fname[0]['value']) ? $node->field_r_fname[0]['value'] : $node->field_r_fname['und'][0]['value'] );
+          ?>
+          <div class="reviewer">
+            <div class="r-avatar"><img src="/sites/all/themes/hr_aqua/css/images/avatar.png"></div>
+            <div clsss="name"><?php echo $reviewer; ?></div>
+          </div>
+          
+          
           <div class="review-wrapper">
     
             
@@ -128,7 +137,8 @@
 
               <div class="submitted">
               <?php 
-                echo t('Reviewer'), ': ', '<span property="v:reviewer">' . (isset($node->field_r_fname[0]['value']) ? $node->field_r_fname[0]['value'] : $node->field_r_fname['und'][0]['value'] ), '</span><span class="delim">|</span><span property="v:dtreviewed" content="' . date('Y-m-d', $node->created) . '">', date('F d, Y \a\t g:sa', $node->created), '</span>';
+              
+                echo 'Reviewer: <span property="v:reviewer">', $reviewer, '</span><span class="delim">|</span><span property="v:dtreviewed" content="', date('Y-m-d', $node->created), '">', date('F d, Y \a\t g:sa', $node->created), '</span>';
               ?>
               </div>
     

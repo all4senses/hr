@@ -1344,10 +1344,11 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 .node-type-provider .site a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
-.caption .fivestar {float: left;}
+.caption .fivestar {float: left; margin: 9px 5px 0 0;}
+.caption .count {font-size: 12px; margin: 10px 0 0 0; overflow: hidden; float: left;}
 
-.node-type-provider #left-col .hr_votes .caption {font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
-.node-type-provider #left-col .hr_votes .caption span {float: left; margin-right: 5px;}
+.node-type-provider #left-col .hr_votes .caption {font-weight: bold; font-size: 22px; border-radius: 0; overflow: hidden; border-bottom: 1px solid lightgray; padding: 0 0 0 10px;}
+.node-type-provider #left-col .hr_votes .caption span {margin-right: 5px;}
 .node-type-provider #left-col .hr_votes .hr_vote {margin-top: 4px;}
 .node-type-provider #left-col .hr_votes .hr_vote.even {background: none;}
 .node-type-provider #left-col .hr_votes .data {padding: 0;}

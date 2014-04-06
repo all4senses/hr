@@ -17,7 +17,7 @@
 
           
           
-          <div id="left-col" style="overflow: hidden;">
+          <div id="left-col" class="sidebar" style="overflow: hidden;">
             
               <div id="main-info">
               

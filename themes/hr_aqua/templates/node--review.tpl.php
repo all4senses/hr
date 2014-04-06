@@ -88,6 +88,7 @@
 
         <div class="content"<?php print $content_attributes; ?>>
           
+          <div class="reviewer"></div>
           <div class="review-wrapper">
     
             

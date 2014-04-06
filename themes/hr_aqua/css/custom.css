@@ -1510,6 +1510,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 
 .node-review .links{float: right !important; margin: 10px 0 0 0;}
+.node-review .reviewer {float: left; width: 100px; height: 100px; background: red;}
 
 .node-type-review .links{bottom: 5px; position: absolute; right: 0; text-align: right; width: 500px;}
 .links .review-provider{white-space: nowrap;}

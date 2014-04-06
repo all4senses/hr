@@ -105,7 +105,7 @@
                     <h1 property="dc:title v:summary" 
                   <?php else: ?>
                     <h3 class="rcaption" property="dc:title v:summary"
-                  <?php endif; ?>
+                  <?php endif; ?>>
 
 
                         <?php 

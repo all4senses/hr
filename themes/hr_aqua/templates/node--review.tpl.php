@@ -100,7 +100,7 @@
           
           <div class="review-wrapper">
     
-            
+              <div class="pointer"></div>
             
               <?php /* if (!$page): ?>
                 <header>

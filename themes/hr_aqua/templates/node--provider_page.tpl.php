@@ -79,6 +79,10 @@
                       
                         $block_data = array('module' => 'views', 'delta' => 'providers-block_topwhost_small', 'shadow' => FALSE);
                         echo hr_blocks_getBlockThemed($block_data);
+                        
+                        //$block = module_invoke('module_name', 'block_view', 'block_delta');
+                        $block = module_invoke('views', 'block_view', 'providers-block_topwhost_small');
+                        echo $block['content'];
                       
                       ?>
                           

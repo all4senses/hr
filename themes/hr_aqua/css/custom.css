@@ -1114,7 +1114,10 @@ margin-top: 100px;
 .node-type-provider .ui-widget-header{border: none; background: none; float: left;}
 .node-type-provider .ui-tabs .ui-tabs-panel{border: 1px solid lightgray;}
 
-.node-type-provider .ui-state-default.ui-tabs-selected, .node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover{background: none; border: 1px solid lightgray;}
+.node-type-provider .ui-state-default.ui-tabs-selected, 
+.node-type-provider .ui-state-default.ui-tabs-selected.ui-state-hover, 
+.node-type-provider .ui-state-default.ui-state-hover{background: none; border: none;}
+
 .node-type-provider .ui-state-default{background: #f3fbf8; border: none; font-size: 14px;}
 .node-type-provider .ui-state-default.ui-state-hover{background: #f3fbf8; border: 1px solid lightgray;}
 
@@ -1295,7 +1298,7 @@ margin-top: 100px;
 
 
 .node-type-provider #top-line li a,
-.node-type-provider .ui-tabs .ui-tabs-nav li a {padding: 50px 9px 10px; color: lightgray; font-weight: 600;}
+.node-type-provider .ui-tabs .ui-tabs-nav li a {padding: 50px 9px 5px; color: lightgray; font-weight: 600;}
 
 
 .node-type-provider #top-line li {display: none; /*float: left; background: #f1f1f1; border: 2px solid #61b4eb; font-size: 14px; border-radius: 0; height: 32px; margin-left: 5px;
@@ -1307,7 +1310,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .ui-tabs .ui-tabs-nav li a#tab1 {background: url(/sites/all/themes/hr_aqua/css/images/sprite-r.png) no-repeat -3px 0px transparent;}
 
 /*.node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 32px;}*/
-.node-type-provider #top-line li.ui-state-default.ui-tabs-selected a {}
+.node-type-provider #top-line li.ui-state-default a:hover, .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a {color: #035b8b;}
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a#tab0 {background: url(/sites/all/themes/hr_aqua/css/images/sprite-r.png) no-repeat -145px -93px transparent;}
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a#tab1 {background: url(/sites/all/themes/hr_aqua/css/images/sprite-r.png) no-repeat -3px -93px transparent;}
 

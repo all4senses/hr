@@ -137,8 +137,8 @@
 
               <div class="submitted">
               <?php 
-              
-                echo 'Reviewer: <span property="v:reviewer">', $reviewer, '</span><span class="delim">|</span><span property="v:dtreviewed" content="', date('Y-m-d', $node->created), '">', date('F d, Y \a\t g:sa', $node->created), '</span>';
+                //echo '<span property="v:reviewer">', $reviewer, '</span>, <span property="v:dtreviewed" content="', date('Y-m-d', $node->created), '">', date('F d, Y \a\t g:sa', $node->created), '</span>';
+                echo '<span property="v:reviewer">', $reviewer, '</span>, <span property="v:dtreviewed" content="', date('Y-m-d', $node->created), '">', date('F d, Y', $node->created), '</span>';
               ?>
               </div>
     

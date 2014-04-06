@@ -1507,7 +1507,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .review-wrapper {font-size: 12px; color: gray; font-weight: normal; width: 310px; float: left; border: 1px solid lightgray; border-radius: 5px; padding: 10px; min-height: 166px; position: relative;}
 .review-wrapper .pointer {width: 20px; height: 20px; position: absolute; top: 10px; left: -10px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -192px -895px transparent;}
-.review-wrapper .submitted {float: none !important;}
+#main .node-teaser .review-wrapper .submitted {float: none; font-size: 12px; border-bottom: 1px solid lightgray; padding-bottom: 3px; margin-bottom: 10px;}
 
 
 .node-review .links{float: right !important; margin: 10px 0 0 0;}
@@ -1927,7 +1927,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 .view-reviews .attachment select,
-.views-exposed-widgets select{float: left; font-size: 14px;}
+.views-exposed-widgets select{float: left; font-size: 14px; color: lightgray; border-color: lightgray;}
+.reviews .view-filters {margin-left: 72px; color: lightgray;}
 
 /* Breadcrumb */
 .breadcrumb{clear: both; padding: 0 0 2px 0; font-size: 12px; color: lightgray;}

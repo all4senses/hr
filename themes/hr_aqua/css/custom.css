@@ -1227,7 +1227,7 @@ margin-top: 100px;
 
 
 .hr_votes{float: left; width: 280px; margin: 0 10px 0 30px; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
-.hr_votes .caption{background: url(images/chart-th-back.jpg) repeat-x 0 bottom transparent; color: white; font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
+.hr_votes .caption{font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
 .hr_votes .caption span{float: left; margin-right: 10px;}
 .hr_votes .data{padding: 0 0 0px 0;}
 .hr_vote{clear: both; height: 25px; background: #c8ebff; border-radius: 5px; margin-top: 5px; padding: 3px 0;}
@@ -1325,7 +1325,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #main .node-teaser header {border-bottom: none; padding-bottom: 0; margin-bottom: 0;}
 .node-type-provider.page-node #main .node-review .main-content .content {background: none; padding: 5px;}
 .node-type-provider .hr_votes {float: left; width: 260px; margin: 0; padding: 0; border: 1px solid lightgray; border-radius: 0; color: gray; font-weight: normal;}
-.node-type-provider .hr_votes .caption {background: #59ade6; color: white; font-weight: normal; padding: 4px 0 6px 10px; border-radius: 0; margin-bottom: 5px;}
+.node-type-provider .hr_votes .caption {font-weight: normal; padding: 4px 0 6px 10px; border-radius: 0; margin-bottom: 5px;}
 .node-type-provider .hr_votes .hr_vote {clear: both; height: 20px; background: none; border-radius: 0; margin-top: 0; padding: 0px 0 5px; font-size: 14px;}
 .node-type-provider .hr_votes .hr_vote.even {background: #f1f1f1;}
 .node-type-provider .hr_vote .fivestar {float: right; margin-right: 10px; padding: 4px 0 5px;}
@@ -1348,7 +1348,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 .caption .fivestar {float: left;}
 
-.node-type-provider #left-col .hr_votes .caption {padding: 20px 5px 2px 10px; color: gray; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -703px; font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
+.node-type-provider #left-col .hr_votes .caption {color: gray; font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
 .node-type-provider #left-col .hr_votes .caption span {float: left; margin-right: 5px;}
 .node-type-provider #left-col .hr_votes .hr_vote {margin-top: 4px;}
 .node-type-provider #left-col .hr_votes .hr_vote.even {background: none;}

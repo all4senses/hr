@@ -727,7 +727,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 .sidebar .top-line{background: url("images/sprite-0.png") no-repeat scroll 0 -2px transparent; height: 5px; margin: 12px 0 10px; width: 100%;}
 
-.sidebar .block {overflow: hidden; margin: 12px 0; position: relative; z-index: 1; background: white; border-radius: 5px; padding: 10px 15px 0;}
+.sidebar .block {overflow: hidden; margin: 12px 0; position: relative; z-index: 1; background: white; border-radius: 5px; padding: 10px 10px 0;}
 
 .sidebar .block-title {padding: 2px 0 7px; color: gray; margin: 0 0 10px; font-size: 18px; font-family: 'Raleway'; font-weight: 300; text-align: center; border-bottom: 1px dotted lightgray;} 
 
@@ -1103,8 +1103,6 @@ margin-top: 100px;
 
 
 .node-type-provider .logo-info{float: left; width: 180px;}
-.node-type-provider .image{float: right; overflow: hidden; text-align: center;}
-
 
 .basic-info{float: left; margin: 10px 0 30px 0; width: 300px; font-size: 15px;}
 .basic-info .title{margin-right: 10px; font-weight: bold;}
@@ -1226,12 +1224,12 @@ margin-top: 100px;
 
 
 
-.hr_votes{float: left; width: 280px; margin: 0 10px 0 30px; padding: 10px 8px 6px; border: 1px solid lightgray; border-radius: 5px;}
+.hr_votes {float: left; border: 1px solid lightgray; border-radius: 5px; color: #b5b3b3; margin: 0 0 10px 10px;}
 .hr_votes .caption{font-weight: bold; padding: 7px 0 6px 10px; border-radius: 5px; margin-bottom: 5px; }
 .hr_votes .caption span{float: left; margin-right: 10px;}
 .hr_votes .data{padding: 0 0 0px 0;}
 .hr_vote{clear: both; height: 25px; background: #c8ebff; border-radius: 5px; margin-top: 5px; padding: 3px 0;}
-.hr_vote .title{padding: 3px 0 3px 10px; float: left;}
+.hr_vote .title{padding: 3px 0 3px 10px; float: left; font-size: 11px; font-weight: bold;}
 .hr_vote.even{background: #dddfe1;}
 .hr_votes .NA {float: right; padding: 3px 10px 3px; color: gray;}
 
@@ -1305,7 +1303,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 32px;}
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a {background: white; padding: .5em 9px .8em;}
 
-.page-node.node-type-provider #main .main-content h1 {font-size: 18px; font-weight: bold; line-height: normal; padding: 6px 10px 0; margin: 0;}
+.page-node.node-type-provider #main .main-content h1 {font-size: 22px; font-weight: bold; line-height: normal; padding: 6px 10px 0; margin: 0;}
+.page-node.node-type-provider #main .main-content h1 span {color: #035b8b;}
 
 
 .node-type-provider .data.tabs {margin: 0; width: 695px; float: right; padding: 0;}
@@ -1324,7 +1323,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #main h3.rcaption {background: none; color: #333333; font-weight: 600; padding: 5px 0 0 5px;}
 .node-type-provider #main .node-teaser header {border-bottom: none; padding-bottom: 0; margin-bottom: 0;}
 .node-type-provider.page-node #main .node-review .main-content .content {background: none; padding: 5px;}
-.node-type-provider .hr_votes {float: left; width: 260px; margin: 0; padding: 0; border: 1px solid lightgray; border-radius: 0; color: gray; font-weight: normal;}
+.node-type-provider .hr_votes {width: 220px; padding: 0; font-weight: normal;}
 .node-type-provider .hr_votes .caption {font-weight: normal; padding: 4px 0 6px 10px; border-radius: 0; margin-bottom: 5px;}
 .node-type-provider .hr_votes .hr_vote {clear: both; height: 20px; background: none; border-radius: 0; margin-top: 0; padding: 0px 0 5px; font-size: 14px;}
 .node-type-provider .hr_votes .hr_vote.even {background: #f1f1f1;}
@@ -1340,22 +1339,21 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #left-col{float: left; width: 242px;}
 #left-col #main-info {background: white; overflow: hidden;}
 .node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
-.node-type-provider .image {float: none; text-align: center; overflow: inherit;}
-.node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
+.node-type-provider .image img {width: 220px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
 
 .node-type-provider .site a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
 .caption .fivestar {float: left;}
 
-.node-type-provider #left-col .hr_votes .caption {color: gray; font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
+.node-type-provider #left-col .hr_votes .caption {font-weight: 500; margin: 0; font-size: 22px; font-family: Roboto; border-radius: 0;}
 .node-type-provider #left-col .hr_votes .caption span {float: left; margin-right: 5px;}
 .node-type-provider #left-col .hr_votes .hr_vote {margin-top: 4px;}
 .node-type-provider #left-col .hr_votes .hr_vote.even {background: none;}
 .node-type-provider #left-col .hr_votes .data {padding: 0;}
 .node-type-provider #left-col .hr_votes .voters {margin: 10px 0 0 10px; font-size: 12px; font-weight: normal;}
 .node-type-provider #left-col .hr_votes .voters .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
-.node-type-provider #left-col .hr_votes .recommend {margin: 0 0 15px 10px; font-size: 12px;}
+.node-type-provider #left-col .hr_votes .recommend {margin: 0 0 10px 10px; font-size: 12px;}
 .node-type-provider #left-col .hr_votes .recommend .title {float: left; margin: 0 5px 0 0; font-weight: normal;}
 .node-type-provider #left-col .overall {margin: 15px auto 5px 10px; font-size: 15px; font-weight: bold; border-top: 1px solid lightgray; padding: 10px 0px 5px 0; width: 240px; text-align: center;}
 .node-type-provider .be-first {margin: 10px 0 15px 10px; display: block; width: 140px; font-size: 15px;}
@@ -1437,7 +1435,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 #all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-php {padding-left: 0; padding-right: 3px; text-align: left;}
 
-#all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-field-p-listposition-sh {padding: 0 2px 0 5px; width: inherit;}
+#all-content #block-views-providers-block-topwhost-small .view-providers td.views-field-field-p-listposition-sh {padding: 0 2px 0 0; width: inherit;}
 #block-views-providers-block-topwhost-small .views-field-php-7 {width: 70px;}
 
 
@@ -1481,7 +1479,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 .node-type-review #main .main-content .content{margin: auto; padding: 20px 0 10px 0; position: relative; width: 720px;}
 
 
-.node-review .hr_votes, .node-type-review .hr_votes{margin: 0; font-size: 15px; color: #333333;}
+.node-review .hr_votes, .node-type-review .hr_votes{margin: 0; font-size: 15px;}
 .node-review .hr_votes .data, .node-type-review .hr_votes .data{border-bottom: none; border-top: none;}
 
 /*.node-review .hr_votes .rate-other, .node-type-review .hr_votes .rate-other{border: 1px solid gray; border-top: none;}*/

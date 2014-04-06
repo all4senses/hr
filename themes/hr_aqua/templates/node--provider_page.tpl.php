@@ -32,7 +32,7 @@
                       <div class="image">
                       <?php
                         if (isset($content['field_p_image'][0]['#item']['uri'])) {
-                          echo '<div>' . hr_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title']))), '</div>';
+                          echo hr_misc_getTrackingUrl(theme('image_style', array( 'path' =>  $content['field_p_image'][0]['#item']['uri'], 'style_name' => 'image_provider_page', 'alt' =>  $content['field_p_image'][0]['#item']['alt'], 'title' =>  $content['field_p_image'][0]['#item']['title'])));
                         }
                       ?>
 
@@ -43,7 +43,7 @@
                         <?php
 
                           //echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>';
-                          echo '<div class="caption"><span>Score</span> ', theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), '<span class="count" content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</span>/5</div>';
+                          echo '<div class="caption"><span>Score</span> ', theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), '<div class="count"><div content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</div>/5</div></div>';
                           if ($node->hr_voters) {
                             //echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->hr_voters . '</div></div>';
                             //echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->hr_recommend . '% of Users' . '</div></div>';

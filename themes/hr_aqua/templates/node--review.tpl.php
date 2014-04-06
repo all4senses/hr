@@ -176,6 +176,8 @@
           
           
           <div class="bottom-clear"></div>
+          
+          <?php /* ?>
           <div class="links">
             <?php 
 
@@ -196,7 +198,7 @@
                   . '</div>'; 
             ?>
           </div>
-           
+          <?php */?>
               
           <?php
             // Hide already shown anr render the rest.

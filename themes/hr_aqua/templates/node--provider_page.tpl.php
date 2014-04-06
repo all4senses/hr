@@ -95,17 +95,17 @@
 
                     <ul>
                       
-                      <li><a href="#tabs-1">Editor's Overview</a></li>
+                      <li><a id="tab1" href="#tabs-1">Editor's Overview</a></li>
 
                       <?php if (!empty($content['reviews_entity_view_1'])): ?>
-                        <li><a href="#tabs-0"><?php echo 'Customer Reviews'; ?></a></li>
+                        <li><a id="tab0" href="#tabs-0"><?php echo 'Customer Reviews'; ?></a></li>
                       <?php endif; ?>
 
 
                       <?php 
 
                       if ($user->uid && !empty($node->p_data['provider_options']) && (!isset($node->p_data['provider_options']['enabled']) || !empty($node->p_data['provider_options']['enabled']))) {
-                        echo '<li><a href="#tabs-2">Available Options</a></li>';
+                        echo '<li><a id="tab2" href="#tabs-2">Available Options</a></li>';
                       }
 
 //                      if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {

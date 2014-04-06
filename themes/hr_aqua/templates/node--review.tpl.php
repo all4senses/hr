@@ -164,7 +164,26 @@
           
           
           <div class="hr_votes">
-            <?php echo '<div class="caption"><span>' , t('User\'s Rating') , ':</span> <span property="v:rating">' , (empty($node->field_r_rating_overall['und'][0]['value']) ? $node->field_r_rating_overall[0]['value'] : $node->field_r_rating_overall['und'][0]['value']), '</span>' /* render($content['hr_rating_overall'])*/ , '<div class="bottom-clear"></div></div>' , render($content['hr_ratings']); ?>
+            <?php 
+            $hr_rating_overall = (empty($node->field_r_rating_overall['und'][0]['value']) ? $node->field_r_rating_overall[0]['value'] : $node->field_r_rating_overall['und'][0]['value']);
+              //echo '<div class="caption"><span>' , t('User\'s Rating') , ':</span> <span property="v:rating">' , (empty($node->field_r_rating_overall['und'][0]['value']) ? $node->field_r_rating_overall[0]['value'] : $node->field_r_rating_overall['und'][0]['value']), '</span>' /* render($content['hr_rating_overall'])*/ , '<div class="bottom-clear"></div></div>' , render($content['hr_ratings']); 
+              echo '<div class="caption">
+                      <span>User\'s Rating:</span> 
+                      <span property="v:rating">', $hr_rating_overall, '</span>
+                      <div class="bottom-clear"></div>
+                    </div>', 
+                    render($content['hr_ratings']); 
+              echo '<div class="caption">
+                      <span>Score</span> ', 
+                      theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), 
+                      '<div class="count">
+                         <span content="', $node->hr_rating_overall, '" property="v:rating">', 
+                          $node->hr_rating_overall, 
+                        '</span>
+                        <span>/5</span>
+                      </div>
+                     </div>';
+            ?>
             <div class="rate-other">
               <?php if (!$page): ?>
                 <?php //echo '<div class="text"><div class="title">' , t('Date:') , '</div><div property="v:dtreviewed" content="' . date('Y-m-d', $node->created) . '">' , date('F j, Y', $node->created) , '</div></div>'; ?>

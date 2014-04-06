@@ -88,7 +88,7 @@
 
         <div class="content"<?php print $content_attributes; ?>>
           
-          <div class="review">
+          <div class="review-wrapper">
     
             
             
@@ -125,11 +125,11 @@
               <?php endif; */ ?>
 
 
-              <span class="submitted">
+              <div class="submitted">
               <?php 
                 echo t('Reviewer'), ': ', '<span property="v:reviewer">' . (isset($node->field_r_fname[0]['value']) ? $node->field_r_fname[0]['value'] : $node->field_r_fname['und'][0]['value'] ), '</span><span class="delim">|</span><span property="v:dtreviewed" content="' . date('Y-m-d', $node->created) . '">', date('F d, Y \a\t g:sa', $node->created), '</span>';
               ?>
-              </span>
+              </div>
     
             
               <?php /*if (!empty($content['r_data']['pros']) || !empty($content['r_data']['cons'])): ?>

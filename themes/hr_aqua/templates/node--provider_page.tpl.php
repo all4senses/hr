@@ -75,22 +75,13 @@
             
             
                       
-                      <?php 
-                      
-                        $block_data = array('module' => 'views', 'delta' => 'providers-block_topwhost_small', 'shadow' => FALSE);
-                        echo hr_blocks_getBlockThemed($block_data);
-                        
-                        //$block = module_invoke('module_name', 'block_view', 'block_delta');
-                        $block = module_invoke('views', 'block_view', 'providers-block_topwhost_small');
-                        dpm($block);
-                        echo drupal_render($block['content']);
-                        
-                        //$block = block_load('views', 'block_name');
-                        $block = block_load('views', 'providers-block_topwhost_small');
-                        $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));        
-                        echo $output;
-                      
-                      ?>
+              <?php 
+
+                $block = block_load('views', 'providers-block_topwhost_small');
+                $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));        
+                echo $output;
+
+              ?>
                           
             </div> <!-- <div id="left-col"> --> 
                

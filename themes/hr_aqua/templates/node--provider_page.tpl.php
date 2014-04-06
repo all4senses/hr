@@ -39,29 +39,27 @@
                       </div>
 
                 
-                      <div id="ratings">
-              
-                            <div class="hr_votes">
-                              <?php
-                                
-                                //echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>';
-                                echo '<div class="caption"><span>Score</span> ', theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), '<span class="count" content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</span>/5</div>';
-                                if ($node->hr_voters) {
-                                  //echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->hr_voters . '</div></div>';
-                                  //echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->hr_recommend . '% of Users' . '</div></div>';
-                                  echo render($content['hr_ratings']); 
-                                  //echo '<div class="overall">Overall Score: <span class="count" content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</span> out of 5</div>'; 
-                                  echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->hr_voters . '</div></div>';
-                                  echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->hr_recommend . '% of Users' . '</div></div>';
-                                }
-                                else {
-                                  echo l('Be the first to review!', 'node/add/review', array('query' => array('id' => $node->nid), 'attributes' => array('class' => array('be-first'), 'rel' => array('nofollow'))));
-                                  //echo '<a href="' . url() . '" class="descr be-first">Be the first to review</a>'; 
-                                }
-                              ?>
-                            </div>
-                        
-                      </div> <!-- <div id="ratings">-->
+                      <div class="hr_votes">
+                        <?php
+
+                          //echo '<div class="caption"><span property="v:itemreviewed">', $node->field_p_name['und'][0]['value'], '</span> Ratings</div>';
+                          echo '<div class="caption"><span>Score</span> ', theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), '<span class="count" content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</span>/5</div>';
+                          if ($node->hr_voters) {
+                            //echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->hr_voters . '</div></div>';
+                            //echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->hr_recommend . '% of Users' . '</div></div>';
+                            echo render($content['hr_ratings']); 
+                            //echo '<div class="overall">Overall Score: <span class="count" content="' . $node->hr_rating_overall . '" property="v:rating">' . $node->hr_rating_overall . '</span> out of 5</div>'; 
+                            echo '<div class="voters"><div class="title">Total Number of Reviews:</div><div class="count" property="v:count">' . $node->hr_voters . '</div></div>';
+                            echo '<div class="recommend"><div class="title">Would recommend: </div><div class="data">' . $node->hr_recommend . '% of Users' . '</div></div>';
+                          }
+                          else {
+                            echo l('Be the first to review!', 'node/add/review', array('query' => array('id' => $node->nid), 'attributes' => array('class' => array('be-first'), 'rel' => array('nofollow'))));
+                            //echo '<a href="' . url() . '" class="descr be-first">Be the first to review</a>'; 
+                          }
+                        ?>
+                      </div> <!-- <div class="hr_votes">-->
+
+
                       
 
                       <?php

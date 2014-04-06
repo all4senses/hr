@@ -1305,7 +1305,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected {background: white; border: 2px solid #61b4eb; height: 32px;}
 .node-type-provider #top-line li.ui-state-default.ui-tabs-selected a {background: white; padding: .5em 9px .8em;}
 
-.page-node.node-type-provider #main .main-content h1 {font-family: arial; float: left; font-size: 18px; font-weight: bold; background: #61b4eb; line-height: normal; padding: 6px 25px; height: 22px; color: white; margin: 5px 0 0 20px;}
+.page-node.node-type-provider #main .main-content h1 {font-size: 18px; font-weight: bold; line-height: normal; padding: 6px 10px 0; margin: 0;}
 
 
 .node-type-provider .data.tabs {margin: 0; width: 695px; float: right; padding: 0;}
@@ -1338,7 +1338,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 
 .node-type-provider #left-col{float: left; width: 242px;}
-#left-col #main-info {background: white;}
+#left-col #main-info {background: white; overflow: hidden;}
 .node-type-provider .logo-info {float: none; width: 180px; overflow: hidden;}
 .node-type-provider .image {float: none; text-align: center; overflow: inherit;}
 .node-type-provider .image img {width: 260px; border: 1px solid lightgray;}
@@ -1577,7 +1577,7 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 
 /*.page-node #main .main-content h1{color: gray; font-weight: 600; font-size: 28px;}*/
-.page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-weight: 500; font-family: 'Roboto'; margin: 10px 0 2px 0;}
+.page-node #main .main-content h1 {font-size: 38px; line-height: 45px; font-weight: 500; margin: 10px 0 2px 0;}
 
 h1.preface,
 .front h1 {margin-top: 3px; padding: 0;}

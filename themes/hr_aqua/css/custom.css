@@ -480,7 +480,8 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
 
-.view-providers {box-shadow: 1px 3px 10px -4px black;}
+.view-providers {box-shadow: 1px 3px 10px -4px black; border-radius: 5px; overflow: hidden;}
+
 .page-compare-providers .view-providers {width: 960px; clear: both;}
 
 /*
@@ -488,7 +489,7 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 .view-providers table{margin-bottom: 0; border-collapse: separate; border-spacing: 0 4px; border: 1px solid lightgray; padding: 3px 7px 4px; border-radius: 5px;}
 */
 .view-display-id-page_chart_providers table,
-.view-providers table{margin-bottom: 0; border-collapse: separate; border: 1px solid lightgray; background: white;}
+.view-providers table{margin-bottom: 0; border-collapse: separate; background: white; }
 
 /*
 .view-display-id-page_chart_providers th,
@@ -550,8 +551,6 @@ tr.even, tr.odd {background: transparent;}
 .view-display-id-page_chart_providers tr.odd td:last-child, 
 .view-providers td:last-child {border-radius: 0 6px 6px 0;}
 */
-.view-display-id-page_chart_providers tr.odd td:last-child, 
-.view-providers td:last-child {}
 
 
 /*.view-display-id-page_chart_providers table thead th:first-child, .view-providers table thead th:first-child {border-radius: 6px 0 0 6px;}*/
@@ -2105,7 +2104,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 /* Home banner block 2 */
 #block-hr-blocks-home-banner2 {text-align: center; position: absolute; top: 125px; width: 100%; color: white;}
-#block-hr-blocks-home-banner2 .content {padding: 0 70px;}
+#block-hr-blocks-home-banner2 .content {padding: 0 70px; font-family: Raleway;}
 
 
 

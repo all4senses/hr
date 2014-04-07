@@ -465,20 +465,20 @@ div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 15px; heig
 div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 100%; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll 0 -86px transparent;}
 
 
-
+/*
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star{width: 14px; height: 14px; float: left; background: url("images/sprite-2.png") no-repeat scroll -19px -50px transparent;}
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 14px; height: 14px; display: block; background: url("images/sprite-2.png") no-repeat scroll -19px -62px transparent;}
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {display: block; width: 14px; height: 14px; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -19px -50px transparent;}
-
+*/
 
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star{width: 14px; height: 14px; float: left; background: url("images/sprite-2.png") no-repeat scroll -19px -86px transparent;}
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.on{text-indent: -9999px; width: 14px; height: 14px; display: block; background: url("images/sprite-2.png") no-repeat scroll -19px -101px transparent;}
 .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {display: block; width: 14px; height: 14px; background: url("images/sprite-2.png") no-repeat scroll -19px -86px transparent;}
 
 
-.caption div.fivestar-widget-static .star {width: 20px; height: 20px; float: left; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -22px -84px transparent;}
-.caption div.fivestar-widget-static .star span.on {text-indent: -9999px; width: 20px; height: 20px; display: block; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -21px -105px transparent;}
-.caption div.fivestar-widget-static .star span.off {width: 20px; height: 20px; display: block; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -22px -84px transparent;}
+.caption div.fivestar-widget-static .star {width: 20px; height: 20px; float: left; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -38px -89px transparent;}
+.caption div.fivestar-widget-static .star span.on {text-indent: -9999px; width: 20px; height: 20px; display: block; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -38px -110px transparent;}
+.caption div.fivestar-widget-static .star span.off {width: 20px; height: 20px; display: block; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -38px -89px transparent;}
 
 .view-providers .plan {color: gray; font-size: 14px; font-weight: bold; margin: 0 0 1px 2px; font-family: arial;}
 .view-providers .feature {background: url("images/sprite-2.png") no-repeat scroll -189px 2px transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 18px; }

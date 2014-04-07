@@ -475,7 +475,7 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 
 
 .view-providers .plan{color: gray; font-size: 14px; font-weight: bold; margin: 0 0 1px 2px; font-family: arial;}
-.view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 20px; }
+.view-providers .feature{background: url("images/sprite-2.png") no-repeat scroll -189px 0 transparent; font-size: 13px; padding-left: 20px; color: #777777; line-height: 18px; }
 
 
 .view-display-id-page_chart_providers {margin: 0 0 50px 0;}
@@ -489,14 +489,14 @@ div.fivestar-widget-static .star span.off {display: block; width: 100%; height: 
 .view-providers table{margin-bottom: 0; border-collapse: separate; border-spacing: 0 4px; border: 1px solid lightgray; padding: 3px 7px 4px; border-radius: 5px;}
 */
 .view-display-id-page_chart_providers table,
-.view-providers table{margin-bottom: 0; border-collapse: separate; background: white; }
+.view-providers table {margin-bottom: 0; border-collapse: separate; background: white; font-family: Raleway;}
 
 /*
 .view-display-id-page_chart_providers th,
 .view-providers th{position: relative; background: url(images/chart-th-back.jpg) repeat-x 0 0 transparent; color: white; height: 39px; text-align: center; font-size: 13px; padding: 0 5px; font-weight: bold;}
 */
 .view-display-id-page_chart_providers th,
-.view-providers th{background: #a8a8a8; position: relative; color: white; height: 38px; text-align: center; font-size: 14px; padding: 0 5px; font-weight: bold; font-family: Raleway; line-height: 17px;}
+.view-providers th {background: #a8a8a8; position: relative; color: white; height: 38px; text-align: center; font-size: 14px; padding: 0 5px; font-weight: bold; font-family: Raleway; line-height: 17px;}
 
 
 .view-display-id-page_chart_providers th a,
@@ -692,7 +692,7 @@ td.views-field-php-7 a {color: gray; font-size: 14px; font-weight: normal;}
 td.views-field-php-7 a:hover {text-decoration: underline;}
 
 
-.views-field .count{font-size: 11px;/* padding-top: 4px;*/}
+.views-field .count{font-size: 11px; font-family: 'Open Sans';}
 
 .views-field-field-p-listposition-ca,
 .views-field-field-p-listposition-sh,

@@ -489,7 +489,7 @@ height: 20px;
 display: block;
 background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat scroll -21px -105px transparent;
 }
-.caption .view-display-id-block_topwhost_small div.fivestar-widget-static .star span.off {
+.caption div.fivestar-widget-static .star span.off {
 width: 20px;
 height: 20px;
 display: block; 

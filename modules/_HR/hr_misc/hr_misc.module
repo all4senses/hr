@@ -6597,9 +6597,9 @@ function hr_misc_getProviderQuickData($target, $data) {
     case 'i_web2':
       
       $all_data_quick = hr_misc_getProvidersDataQuick();
-      
+      /*
       //$url = isset($all_data_quick[$data['data']->nid]['i_web']) ? $all_data_quick[$data['data']->nid]['i_web'] : '';
-      //$out = l('Visit Site', $url, array('attributes' => array(/*'rel' => 'nofollow', */'target' => '_blank', 'class' => 'site')));
+      //$out = l('Visit Site', $url, array('attributes' => array('target' => '_blank', 'class' => 'site')));
       
       //hr_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid = NULL, $target_name = NULL, $a_class = NULL, $service_type = NULL) {
       
@@ -6620,13 +6620,9 @@ function hr_misc_getProviderQuickData($target, $data) {
       {
         $out .= hr_misc_getTrackingUrl('Visit ' . $all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid, NULL, 'visit visit-site-link', @$data['service_type']);
       }
+      */
       
-      
-      global $user;
-      if ($user->uid == 1) {
-        $out = '<div class="p-links">' . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">READ REVIEWS</a>' . hr_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '</div>';
-      
-      }
+      $out = '<div class="p-links">' . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">READ REVIEWS</a>' . hr_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '</div>';
       
       return $out;
 

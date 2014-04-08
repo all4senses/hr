@@ -1359,7 +1359,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .image img {width: 220px; border: 1px solid lightgray;}
 /*.node-type-provider .basic-info {float: none; margin: 0; width: inherit; font-size: 15px;}*/
 
-.node-type-provider .site a {text-indent: 0; display: block; height: 25px; margin: 0px auto 17px; padding: 7px 0 10px 0; color: white; border-radius: 5px; font-size: 20px; background: #fe4c29; width: 220px; font-family: Raleway; font-weight: 700;}
+.node-type-provider .site a {text-indent: 0; display: block; height: 25px; margin: 30px auto 17px; padding: 7px 0 10px 0; color: white; border-radius: 5px; font-size: 20px; background: #fe4c29; width: 220px; font-family: Raleway; font-weight: 700;}
+.node-type-provider #main-info .site a {margin-top: 1px;}
 
 .caption .fivestar {float: left; margin: 9px 0 0 1px;} 
 .caption .count {font-size: 12px; margin: 11px 1px 0 1px; overflow: hidden; float: left;}

@@ -94,7 +94,7 @@
           ?>
           <div class="reviewer">
             <div class="r-avatar"><img src="/sites/all/themes/hr_aqua/css/images/avatar.png"></div>
-            <div clsss="name"><?php echo $reviewer; ?></div>
+            <div class="name"><?php echo $reviewer; ?></div>
           </div>
           
           

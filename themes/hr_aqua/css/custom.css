@@ -1361,8 +1361,8 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 
 .node-type-provider .site a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) repeat-x 0 -763px #2ab967; text-indent: 0; display: block; height: 25px; width: 260px; margin: 15px auto 20px; padding: 7px 0 8px 0; color: white; border-radius: 5px; font-size: 18px;}
 
-.caption .fivestar {float: left; margin: 9px 3px 0 0;}
-.caption .count {font-size: 12px; margin: 10px 0 0 0; overflow: hidden; float: left;}
+.caption .fivestar {float: left; margin: 11px 1px 0 1px;}
+.caption .count {font-size: 12px; margin: 9px 0 0 1px; overflow: hidden; float: left;}
 
 .node-type-provider .hr_votes .caption {font-weight: bold; font-size: 22px; border-radius: 0; overflow: hidden; border-bottom: 1px solid lightgray; padding: 0 0 0 10px;}
 .node-type-provider .hr_votes .caption span {margin-right: 5px;}

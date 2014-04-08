@@ -524,7 +524,7 @@ td.active {background-color: transparent;}
 .trend.neg {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -17px -0px; width: 30px; height: 30px; text-indent: -9999px; margin: auto;}
 .trend.neu {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -17px -35px; width: 30px; height: 10px; text-indent: -9999px; margin: auto;} 
 
-
+#all-content .view-providers td.mb {color: gray; font-weight: 700; font-size: 18px;}
 
 
 tr.even, tr.odd {background: transparent;}

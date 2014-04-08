@@ -656,8 +656,8 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 
 
 
-.review-link {font-size: 11px; margin: 3px 0 0 0; display: block; line-height: 12px; font-weight: bold;}
-.review-link:hover {text-decoration: underline;}
+.review-link {text-decoration: underline; font-size: 11px; margin: 3px 0 0 0; display: block; line-height: 12px; font-weight: bold;}
+.review-link:hover {text-decoration: none;}
 
 .view-display-id-page_chart_providers .site-link,
 .view-display-id-block_chart_all_providers .site-link {background: url("images/visit-site-btn2.png") no-repeat 0 0 transparent; text-indent: -9999px; color: black; display: block; width: 103px; height: 25px; margin: 0 auto 10px auto;}

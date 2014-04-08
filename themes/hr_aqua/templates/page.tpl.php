@@ -28,15 +28,7 @@
       ?>
     </nav> <!-- /#navigation -->
 
-    <?php 
-    
-    if ($is_front) {
-      echo '<div style="display: none;"><a href="https://plus.google.com/117391637729684340947" rel="publisher">Google+</a></div>';
-    }
-    
-    ?>
-    
-      <?php ////if ($breadcrumb): print $breadcrumb; endif;?>
+    <?php ////if ($breadcrumb): print $breadcrumb; endif;?>
   </header> <!-- /#header -->
 
 </div>

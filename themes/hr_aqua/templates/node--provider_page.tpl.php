@@ -158,6 +158,9 @@
                       <?php echo render($content['reviews_entity_view_1']); ?>
 
                     </div>
+                    
+                    <?php echo (!empty($visit_site_url) ? $visit_site_url : ''); ?>
+                    
                   </div>
                 <?php endif; ?>
                 

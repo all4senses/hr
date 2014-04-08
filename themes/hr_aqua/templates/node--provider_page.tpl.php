@@ -39,6 +39,13 @@
                       </div>
 
                 
+                      <?php
+                        if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
+                          $visit_site_url = '<div class="site">' . hr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) . '</div>';
+                          echo $visit_site_url;
+                        }
+                      ?>   
+                
                       <div class="hr_votes">
                         <?php
 
@@ -71,12 +78,7 @@
 
                       
 
-                      <?php
-//                        if (!$node->p_data['info']['i_web_hide'] && !empty($node->p_data['info']['i_web'])) {
-//                          $visit_site_url = '<div class="site">' . hr_misc_getTrackingUrl('Visit ' . $node->field_p_name['und'][0]['value']) . '</div>';
-//                          echo $visit_site_url;
-//                        }
-                      ?>   
+                     
 
               </div> <!-- <div id="main-info"> -->
             

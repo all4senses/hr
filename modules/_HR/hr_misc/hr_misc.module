@@ -6477,16 +6477,18 @@ function hr_misc_getProviderQuickData($target, $data) {
                         . ' <div class="count">' . $rating_count . '<span> / 5</span></div>'
                         . $stars . '
                         
-                    </div>
-                    <div class="details">
-                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
-                      </a>
-                    </div>
-                    ';
+                    </div>' .
+                    // Read Reviews
+//                    '<div class="details">
+//                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
+//                      </a>
+//                    </div>' .
+                    '';
         }
       }
       else {
-        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
+        // Write a review
+        ////$out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Write Review</div></a></div>';
       }
 
       

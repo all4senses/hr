@@ -1546,6 +1546,12 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 .node-review .links .delim, .node-type-review .links .delim{margin: 3px; color: #275FA6;}
 
 
+.node-type-provider .item-list .pager {overflow: hidden; padding: 0;}
+.node-type-provider .item-list .pager li.first {float: left;}
+.node-type-provider .item-list .pager li.last {float: right;}
+.node-type-provider .item-list .pager li a {color: #035b8b;}
+
+
 
 /* All Reviews pages */
 .page-providers-reviews #edit-provider-wrapper,

@@ -93,7 +93,7 @@
             $reviewer = (isset($node->field_r_fname[0]['value']) ? $node->field_r_fname[0]['value'] : $node->field_r_fname['und'][0]['value'] );
           ?>
           <div class="reviewer">
-            <div class="r-avatar"><img src="/sites/all/themes/hr_aqua/css/images/avatar.png"></div>
+            <div class="r-avatar"><img src="/sites/all/themes/hr_aqua/css/images/avatar.jpg"></div>
             <div class="name"><?php echo $reviewer; ?></div>
           </div>
           

@@ -656,7 +656,7 @@ a.visit-site-btn {background: url("images/sprite-2.png") no-repeat 3px -890px tr
 
 
 
-.review-link {font-size: 12px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
+.review-link {font-size: 11px; margin: 3px 0 5px 0; display: block; line-height: 12px; font-weight: bold;}
 .review-link:hover {text-decoration: underline;}
 
 .view-display-id-page_chart_providers .site-link,

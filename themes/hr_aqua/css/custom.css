@@ -2181,7 +2181,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 .price.crossed {position: relative; color: black; font-size: 16px; font-weight: normal;}
 .view-display-id-block_top_ca_p_table .price.crossed {font-size: 14px;}
 
-.price.non-crossed {font-size: 24px; color: #fe4c29;}
+.price.non-crossed {font-size: 28px; color: #fe4c29;}
 
 .price.crossed .cross {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat 0px -923px transparent; width: 52px; height: 10px; position: absolute; top: 6px; margin: auto; left: 20px;}
 .view-display-id-block_top_ca_p_table .price.crossed .cross {width: 72px; left: 28px;}

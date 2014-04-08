@@ -90,6 +90,10 @@
                 $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));        
                 echo $output;
 
+                $block = block_load('hr_blocks', 'editor_note');
+                $output = drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));        
+                echo $output;
+                
               ?>
                           
             </div> <!-- <div id="left-col"> --> 

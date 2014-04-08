@@ -174,15 +174,17 @@
 //                    </div>', 
 //                    render($content['hr_ratings']); 
               echo '<div class="caption">
+                
                       <span>Score</span> ', 
-                      theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), 
                       '<div class="count">
                          <span content="', $node->hr_rating_overall, '" property="v:rating">', 
                           $node->hr_rating_overall, 
                         '</span>
                         <span>/5</span>
-                      </div>
-                     </div>', 
+                      </div>',
+                      theme('hr_misc_fivestar_static', array('rating' => $node->hr_rating_overall*20, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))), 
+                      
+                     '</div>', 
                     render($content['hr_ratings']);
             ?>
             <div class="rate-other">

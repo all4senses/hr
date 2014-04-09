@@ -150,6 +150,13 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  $blocks['shopper_code'] = array(
+    'info' => 'ShopperApproved ThankYou Code',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  
+  
   return $blocks;
 }
 
@@ -270,6 +277,11 @@ function hr_blocks_block_view($delta = '') {
       $block['content'] = hr_blocks_getGoogleRemarketingCode();
       break;
     
+    
+    case 'shopper_code':
+      $block['subject'] = '';
+      $block['content'] = hr_blocks_getShopperapprovedCode();
+      break;
     
     
     default:

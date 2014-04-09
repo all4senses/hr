@@ -489,7 +489,6 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
   
 }
 
-
 /**
  * Google Remarketing Code.
  */
@@ -514,6 +513,18 @@ var google_remarketing_only = true;
 <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/944838791/?value=0&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
+';
+  
+}
+
+
+/**
+ * shopperapproved.com code
+ */
+function hr_blocks_getShopperapprovedCode() {
+  
+  return '
+<script type="text/javascript"> var sa_values = { "site":10680 }; function saLoadScript(src) { var js = window.document.createElement("script"); js.src = src; js.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(js); } var d = new Date(); if (d.getTime() - 172800000 > 1396998481000) saLoadScript("//www.shopperapproved.com/thankyou/rate/10680.js"); else saLoadScript("//direct.shopperapproved.com/thankyou/rate/10680.js?d=" + d.getTime()); </script>
 ';
   
 }

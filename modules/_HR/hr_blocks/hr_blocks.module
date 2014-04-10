@@ -581,7 +581,8 @@ function hr_blocks_getReviewsRotated() {
   for($i = 0; $i < 5; $i += 2) {
       $nodes = node_load_multiple(array($reviews[$i], $reviews[$i+1]));
       $node_views = node_view_multiple($nodes, 'teaser_on_serviceTypePage');
-      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
+      //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
+      $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '"></a></li>';
       $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_views) . '</div></div>';
   }
   //$key += 1; 

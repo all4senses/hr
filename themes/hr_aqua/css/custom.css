@@ -8,7 +8,7 @@ body.front.one-sidebar.sidebar-second #sidebar-second{padding-top: 3px}
 #all-content-wrapper{overflow: hidden; padding-bottom: 5px;}
 
 /*#all-content{background: white; margin: auto; padding: 0; width: 1000px; border: 1px solid lightgray; border-top: none; border-radius: 0 0 15px 15px; min-height: 600px; box-shadow: 0px 10px 60px #DDDDDD,0 0px 47px #f3f3f3;}*/
-#all-content {background: #eeeeee; padding: 30px 0; min-height: 600px; box-shadow: /*0px 10px 60px #DDDDDD,0 0px 7px gray*/ 0px 5px 30px #DDDDDD,0 0px 4px gray;}
+#all-content {background: #eeeeee; padding: 20px 0; min-height: 600px; box-shadow: /*0px 10px 60px #DDDDDD,0 0px 7px gray*/ 0px 5px 30px #DDDDDD,0 0px 4px gray;}
 
 .page-node-edit.node-type-provider #all-content {background: #eeeeee; /*padding: 0 20px; width: 960px;*/}
 
@@ -2199,11 +2199,11 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 /* Fix for the listing pages without bottom and sidebar */
 /* Shared */
-.page-node-80 #all-content {padding: 5px 0 5px 20px; width: 980px;}
+.page-node-80 #all-content {padding: 25px 0 5px 20px; width: 980px;}
 .page-node-80 .preface .field-item {padding-right: 20px;}
 
 /* Canada */
-.page-node-215 #all-content {padding: 5px 0 5px 20px; width: 980px;}
+.page-node-215 #all-content {padding: 25px 0 5px 20px; width: 980px;}
 .page-node-215 .preface .field-item {padding-right: 20px;}
 
 

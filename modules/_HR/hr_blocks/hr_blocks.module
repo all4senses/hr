@@ -564,13 +564,21 @@ function hr_blocks_getReviewsRotated() {
   $query->condition('n.type', 'review');
   $query->condition('n.status', 1);
   $query->orderBy('n.created', 'DESC');
-  $query->range(0, 8);
+  // 4 pages
+  //$query->range(0, 7);
+  // 3 pages
+  $query->range(0, 5);
+  
   
   $reviews = $query->execute()->fetchCol();
   
   $ui_tabs_nav = '';
   $fragments = '';
-  for($i = 0; $i < 7; $i += 2) {
+  
+  // 4 pages
+  //for($i = 0; $i < 7; $i += 2) {
+  // 3 pages
+  for($i = 0; $i < 5; $i += 2) {
       $nodes = node_load_multiple(array($reviews[$i], $reviews[$i+1]));
       $node_views = node_view_multiple($nodes, 'teaser_on_serviceTypePage');
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';

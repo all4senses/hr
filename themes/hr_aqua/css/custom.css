@@ -257,7 +257,8 @@ ul.hr{margin-left: 0px; padding-left: 10px;}
 
 .om-maximenu ul.om-menu li.om-leaf a.om-link{padding: 25px 5px 5px; font-size: 14px; display: block; line-height: 30px; height: 50px; font-weight: bold; color: lightgray; border-left: 2px solid white; border-right: 2px solid white;}
 
-#om-menu-main-om-menu li.om-leaf:hover a.om-link, #om-menu-main-om-menu li.om-leaf.active a.om-link {color: #035b8b; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -1px -1112px transparent; border-left: 2px #f1f1f1 solid; border-right: 2px #f1f1f1 solid;}
+#om-menu-main-om-menu li.om-leaf:hover a.om-link {color: #035b8b;}
+#om-menu-main-om-menu li.om-leaf.active a.om-link {color: #035b8b; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -1px -1112px transparent; border-left: 2px #f1f1f1 solid; border-right: 2px #f1f1f1 solid;}
 
 
 #om-menu-main-om-menu li.om-leaf:hover {/*background: none;*/}

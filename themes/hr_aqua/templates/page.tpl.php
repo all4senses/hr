@@ -20,7 +20,7 @@
           echo /*'<a id="itexpo" href="http://hostingreview.org/blog/tags/itexpo-2012"></a>',*/ render($page['header']); 
           
           //echo hr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), TRUE, '+31 day', ($user->uid ? '_logged' : NULL));
-          echo hr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), FALSE, '+31 day', ($user->uid ? '_logged' : NULL));
+          //echo hr_blocks_getBlockThemed(array('module' => 'om_maximenu', 'delta' => 'om-maximenu-1', 'no_subject' => TRUE, 'class' => 'block-om-maximenu', 'shadow' => FALSE), FALSE, '+31 day', ($user->uid ? '_logged' : NULL));
           
 //        }
 //        else {

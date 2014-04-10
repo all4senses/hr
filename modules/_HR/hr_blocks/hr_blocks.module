@@ -565,9 +565,9 @@ function hr_blocks_getReviewsRotated() {
   $query->condition('n.status', 1);
   $query->orderBy('n.created', 'DESC');
   // 4 pages
-  //$query->range(0, 7);
+  //$query->range(0, 8);
   // 3 pages
-  $query->range(0, 5);
+  $query->range(0, 6);
   
   
   $reviews = $query->execute()->fetchCol();

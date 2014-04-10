@@ -1548,9 +1548,9 @@ h2.rcaption a, h3.rcaption a, /*.node-review*/ h3.rcaption a:hover{color: white;
 
 .node-type-provider .item-list .pager {overflow: hidden; padding: 0;}
 .node-type-provider .item-list .pager li.first {float: left;}
-.node-type-provider .item-list .pager li.last {float: right;}
-.node-type-provider .item-list .pager li a {color: #035b8b;}
-
+.node-type-provider .item-list .pager li.last {float: right; }
+.node-type-provider .item-list .pager li a {color: #035b8b; background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -125px -1002px transparent; padding: 12px 10px 4px 0; width: 70px; display: block; font-weight: 700; font-size: 18px;}
+.node-type-provider .item-list .pager li.first a {background: url(/sites/all/themes/hr_aqua/css/images/sprite-2.png) no-repeat -125px -1002px transparent; padding: 12px 10px 4px 0;}
 
 
 /* All Reviews pages */

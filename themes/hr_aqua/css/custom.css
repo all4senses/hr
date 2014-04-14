@@ -1344,7 +1344,7 @@ list-style: none; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bot
 .node-type-provider .hr_votes {width: 220px; padding: 0; font-weight: normal;}
 .node-type-provider .hr_votes .caption {font-weight: normal; padding: 4px 0 6px 10px; border-radius: 0; margin-bottom: 5px;}
 .node-type-provider .hr_votes .hr_vote {clear: both; height: 20px; background: none; border-radius: 0; margin-top: 0; padding: 0px 0 5px; font-size: 14px;}
-.node-type-provider .hr_votes .hr_vote.even {background: #f1f1f1;}
+.node-type-provider .hr_votes .hr_vote.even {/*background: #f1f1f1;*/}
 .node-type-provider .hr_vote .fivestar {float: right; margin-right: 10px; padding: 4px 0 5px;}
 
 .node-type-provider .review-right {margin-left: 285px; font-size: 13px; color: #333333; line-height: inherit; font-weight: normal;}

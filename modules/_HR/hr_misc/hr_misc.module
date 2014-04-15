@@ -5789,10 +5789,6 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
   }
   
   
-  dpm('xxx2');
-  return;
-  
-  
   $out_sprite_path = 'f/p/';
   $out_sprite_ext = 'png';
   
@@ -5847,6 +5843,12 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
         $current_y += 10 + $input_image['info'][1];
       }
     }
+    
+    
+  
+  dpm('xxx3');
+  return;
+  
   
     // Save a new sprite file.
     imagepng($out_sprite['img'], $out_sprite['file']);

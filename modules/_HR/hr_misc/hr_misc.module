@@ -6011,6 +6011,12 @@ function hr_misc_getProvidersDataQuick($scope = 'all', $reset = FALSE, $clear_fr
 function hr_misc_getProviderQuickData($target, $data) {
   
   $out = '';
+  global $user;
+  
+  static $all_data_quick;
+  if (!$all_data_quick) {
+    $all_data_quick = hr_misc_getProvidersDataQuick();
+  }
   
   switch($target) {
     
@@ -6018,9 +6024,6 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       $details = NULL;
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      
-      global $user;
       if (empty($all_data_quick[$data['data']->nid]['details']) && $user->uid == 1) {
 
         $query = db_select('field_data_body', 'b')
@@ -6064,10 +6067,13 @@ function hr_misc_getProviderQuickData($target, $data) {
       return $details;
       
     
+      
+      
+      
+      
     
     case 'coupon_offers':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       if (!empty($all_data_quick[$data['data']->nid]['coupon']['link'])) {
         $link = $all_data_quick[$data['data']->nid]['coupon']['link'];
       }
@@ -6083,18 +6089,22 @@ function hr_misc_getProviderQuickData($target, $data) {
       return !empty($all_data_quick[$data['data']->nid]['coupon']['offers']) ? l($all_data_quick[$data['data']->nid]['coupon']['offers'], $link, array('absolute' => $absolute)) : '';
       
     
-    case 'best_deal':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
+      
+      
+      
+      
+    case 'best_deal':
       
       return !empty($all_data_quick[$data['data']->nid]['best_deal']) ? $all_data_quick[$data['data']->nid]['best_deal'] : '';
     
      
+      
+      
+      
+      
     case 'offers':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      
-      $out = '';
       if (!empty($all_data_quick[$data['data']->nid]['offers'])) {
 //        foreach ($all_data_quick[$data['data']->nid]['offers'] as $offer) {
 //          $out .= '<div class="offer">' . $offer . '</div>';
@@ -6106,23 +6116,21 @@ function hr_misc_getProviderQuickData($target, $data) {
      
       
       
+      
+      
+      
+      
     case 'logo_chart':
     case 'logo_article':
     case 'logo_chart_iframe':
     case 'logo_small_block':
     
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      $out = '';
-      
       //dpm(@$data['view_display']);
       //return $all_data_quick[$data['data']->nid]['name'];
-    
-      
-      
-      
+       
       // Render a logo from sprite.
       
-      
+      /*
       //'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_h_top_sh_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
       //'top_webhost_small_block' => array('image_style' => 'article_thumbnail_side_block', 'providers_views_displays' => array('block_topwhost_small'), 'listing_pos_fields' => array('field_p_listposition_sh')),
       //'top_sh_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_sh_p_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
@@ -6132,8 +6140,7 @@ function hr_misc_getProviderQuickData($target, $data) {
       //'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ca_p_table'), 'listing_pos_fields' => array('field_p_listposition_ca')),
       //'top_ds_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ds_p_table'), 'listing_pos_fields' => array('field_p_listposition_ds')),
       //'top_ch_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ch_p_table'), 'listing_pos_fields' => array('field_p_listposition_ch')),
-    
-              
+    */
               
       $display_to_sprite = array(
                                   'block_h_top_sh_table' => 'home_top_providers',
@@ -6208,8 +6215,6 @@ function hr_misc_getProviderQuickData($target, $data) {
       }
       
       
-      
-      
       if (!$out) {
       
           if (!empty($all_data_quick[$data['data']->nid]['i_logo_uri'])) {
@@ -6229,7 +6234,6 @@ function hr_misc_getProviderQuickData($target, $data) {
 
             $image = theme('hr_misc_image_style', array('style_name' => $image_style_name, 'path' => $all_data_quick[$data['data']->nid]['i_logo_uri'], 'alt' =>  $all_data_quick[$data['data']->nid]['i_logo_alt'], 'title' =>  $all_data_quick[$data['data']->nid]['i_logo_title'] ));
 
-    //        global $user;
     //        if ($data['data']->nid == 88 && $user->hostname == '109.171.109.18') { // 88 - hostgator
     //           dpm($all_data_quick[$data['data']->nid]);
     //        }
@@ -6282,19 +6286,16 @@ function hr_misc_getProviderQuickData($target, $data) {
       }
       */
       
-
-      
       return $out;
 
+
+      
       
     
       
       
     case 'name_n_logo_chart':
-    
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      $out = '';
-      
+          
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $link = $all_data_quick[$data['data']->nid]['i_web'];
       }
@@ -6319,20 +6320,22 @@ function hr_misc_getProviderQuickData($target, $data) {
       if (!empty($all_data_quick[$data['data']->nid]['name'])) {
         //$out .= '<div class="link"><a href="' . $link . '" target="_blank">Visit website</a></div>';
         
-        
         /////$out .= '<a href="/click?p=' . urlencode($all_data_quick[$data['data']->nid]['name']) . '" rel="nofollow" target="_blank">' . @$all_data_quick[$data['data']->nid]['name'] . '</a>';
         
         $out .= hr_misc_getTrackingUrl(@$all_data_quick[$data['data']->nid]['name'], NULL, $data['data']->nid);
       }
-      
-          
+                
       return $out;
     
    
      
+      
+      
+      
+      
+      
     case 'name_n_stars':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       $out = '<div class="name">' . $all_data_quick[$data['data']->nid]['name'] . '</div>';
       // Add stars
       if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
@@ -6342,9 +6345,11 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       
-    case 'site_link':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
+      
+      
+      
+    case 'site_link':
       
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
         $out = hr_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link');
@@ -6355,9 +6360,13 @@ function hr_misc_getProviderQuickData($target, $data) {
     
       
       
+      
+      
+      
+      
+      
     case 'review_and_site_links':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       
       /*
       if (!empty($all_data_quick[$data['data']->nid]['i_web'])) {
@@ -6367,8 +6376,6 @@ function hr_misc_getProviderQuickData($target, $data) {
         $link = url('node/' . $data['data']->nid);
       }
       */
-      
-      $out = '';
       
       if (!empty($all_data_quick[$data['data']->nid][$data['service_type']]['s-url'])) {
         $out .= hr_misc_getTrackingUrl('Visit site', NULL, $data['data']->nid, NULL, 'site-link', @$data['service_type']);
@@ -6384,26 +6391,23 @@ function hr_misc_getProviderQuickData($target, $data) {
     
       
       
+      
+      
+      
     case 'i_mbg':
-      
-      
-      //$out = NULL;
-      
-//      global $user;
-//      if (!$user->uid) 
-        {
-        $all_data_quick = hr_misc_getProvidersDataQuick();
-        $out = @$all_data_quick[$data['data']->nid][$target];
-      }
+
+      $out = @$all_data_quick[$data['data']->nid][$target];
       
       return $out;
       
       
       
+      
+      
+      
+      
     case 'sp': // space
     case 'bw': // bandwidth
-      $out = '';
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']][$target] : '';
       
@@ -6412,15 +6416,13 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       
-    case 'features':
       
-      $out = '';
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
+      
+    case 'features':
       
       $plan_title = isset($all_data_quick[$data['data']->nid][$data['service_type']]['plan']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['plan'] : '';
       $features = isset($all_data_quick[$data['data']->nid][$data['service_type']]['feat']) ?  $all_data_quick[$data['data']->nid][$data['service_type']]['feat'] : '';
-      //dpm($features);
+
       if ($plan_title) {
         $out .= '<div class="plan">' . $plan_title . '</div>';
       }
@@ -6434,9 +6436,12 @@ function hr_misc_getProviderQuickData($target, $data) {
       
     
     
+      
+      
+      
+      
     case 'grade':
-      //$all_data_quick = hr_misc_getProvidersDataQuick();
-      $out = '';
+      
       if (isset($data['data']->votingapi_cache_node_percent_overall_average_value) && $data['data']->votingapi_cache_node_percent_overall_average_value) {
         $out = hr_misc_getProviderGradeFromRating($data['data']->votingapi_cache_node_percent_overall_average_value);
       }
@@ -6446,11 +6451,10 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       
-    case 'erating':
-    
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      $out = '';
       
+      
+    case 'erating':
+          
       if (!empty($all_data_quick[$data['data']->nid]['erating'])) {
         $out = theme('hr_misc_fivestar_static', array('rating' => $all_data_quick[$data['data']->nid]['erating'], 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
       }
@@ -6463,16 +6467,14 @@ function hr_misc_getProviderQuickData($target, $data) {
       
     
     case 'rating':
-    
-//      $all_data_quick = hr_misc_getProvidersDataQuick();
-//      $out = '';
-//      if (isset($data['data']->votingapi_cache_node_percent_overall_average_value) && $data['data']->votingapi_cache_node_percent_overall_average_value) {
-//                
-//        $out = theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
-//        
-//        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>' . $data['data']->votingapi_cache_node_percent_overall_count_value . ' ' . $all_data_quick[$data['data']->nid]['name'] . '</div><div>' . t('Reviews') . '</div></a></div>' . $out . ' <div class="count">(' . number_format( (0.05 * $data['data']->votingapi_cache_node_percent_overall_average_value), 1 ) . ')</div>';
-//      }
-      
+      /*
+      if (isset($data['data']->votingapi_cache_node_percent_overall_average_value) && $data['data']->votingapi_cache_node_percent_overall_average_value) {
+                
+        $out = theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
+        
+        $out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>' . $data['data']->votingapi_cache_node_percent_overall_count_value . ' ' . $all_data_quick[$data['data']->nid]['name'] . '</div><div>' . t('Reviews') . '</div></a></div>' . $out . ' <div class="count">(' . number_format( (0.05 * $data['data']->votingapi_cache_node_percent_overall_average_value), 1 ) . ')</div>';
+      }
+      */
       if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
                 
         $stars = theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css')));
@@ -6481,18 +6483,20 @@ function hr_misc_getProviderQuickData($target, $data) {
         
         
         $rating_count = number_format( (0.05 * $data['data']->votingapi_cache_node_percent_overall_average_value), 1 );
-//        global $user;
-//        if (!$user->uid) {
-//            $out = '<div class="details">
-//                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
-//                      </a>
-//                    </div>
-//                    <div class="stars_n_count">' 
-//                        . $stars 
-//                        . ' <div class="count">(' . $rating_count . ')</div>
-//                    </div>';
-//        }
-//        else
+        /*
+        global $user;
+        if (!$user->uid) {
+            $out = '<div class="details">
+                      <a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>Read Reviews</div>
+                      </a>
+                    </div>
+                    <div class="stars_n_count">' 
+                        . $stars 
+                        . ' <div class="count">(' . $rating_count . ')</div>
+                    </div>';
+        }
+        else
+        */
           {
             $out = '
                     <div class="stars_n_count">' 
@@ -6516,19 +6520,19 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       return $out;
       
+      
+      
+      
     
       
       
       
     case 'rating_visit_review': // For Top 5 hosting sites block on a provider page/
-      
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      
+            
       if (!empty($data['data']->votingapi_cache_node_percent_overall_average_value)) {
                 
         //$out = '<div class="rating"><span>Rating: ' . number_format($data['data']->votingapi_cache_node_percent_overall_average_value * 0.05, 1) . '/5</span> ' . theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
         $out = '<div class="rating"><span>Rating:</span> ' . theme('hr_misc_fivestar_static', array('rating' => $data['data']->votingapi_cache_node_percent_overall_average_value, 'stars' => 5, 'tag' => 'overall', 'widget' => array('name' => 'stars', 'css' => 'stars.css'))) . '</div>';
-        
         
         //$out = '<div class="details"><a ' . ( (isset($data['target']) && $data['target'] == 'iframe') ? 'target="_blank" ' : '') . 'href="' . url('node/' . $data['data']->nid) . '"><div>' . format_plural($data['data']->votingapi_cache_node_percent_overall_count_value, '1 Review', '@count Reviews') . '</div></a></div>' . $out ;
       }
@@ -6545,8 +6549,8 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       
-   case 'visit_n_reviews': // For Top 5 hosting sites block on a provider page/
       
+   case 'visit_n_reviews': // For Top 5 hosting sites block on a provider page/
       
       $out .= '<div class="p-links">' . hr_misc_getTrackingUrl('', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']) . '<a class="review-link" href="' . url('node/' . $data['data']->nid) . '">READ REVIEWS</a></div>';
       
@@ -6556,49 +6560,51 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       
-    case 'plan':
       
-      //dpm($data); 
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
+      
+    case 'plan':
       
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['plan']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['plan'] : '';
       
       
       
+      
+      
+      
+      
     // Video Review from YouTube
     case 'vr-y':
-      
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      
+            
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['vr-y']) 
                 ? '<a class="yt-direct" href="http://www.youtube.com/embed/' . $all_data_quick[$data['data']->nid][$data['service_type']]['vr-y'] . '?rel=0&amp;wmode=transparent" title="' . $all_data_quick[$data['data']->nid]['name'] . ' Video Review">Watch</a>'
                 : '';
       
     
-    case 'trend':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
-      //dpm($all_data_quick);
+      
+      
+      
+      
+    case 'trend':
       
       return isset($all_data_quick[$data['data']->nid][$data['service_type']]['trend']) ? $all_data_quick[$data['data']->nid][$data['service_type']]['trend'] : 0;
     
+      
+      
+      
+      
       
       
     case 'monthly':
     case 'back':
     case 'setup':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       $out = isset($all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target]) ? $all_data_quick[$data['data']->nid][$data['service_type']]['fees'][$target] : '';
-      
-      
       
       if ($target == 'monthly' && $out) {
         
         $out = ($data['service_type'] == 'ca' ? 'CAD$' : '$') . $out;
         if (!empty($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed']) && strpos($all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'], '-') !== 0) {
-//          dpm($all_data_quick[$data['data']->nid][$data['service_type']]['fees']);
           $out = '<div class="price month non-crossed">'. $out . '</div>';
           // Crossed out price
           ///$out = '<div class="price month crossed">' . ($data['service_type'] == 'ca' ? 'CAD$' : '$') . $all_data_quick[$data['data']->nid][$data['service_type']]['fees']['monthly-crossed'] . '<div class="cross"></div></div>' . $out;
@@ -6609,27 +6615,31 @@ function hr_misc_getProviderQuickData($target, $data) {
       
     
       
+      
+      
+      
+      
     // Deprecated.
     case 'i_web':
-      
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       
       $url = isset($all_data_quick[$data['data']->nid][$target]) ? $all_data_quick[$data['data']->nid][$target] : '';
 
       return $url;
       
       
+      
+      
+      
+      
+      
     case 'i_web2':
       
-      $all_data_quick = hr_misc_getProvidersDataQuick();
       /*
       //$url = isset($all_data_quick[$data['data']->nid]['i_web']) ? $all_data_quick[$data['data']->nid]['i_web'] : '';
       //$out = l('Visit Site', $url, array('attributes' => array('target' => '_blank', 'class' => 'site')));
       
       //hr_misc_getTrackingUrl($title_or_wrapped_object, $subpath = NULL, $nid = NULL, $target_name = NULL, $a_class = NULL, $service_type = NULL) {
       
-      
-//      global $user;
 //      
 //      if (!$user->uid) {
 //        //$out = hr_misc_getTrackingUrl('Visit Site', NULL, $data['data']->nid, NULL, 'reviews visit-site-btn', @$data['service_type']);

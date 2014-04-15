@@ -5589,8 +5589,11 @@ function hr_misc_imageOptimizeOnServer($file) {
 /**
  * Return sprite image with link for a provider from certain sprite by nid.
  */
-function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick = NULL) {
+function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick = NULL, $out_sprite_ext = 'png') {
 
+  //$out_sprite_ext = 'png';
+  $out_sprite_ext = 'jpg';
+  
   $hr_providers_sprites = variable_get('hr_providers_sprites');
   if (isset($hr_providers_sprites[$sprite_name]['data'][$nid])) {
     $out_sprite_path = 'f/p/';
@@ -5600,13 +5603,13 @@ function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick =
     //dpm($hr_providers_sprites[$sprite_name]['data'][$nid]);
     
     if ($hr_providers_sprites[$sprite_name]['data'][$nid]['h'] < 45) {
-      //return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
-      return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+      //return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+      return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
     }
     else 
       {
-      //return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
-      return '<div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.png?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+      //return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+      return '<div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
     }
     
   }

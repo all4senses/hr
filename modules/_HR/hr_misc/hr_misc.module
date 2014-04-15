@@ -5547,12 +5547,20 @@ function hr_misc_imageOptimizeOnServer($file) {
   // Code example from the image_optimize.module
   $dst = drupal_realpath($file['uri']);
   dpm($dst);
-  return;
+  //return;
   
   //hr_misc_sendMessage('new_file_was_uploaded', array('report' => 'dst: ' . $dst));
   
   switch ($file['filemime']) {
     case 'image/png':
+      $cmd = variable_get('imageapi_optimize_optipng', '');
+      dpm('imageapi_optimize_optipng = ' . $cmd);
+      $cmd = variable_get('imageapi_optimize_pngcrush', '');
+      dpm('imageapi_optimize_pngcrush = ' . $cmd);
+      $cmd = variable_get('imageapi_optimize_advpng', '');
+      dpm('imageapi_optimize_advpng = ' . $cmd);
+      break;
+      
       if ($cmd = variable_get('imageapi_optimize_optipng', '')) { // /usr/bin/optipng, should be installed in system
         exec("$cmd -o5 -quiet ". escapeshellarg($dst));
       }

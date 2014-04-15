@@ -5553,13 +5553,13 @@ function hr_misc_imageOptimizeOnServer($file) {
   
   switch ($file['filemime']) {
     case 'image/png':
-      $cmd = variable_get('imageapi_optimize_optipng', '');
-      dpm('imageapi_optimize_optipng = ' . $cmd);
-      $cmd = variable_get('imageapi_optimize_pngcrush', '');
-      dpm('imageapi_optimize_pngcrush = ' . $cmd);
-      $cmd = variable_get('imageapi_optimize_advpng', '');
-      dpm('imageapi_optimize_advpng = ' . $cmd);
-      break;
+//      $cmd = variable_get('imageapi_optimize_optipng', '');
+//      dpm('imageapi_optimize_optipng = ' . $cmd);
+//      $cmd = variable_get('imageapi_optimize_pngcrush', '');
+//      dpm('imageapi_optimize_pngcrush = ' . $cmd);
+//      $cmd = variable_get('imageapi_optimize_advpng', '');
+//      dpm('imageapi_optimize_advpng = ' . $cmd);
+//      break;
       
       if ($cmd = variable_get('imageapi_optimize_optipng', '')) { // /usr/bin/optipng, should be installed in system
         exec("$cmd -o5 -quiet ". escapeshellarg($dst));

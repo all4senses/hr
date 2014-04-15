@@ -6198,7 +6198,7 @@ function hr_misc_getProviderQuickData($target, $data) {
       
       
       // Get a logo from a sprite.
-      /*
+      
       if (isset($data['view_display']) && isset($display_to_sprite[$data['view_display']])) {
       
         if ($p_image = hr_misc_getProviderLogoFromSprite($data['data']->nid, $display_to_sprite[$data['view_display']], $all_data_quick)) {
@@ -6206,7 +6206,7 @@ function hr_misc_getProviderQuickData($target, $data) {
         }
       
       }
-      */
+      
       
       
       

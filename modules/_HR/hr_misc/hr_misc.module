@@ -5589,10 +5589,12 @@ function hr_misc_imageOptimizeOnServer($file) {
 /**
  * Return sprite image with link for a provider from certain sprite by nid.
  */
-function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick = NULL, $out_sprite_ext = 'png') {
+function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick = NULL, $out_sprite_ext = NULL) {
 
-  //$out_sprite_ext = 'png';
-  $out_sprite_ext = 'jpg';
+  if (!$out_sprite_ext) {
+    //$out_sprite_ext = 'png';
+    $out_sprite_ext = 'jpg';
+  }
   
   $hr_providers_sprites = variable_get('hr_providers_sprites');
   if (isset($hr_providers_sprites[$sprite_name]['data'][$nid])) {
@@ -5604,12 +5606,24 @@ function hr_misc_getProviderLogoFromSprite($nid, $sprite_name, $all_data_quick =
     
     if ($hr_providers_sprites[$sprite_name]['data'][$nid]['h'] < 45) {
       //return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
-      return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div><div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div><div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px"></div>';
+      return '<div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px">
+              </div>
+              <div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" 
+                //. $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] 
+                . $out_sprite_path . $sprite_name . '_' . $hr_providers_sprites[$sprite_name]['time'] . '.' . $out_sprite_ext 
+                . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;">
+              </div>
+              <div style="width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . (45 - $hr_providers_sprites[$sprite_name]['data'][$nid]['h'])/2 . 'px">
+              </div>';
     }
     else 
       {
       //return '<div title="' . $all_data_quick[$nid]['name'] . ' site" style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
-      return '<div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" . $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;"></div>';
+      return '<div style="margin: auto; width: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['w'] . 'px; height: ' . $hr_providers_sprites[$sprite_name]['data'][$nid]['h'] . 'px; background: url('. "'/" 
+                //. $out_sprite_path . $sprite_name . '.' . $out_sprite_ext . '?' . $hr_providers_sprites[$sprite_name]['time'] 
+                . $out_sprite_path . $sprite_name . '_' . $hr_providers_sprites[$sprite_name]['time'] . '.' . $out_sprite_ext
+                . "')" . ' no-repeat 0 -' . $hr_providers_sprites[$sprite_name]['data'][$nid]['y'] . 'px transparent;">
+              </div>';
     }
     
   }
@@ -5885,8 +5899,10 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
         $filemime = 'image/jpeg';
         break;
     }
+    
     // Optimize the image.
     hr_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => $filemime));
+    hr_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri_timed'], 'filemime' => $filemime));
 
     // Show image.
     //Header("Content-type: image/png");
@@ -6154,29 +6170,29 @@ function hr_misc_getProviderQuickData($target, $data) {
        
       // Render a logo from sprite.
       
-      /*
-      //'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_h_top_sh_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
-      //'top_webhost_small_block' => array('image_style' => 'article_thumbnail_side_block', 'providers_views_displays' => array('block_topwhost_small'), 'listing_pos_fields' => array('field_p_listposition_sh')),
-      //'top_sh_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_sh_p_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
-      //'top_wp_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wp_p_table'), 'listing_pos_fields' => array('field_p_listposition_wp')),
-      //'top_vps_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_vps_p_table'), 'listing_pos_fields' => array('field_p_listposition_vps')), 
-      //'top_wb_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wb_p_table'), 'listing_pos_fields' => array('field_p_listposition_wb')),
-      //'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ca_p_table'), 'listing_pos_fields' => array('field_p_listposition_ca')),
-      //'top_ds_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ds_p_table'), 'listing_pos_fields' => array('field_p_listposition_ds')),
-      //'top_ch_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ch_p_table'), 'listing_pos_fields' => array('field_p_listposition_ch')),
+    /*
+      'home_top_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_h_top_sh_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+      'top_webhost_small_block' => array('image_style' => 'article_thumbnail_side_block', 'providers_views_displays' => array('block_topwhost_small'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+      'top_sh_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_sh_p_table'), 'listing_pos_fields' => array('field_p_listposition_sh')),
+      'top_wp_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wp_p_table'), 'listing_pos_fields' => array('field_p_listposition_wp')),
+      'top_vps_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_vps_p_table'), 'listing_pos_fields' => array('field_p_listposition_vps')), 
+      'top_wb_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wb_p_table'), 'listing_pos_fields' => array('field_p_listposition_wb')),
+      'top_ca_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ca_p_table'), 'listing_pos_fields' => array('field_p_listposition_ca')),
+      'top_ds_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ds_p_table'), 'listing_pos_fields' => array('field_p_listposition_ds')),
+      'top_ch_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_ch_p_table'), 'listing_pos_fields' => array('field_p_listposition_ch')),
     */
               
       $display_to_sprite = array(
-                                  'block_h_top_sh_table' => 'home_top_providers',
-                                  'block_topwhost_small' => 'top_webhost_small_block',
-                                  'block_top_sh_p_table' => 'top_sh_providers',
-                                  'block_top_wp_p_table' => 'top_wp_providers',
-                                  'block_top_vps_p_table' => 'top_vps_providers',
-          
-                                  'block_top_wb_p_table' => 'top_wb_providers',
-                                  'block_top_ca_p_table' => 'top_ca_providers',
-                                  'block_top_ds_p_table' => 'top_ds_providers',
-                                  'block_top_ch_p_table' => 'top_ch_providers',
+        'block_h_top_sh_table' => 'home_top_providers',
+        'block_topwhost_small' => 'top_webhost_small_block',
+        'block_top_sh_p_table' => 'top_sh_providers',
+        'block_top_wp_p_table' => 'top_wp_providers',
+        'block_top_vps_p_table' => 'top_vps_providers',
+
+        'block_top_wb_p_table' => 'top_wb_providers',
+        'block_top_ca_p_table' => 'top_ca_providers',
+        'block_top_ds_p_table' => 'top_ds_providers',
+        'block_top_ch_p_table' => 'top_ch_providers',
       );
       
       /*

@@ -603,6 +603,9 @@ function hr_process_page(&$variables) {
   // Add a BounceX popup window
   //drupal_add_js( $module_path_misc . '/js/hr_addBounceX.js'); 
   
+  // Add a Google Trusted Stores code
+  drupal_add_js( $module_path_misc . '/js/hr_addGoogleTrustedStores.js'); 
+  
   
   /* Add Google's fonts */
   //gv_misc_addMetatag('stylesheet', NULL, 'http://fonts.googleapis.com/css?family=Open+Sans', 'NA', 'text/css');

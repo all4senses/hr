@@ -580,15 +580,18 @@ function hr_misc_flush_caches() {
   
   // Remove all minified files from jsmin-hr folder.
   // Uncomment in case of changing any js
-  
-//  $dir = 'f/jsmin-hr';
-//  $objects = scandir($dir);
-//  foreach ($objects as $object) {
-//    if ($object != "." && $object != "..") {
-//      unlink($dir . "/" . $object);
-//    }
-//  }
-  variable_del('hr_minified_js');
+  /*
+  $dir = 'f/jsmin-hr';
+  $objects = scandir($dir);
+  foreach ($objects as $object) {
+    if ($object != "." && $object != "..") {
+      unlink($dir . "/" . $object);
+    }
+  }
+  */
+  // No need to really delete files, as they will be rewritten anyways
+  // So we just have to clear the variable.
+  //variable_del('hr_minified_js');
   
   
   // Recalculate the reviews amount.

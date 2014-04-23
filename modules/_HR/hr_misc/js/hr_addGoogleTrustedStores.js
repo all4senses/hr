@@ -3,7 +3,7 @@
   Drupal.behaviors.hr_addGoogleTrustedStores = {
     attach: function (context, settings) {
        
-      console.log('hr_addGoogleTrustedStores');
+      //console.log('hr_addGoogleTrustedStores');
        
        
       // <!-- BEGIN: Google Trusted Stores -->

@@ -5941,10 +5941,10 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
   views_invalidate_cache();
   cache_clear_all('*', 'cache_views_data', TRUE);
   
-  drupal_set_message('Cache is flushed after the prividers logos sprites regenerating.', 'warning');
+  drupal_set_message("Cache is flushed after $sprites_generated prividers logos sprites regenerating.", 'warning');
   
   if (!$listing_pos_fields) {
-    drupal_set_message('All providers logos sprites have been regenerated!');
+    drupal_set_message("All $sprites_generated providers logos sprites have been regenerated!");
     drupal_goto();
   }
   

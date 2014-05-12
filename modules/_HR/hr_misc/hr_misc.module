@@ -128,6 +128,14 @@ function hr_misc_menu() {
   );
     
   */
+  $items['admin/content/rebuild-providers-sprites'] = array(
+    'title' => 'Regenerate providers sprites',
+    'page callback' => 'hr_misc_rebuildProvidersLogosSprites',
+    //'access arguments' => array('administer content'),
+    'access callback' => 'hr_misc_userIsAdmin',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   $items['admin/content/reviews-to-approve'] = array(
     'title' => 'Reviews to Approve',
     'page callback' => 'hr_misc_gotoReviewsToApprove',

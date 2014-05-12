@@ -5836,6 +5836,8 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
   
   $time =  time();
   
+  $sprites_generated = 0;
+  
   foreach ($input_providers_data as $providers_logos_sprite_name => $providers_logos_sprite) {
     
     $out_sprite['file'] = $out_sprite_path . $providers_logos_sprite_name . '.' . $out_sprite_ext;
@@ -5901,26 +5903,28 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
       case 'png':
         //imagepng($out_sprite['img'], $out_sprite['file']);
         imagepng($out_sprite['img'], $out_sprite['file_timed']);
-        imagepng($out_sprite['img'], $out_sprite['file']);
+        //imagepng($out_sprite['img'], $out_sprite['file']);
         $filemime = 'image/png';
         break;
       
       case 'jpg':
         //imagejpeg($out_sprite['img'], $out_sprite['file']);
         imagejpeg($out_sprite['img'], $out_sprite['file_timed']);
-        imagejpeg($out_sprite['img'], $out_sprite['file']);
+        //imagejpeg($out_sprite['img'], $out_sprite['file']);
         $filemime = 'image/jpeg';
         break;
     }
     
     // Optimize the image.
-    hr_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => $filemime));
+    //hr_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri'], 'filemime' => $filemime));
     hr_misc_imageOptimizeOnServer(array('uri' => $out_sprite['uri_timed'], 'filemime' => $filemime));
 
     // Show image.
     //Header("Content-type: image/png");
     //imagepng($out_sprite['img'], NULL, 0);
-  }
+    
+    ++$sprites_generated;
+  } // End of foreach ($input_providers_data as $providers_logos_sprite_name => $providers_logos_sprite) {
   
    //dpm('xxx4');
     
@@ -5928,7 +5932,7 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
   //dpm($input_providers_data);
   
   variable_set('hr_providers_sprites', $hr_providers_sprites);
-  
+  watchdog("Sprites Regenerating", "$sprites_generated providers sprites have been Regenerated", NULL, WATCHDOG_WARNING);
   
   //drupal_flush_all_caches();
   // Not so hard clearing.

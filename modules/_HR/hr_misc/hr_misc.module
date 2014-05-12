@@ -5943,7 +5943,7 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
   
   if (!$listing_pos_fields) {
     drupal_set_message('All providers logos sprites have been regenerated!');
-    //drupal_goto();
+    drupal_goto();
   }
   
 }

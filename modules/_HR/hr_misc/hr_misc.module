@@ -1851,7 +1851,7 @@ function hr_misc_getArticleTeaserData($target, $body_full_markup, $nid, $charact
   }
   elseif (preg_match('/<img[^>]+>/i', $body_full_markup, $matches)) {
     $found_image = TRUE;
-    preg_mathr_all('/(alt|title|src)="([^"]*)"/i',$matches[0], $matches);
+    preg_match_all('/(alt|title|src)="([^"]*)"/i',$matches[0], $matches);
     foreach ($matches[1] as $index => $key) {
       $main_image[$key] = $matches[2][$index];
     }

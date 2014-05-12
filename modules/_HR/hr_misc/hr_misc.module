@@ -2203,6 +2203,7 @@ function hr_misc_addSocialShareData_toPage($node) {
             'href' => 'http://hostingreview.org/rss.xml',
         ),
       ),
+        /*
       'blog_rss' => array(
         '#tag' => 'link', 
         '#attributes' => array( 
@@ -2212,6 +2213,7 @@ function hr_misc_addSocialShareData_toPage($node) {
             'href' => 'http://hostingreview.org/blog/rss.xml',
         ),
       ),
+        */
         
     );
     

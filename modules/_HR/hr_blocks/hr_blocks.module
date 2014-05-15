@@ -710,7 +710,7 @@ function hr_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
     
     case 'google_trusted':
-      return '<img href="/sites/all/themes/hr_aqua/css/images/google-trusted.png" />';
+      return '<img src="/sites/all/themes/hr_aqua/css/images/google-trusted.png" />';
     
     case 'disclosure':
       $data = unserialize(variable_get('hr_disclosure_block_data', NULL));

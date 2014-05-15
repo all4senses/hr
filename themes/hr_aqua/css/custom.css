@@ -733,7 +733,7 @@ body.sidebar-second #sidebar-second{float: right; margin-right: 18px; padding: 1
 
 .sidebar .top-line{background: url("images/sprite-0.png") no-repeat scroll 0 -2px transparent; height: 5px; margin: 12px 0 10px; width: 100%;}
 
-.sidebar .block {overflow: hidden; margin: 12px 0; position: relative; z-index: 1; background: white; border-radius: 5px; padding: 10px 10px 0;}
+.sidebar .block {overflow: hidden; margin: 17px 0; position: relative; z-index: 1; background: white; border-radius: 5px; padding: 10px 10px 0;}
 
 .sidebar .block-title {padding: 2px 0 7px; color: gray; margin: 0 0 10px; font-size: 18px; font-family: 'Raleway'; font-weight: 300; text-align: center; border-bottom: 1px dotted lightgray;} 
 

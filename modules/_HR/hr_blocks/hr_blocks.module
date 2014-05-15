@@ -119,6 +119,11 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_CACHE_GLOBAL,
   );
   
+  $blocks['google_trusted'] = array(
+    'info' => 'Google Trusted logo',
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  
   $blocks['sidebar_share_block'] = array(
     'info' => 'Share this Post Static',
     'cache' => DRUPAL_NO_CACHE,
@@ -247,6 +252,11 @@ function hr_blocks_block_view($delta = '') {
     case 'disclosure':
       $block['subject'] = '';
       $block['content'] = hr_blocks_getAdBlock('disclosure');
+      break;
+    
+    case 'google_trusted':
+      $block['subject'] = 'We Are';
+      $block['content'] = hr_blocks_getAdBlock('google_trusted');
       break;
     
     case 'sidebar_share_block':
@@ -698,6 +708,9 @@ function hr_blocks_get_blogArchive() {
  */
 function hr_blocks_getAdBlock($ad_name) {
   switch ($ad_name) {
+    
+    case 'google_trusted':
+      return '<img href="/sites/all/themes/hr_aqua/css/images/google-trusted.png" />';
     
     case 'disclosure':
       $data = unserialize(variable_get('hr_disclosure_block_data', NULL));

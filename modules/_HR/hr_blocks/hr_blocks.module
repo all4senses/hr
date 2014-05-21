@@ -585,8 +585,9 @@ function hr_blocks_getReviewsRotated() {
 
   $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
   
-  global $user;
-  if ($user->uid != 1) {
+//  global $user;
+//  if ($user->uid != 1) 
+    {
     drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
   }
   

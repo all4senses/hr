@@ -50,6 +50,10 @@
           rtabs.tabs('select', active);
       });
        
+       
+       
+       $("#r-rotator .ui-tabs-panel").removeClass('hidden'); 
+       
     }
   };
 

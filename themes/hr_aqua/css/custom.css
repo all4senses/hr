@@ -2256,3 +2256,5 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 #block-hr-blocks-editor-note .body {font-size: 12px; font-family: Raleway; font-weight: 300;}
 
 #block-hr-blocks-g-remarket-code {height: 0; overflow: hidden;}
+
+.hidden {display: none;}

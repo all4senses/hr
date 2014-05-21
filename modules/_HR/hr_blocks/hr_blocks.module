@@ -618,7 +618,7 @@ function hr_blocks_getReviewsRotated() {
       $node_views = node_view_multiple($nodes, 'teaser_on_serviceTypePage');
       //$ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '">' . $i . '</a></li>';
       $ui_tabs_nav .= '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $i . '"><a href="#fragment-' . $i . '"></a></li>';
-      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel"><div class="info">' . drupal_render($node_views) . '</div></div>';
+      $fragments .= '<div id="fragment-' . $i . '" class="ui-tabs-panel' . ($i ? ' hidden' : '') . '"><div class="info">' . drupal_render($node_views) . '</div></div>';
   }
   //$key += 1; 
   //$blog_tab = '<li class="ui-tabs-nav-item ui-tabs-selected" id="nav-fragment-' . $key . '"><a href="#fragment-' . $key . '">Blog</a></li>';

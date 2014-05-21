@@ -19,14 +19,25 @@
 function hr_misc_menu() {
   
   hr_misc_setPagesToShow410($items);
- 
   //dpm($items);
+  
+ 
+  $items['set-last-updated-date'] = array(
+    'title' => 'Set Last Updated Date',
+    'page callback' => 'hr_misc_setLastUpdatedDate',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  
   $items['upd-titles-date'] = array(
     'title' => 'Update prefaces dates in titles',
     'page callback' => 'hr_misc_updatePrefacesTitlesDate',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
+  
+  
   
   
   $items['cc'] = array(
@@ -195,6 +206,42 @@ function hr_misc_menu_alter(&$items) {
   unset($items['taxonomy/term/%taxonomy_term/feed']); // If you want to hide the feed as well.
 }
 
+
+/**
+ * Set last Updated date at  /set-last-updated-date
+ */
+function hr_misc_setLastUpdatedDate() {
+  
+  //$current_time = date('F d, Y \a\t g:ia', time());
+  $current_time = date('F j, Y', time());
+  
+  // Save a date ib the variable
+  variable_set('hr_last_updated_date', $current_time);
+  
+  
+  
+  
+  //drupal_flush_all_caches();
+  
+  // Not so hard reset...
+
+  // The code from function views_invalidate_cache()
+  // Clear the views cache.
+  cache_clear_all('*', 'cache_views', TRUE);
+  // Clear the page and block cache.
+  cache_clear_all();
+  // Allow modules to respond to the Views cache being cleared.
+  module_invoke_all('views_invalidate_cache');
+  
+  cache_clear_all('*', 'cache_views_data', TRUE);
+  
+  // Function from the module boost.
+  boost_flush_caches();
+  
+  
+  drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
+  drupal_goto('');
+}
 
 
 /**

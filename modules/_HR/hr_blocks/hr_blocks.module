@@ -758,7 +758,17 @@ function hr_blocks_getAdBlock($ad_name) {
         $data['main_body'] = $data['body'];
       }
       //return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div><img alt="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" title="UNBIASED CLOUD HOSTING REVIEWS & COMPARISONS" src="/sites/all/themes/hr/css/images/home-banner.jpg" /><div class="right"><h2>' . $data['right_title'] . '</h2><div class="banner_body">' . $data['right_body']['value'] . '</div></div>';
-      return '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div>';
+      
+      
+      $date = variable_get('hr_last_updated_date');
+      $out = '<h1>' . $data['main_title'] . '</h1><div class="banner_body">' . $data['main_body']['value'] . '</div>';
+      
+      global $user;
+      if ($user->uid == 1) {
+        $out = $out . '<div id="last-updated">Last updated: ' . $date . '</div>';
+      }
+      
+      return $out;
       
     
     case 'editor_note':

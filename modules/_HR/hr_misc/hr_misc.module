@@ -239,6 +239,7 @@ function hr_misc_setLastUpdatedDate() {
   boost_flush_caches();
   
   
+  drupal_set_message('The last updated date is set to ' . $current_time);
   drupal_set_message('Header date is updadet. Cache is flushed.', 'warning');
   drupal_goto('');
 }

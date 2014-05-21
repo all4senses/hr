@@ -584,8 +584,12 @@ function hr_blocks_getReviewsRotated() {
   drupal_add_library('system', 'ui.tabs');
 
   $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
-  drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
-
+  
+  global $user;
+  if ($user->uid != 1) {
+    drupal_add_js($path_to_custom_js . 'hr_reviewsRotator.js');
+  }
+  
   $path_to_current_theme = drupal_get_path('theme', $GLOBALS['theme']) . '/css/';
   drupal_add_css($path_to_current_theme . 'hr_bannerRotator.css');
 

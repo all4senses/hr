@@ -647,7 +647,7 @@ function hr_misc_flush_caches() {
   */
   // No need to really delete files, as they will be rewritten anyways
   // So we just have to clear the variable.
-  //variable_del('hr_minified_js');
+  variable_del('hr_minified_js');
   
   
   // Recalculate the reviews amount.

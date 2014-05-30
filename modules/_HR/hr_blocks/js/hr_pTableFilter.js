@@ -33,7 +33,10 @@
                     
                     price = $(this).find("td.views-field-php-2").html();
                     if (price) {
-                      price = price.replace('$','')
+                      price = price.replace('$','');
+                      price = price.replace('<div class="price month non-crossed">','');
+                      price = price.replace('</div>','');
+                      
                       console.log('price = ' + price);
 
                       if (price < 3) {

@@ -23,7 +23,7 @@
               case "All": 
                 console.log("Show All"); 
                 
-                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_top_wp_p_table tbody tr, view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
 
                     console.log('index #' + index);
                     //console.log(this);
@@ -36,7 +36,7 @@
               case "Top 5": 
                 console.log("a1"); 
                 
-                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_top_wp_p_table tbody tr, view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
                   
                   console.log('index #' + index);
                   if (index > 4) 
@@ -61,7 +61,7 @@
               case "Best Under $3": 
                 console.log("a4"); 
                 
-                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_top_wp_p_table tbody tr, view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
                   //if (index) 
                   {
                     console.log('index #' + index);
@@ -94,7 +94,7 @@
               case "Best Under $4": 
                 console.log("a5"); 
                 
-                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_top_wp_p_table tbody tr, view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
                   if (index) {
                     console.log('index #' + index);
                     //console.log(this);

@@ -4,23 +4,18 @@
     attach: function (context, settings) {
         
         var checked = false;
-        console.log('xxx');
+        console.log('Initiate filter...');
         
         
         $('#p_filter').change(function() {
-          console.log('zzz');
+          console.log('On change...');
           console.log($(this).val());
-          alert( this.value ); // or $(this).val()
-        });
-       
-       
-        $('#p_filter').on('change', function() {
-          console.log('yyy');
-          //console.log($(this).val());
+          // Works
           //alert( this.value ); // or $(this).val()
         });
+       
          
-        $( 'tr' ).each(function( index ) {
+        $( "tr" ).each(function( index ) {
           console.log(index);
         });
           

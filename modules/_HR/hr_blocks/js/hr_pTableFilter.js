@@ -6,15 +6,23 @@
         var checked = false;
         console.log('xxx');
         
-        $('#p_filter').onchange(function() {
-          console.log('yyy');
-          console.log($(this).val());
+        
+        $('#p_filter').onclick(function() {
+          console.log('zzz');
+          //console.log($(this).val());
           //alert( this.value ); // or $(this).val()
         });
-        
-          $( "tr" ).each(function( index ) {
-            console.log(index);
-          });
+       
+       
+        $('#p_filter').on('change', function() {
+          console.log('yyy');
+          //console.log($(this).val());
+          //alert( this.value ); // or $(this).val()
+        });
+         
+        $( 'tr' ).each(function( index ) {
+          console.log(index);
+        });
           
         
     }

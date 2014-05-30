@@ -26,9 +26,10 @@
                 //console.log("default"); 
                 
                 $( ".view-id-providers tbody tr" ).each(function( index ) {
-                  if (index == 3) {
-                    console.log(index);
-                    console.log(this);
+                  //if (index == 3) 
+                  {
+                    console.log('index #' . index);
+                    //console.log(this);
                     
                     price = $(this).find("td.views-field-php-2").html().replace('$','');
                     

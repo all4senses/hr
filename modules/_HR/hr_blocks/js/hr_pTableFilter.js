@@ -27,12 +27,14 @@
                 console.log("a4"); 
                 
                 $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
-                  if (index) {
+                  //if (index) 
+                  {
                     console.log('index #' + index);
                     //console.log(this);
                     
                     price = $(this).find("td.views-field-php-2").html();
                     if (price) {
+                      
                       price = price.replace('$','');
                       price = price.replace('<div class="price month non-crossed">','');
                       price = price.replace('</div>','');

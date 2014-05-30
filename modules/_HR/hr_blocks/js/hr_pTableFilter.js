@@ -41,10 +41,13 @@
                   console.log('index #' + index);
                   if (index > 4) 
                   {
+                    
                     $(this).addClass('hidden');
+                    console.log('Added from ' + index);
                   }
                   else {
                     $(this).removeClass('hidden');
+                    console.log('Removed from ' + index);
                   }
   
                 });

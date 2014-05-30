@@ -23,12 +23,14 @@
               case "Best Refund": console.log("a2"); break;
               case "Worst Refund": console.log("a3"); break;
               default: 
-                console.log("default"); 
+                //console.log("default"); 
                 
-                $( ".view-id-providers tr" ).each(function( index ) {
-                  console.log(index);
-                  console.log(this);
-                  console.log($(this).children("td.views-field-php").html());
+                $( ".view-id-providers tbody tr" ).each(function( index ) {
+                  if (index == 3) {
+                    console.log(index);
+                    console.log(this);
+                    console.log($(this).find("td.views-field-php").html());
+                  }
                 });
                 //
                 

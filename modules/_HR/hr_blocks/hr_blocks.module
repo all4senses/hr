@@ -1108,8 +1108,7 @@ function hr_blocks_getPtableFilter() {
     <option value="Best Refund">Best Refund Policy (should show all providers with anytime money back)</option>
     <option selected="selected" value="Worst Refund">Worst Refund Policy (should show all providers with 30 day money back)</option>
     <option value="Best Under $3">Best Value Under $3/mo (should show all the hosts that are priced under $3/mo)</option>
-    <option value="21 - 50">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
-    <option value="More than 50">More than 50</option>
+    <option value="Best Under $4">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
   </select>';
   
   return $out;

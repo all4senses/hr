@@ -19,7 +19,7 @@
 //          });
           
           switch ($(this).val()) {
-              case "Top 5": 
+              case "All": 
                 console.log("Show All"); 
                 
                 $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {

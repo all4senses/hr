@@ -19,6 +19,19 @@
 //          });
           
           switch ($(this).val()) {
+              case "Top 5": 
+                console.log("Show All"); 
+                
+                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+
+                    console.log('index #' + index);
+                    //console.log(this);
+                    $(this).removeClass('hidden');
+                    
+                });
+                break;
+                
+                
               case "Top 5": console.log("a1"); break;
               case "Best Refund": console.log("a2"); break;
               case "Worst Refund": console.log("a3"); break;
@@ -70,9 +83,11 @@
                     
                     if (price < 4) {
                       console.log(price + ' is less than 4');
+                      $(this).removeClass('hidden');
                     }
                     else {
                       console.log(price + ' is more than 4');
+                      $(this).addClass('hidden');
                     }
                   }
                 });

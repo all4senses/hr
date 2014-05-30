@@ -1104,6 +1104,7 @@ function hr_blocks_getPtableFilter() {
     
     
   $out = '<select name="p_filter" id="p_filter" class="input">
+    <option value="All">Show All</option>
     <option value="Top 5">Our Top 5 (should show just our top 5)</option>
     <option value="Best Refund">Best Refund Policy (should show all providers with anytime money back)</option>
     <option selected="selected" value="Worst Refund">Worst Refund Policy (should show all providers with 30 day money back)</option>

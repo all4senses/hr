@@ -109,11 +109,11 @@
                     console.log('index #' + index);
                     //console.log(this);
                     
-                    data = $(this).find("td.views-field-php-2").html();
+                    data = $(this).find("td.views-field-php-2").html().trim();
                     if (data) {
                       
                       data = data.replace('$','');
-                      data = data.replace('<div class="data month non-crossed">','');
+                      data = data.replace('<div class="price month non-crossed">','');
                       data = data.replace('</div>','');
                       
                       console.log('data = ' + data);
@@ -141,17 +141,23 @@
                     console.log('index #' + index);
                     //console.log(this);
                     
-                    data = $(this).find("td.views-field-php-2").html().replace('$','');
-                    
-                    console.log('data = ' + data);
-                    
-                    if (data < 4) {
-                      console.log(data + ' is less than 4');
-                      $(this).removeClass('hidden');
-                    }
-                    else {
-                      console.log(data + ' is more than 4');
-                      $(this).addClass('hidden');
+                    data = $(this).find("td.views-field-php-2").html().trim();
+                    if (data) {
+                      
+                      data = data.replace('$','');
+                      data = data.replace('<div class="price month non-crossed">','');
+                      data = data.replace('</div>','');
+                      
+                      console.log('data = ' + data);
+
+                      if (data < 4) {
+                        console.log(data + ' is less than 4');
+                        $(this).removeClass('hidden');
+                      }
+                      else {
+                        console.log(data + ' is more than 4');
+                        $(this).addClass('hidden');
+                      }
                     }
                   }
                 });
@@ -160,9 +166,9 @@
                 
                 
               
-              default: 
-                console.log("default"); 
-                break;;
+//              default: 
+//                console.log("default"); 
+//                break;;
           }
         
         });

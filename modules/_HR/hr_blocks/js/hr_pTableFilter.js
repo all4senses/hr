@@ -55,7 +55,29 @@
                 
                 break;
                 
-              case "Best Refund": console.log("a2"); break;
+              case "Best Refund": 
+                console.log("a2"); 
+                
+                $( ".view-display-id-block_top_wp_p_table tbody tr, .view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
+
+                    console.log('index #' + index);
+                    //console.log(this);
+                    
+                    price = $(this).find("td.views-field-php-6").html();
+                    console.log('Refund = ' + price);
+                    if (price && price == 'Anytime') {
+                      $(this).removeClass('hidden');
+                    }
+                    else {
+                      $(this).addClass('hidden');
+                    }
+                });
+                
+                break;
+              
+              
+              
+              
               case "Worst Refund": console.log("a3"); break;
               
               case "Best Under $3": 

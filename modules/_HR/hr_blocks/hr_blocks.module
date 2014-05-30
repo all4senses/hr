@@ -1104,13 +1104,13 @@ function hr_blocks_getPtableFilter() {
     
     
   $out = '<select name="p_filter" id="p_filter" class="input">
-                                    <option value="Top 5">Our Top 5 (should show just our top 5)</option>
-                                    <option value="Best Refund">Best Refund Policy (should show all providers with anytime money back)</option>
-                                    <option selected="selected" value="Worst Refund">Worst Refund Policy (should show all providers with 30 day money back)</option>
-                                    <option value="Best Under $3">Best Value Under $3/mo (should show all the hosts that are priced under $3/mo)</option>
-                                    <option value="21 - 50">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
-                                    <option value="More than 50">More than 50</option>
-                                  </select>';
+    <option value="Top 5">Our Top 5 (should show just our top 5)</option>
+    <option value="Best Refund">Best Refund Policy (should show all providers with anytime money back)</option>
+    <option selected="selected" value="Worst Refund">Worst Refund Policy (should show all providers with 30 day money back)</option>
+    <option value="Best Under $3">Best Value Under $3/mo (should show all the hosts that are priced under $3/mo)</option>
+    <option value="21 - 50">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
+    <option value="More than 50">More than 50</option>
+  </select>';
   
   return $out;
 }

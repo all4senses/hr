@@ -17,6 +17,13 @@
             console.log(index);
             console.log(this);
           });
+          
+          switch ($(this).val()) {
+              case "Top 5": console.log("a1"); break;
+              case "Best Refund": console.log("a2"); break;
+              case "Worst Refund": console.log("a3"); break;
+              default: console.log("default"); break;;
+          }
         
         });
        

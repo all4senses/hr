@@ -3,7 +3,7 @@
   Drupal.behaviors.hr_tablePfilter = {
     attach: function (context, settings) {
         
-        var checked = false;
+        var price = 0;
         console.log('Initiate filter...');
         
         
@@ -29,7 +29,17 @@
                   if (index == 3) {
                     console.log(index);
                     console.log(this);
-                    console.log($(this).find("td.views-field-php-2").html().replace('$',''));
+                    
+                    price = $(this).find("td.views-field-php-2").html().replace('$','');
+                    
+                    console.log('price = ' + price);
+                    
+                    if (price > 3) {
+                      console.log(price + ' is more than 3');
+                    }
+                    else {
+                      console.log(price + ' is less than 3');
+                    }
                   }
                 });
                 //

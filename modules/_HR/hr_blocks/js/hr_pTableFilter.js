@@ -29,7 +29,7 @@
                   if (index == 3) {
                     console.log(index);
                     console.log(this);
-                    console.log($(this).find("td.views-field-php-2").html());
+                    console.log($(this).find("td.views-field-php-2").html(replace('$','')));
                   }
                 });
                 //

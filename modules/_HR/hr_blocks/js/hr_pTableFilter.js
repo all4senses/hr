@@ -29,7 +29,7 @@
                   if (index == 3) {
                     console.log(index);
                     console.log(this);
-                    console.log($(this).find("td.views-field-php").html());
+                    console.log($(this).find("td.views-field-php-2").html());
                   }
                 });
                 //
@@ -40,9 +40,9 @@
         });
        
          
-        $( "tr" ).each(function( index ) {
-          console.log(index);
-        });
+//        $( "tr" ).each(function( index ) {
+//          console.log(index);
+//        });
           
         
     }

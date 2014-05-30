@@ -13,16 +13,26 @@
           // Works
           //alert( this.value ); // or $(this).val()
           
-          $( "tr" ).each(function( index ) {
-            console.log(index);
-            console.log(this);
-          });
+//          $( "tr" ).each(function( index ) {
+//            console.log(index);
+//            console.log(this);
+//          });
           
           switch ($(this).val()) {
               case "Top 5": console.log("a1"); break;
               case "Best Refund": console.log("a2"); break;
               case "Worst Refund": console.log("a3"); break;
-              default: console.log("default"); break;;
+              default: 
+                console.log("default"); 
+                
+                $( ".view-id-providers tr" ).each(function( index ) {
+                  console.log(index);
+                  console.log(this);
+                  console.log($(this).children("td.views-field-php").val());
+                });
+                //
+                
+                break;;
           }
         
         });

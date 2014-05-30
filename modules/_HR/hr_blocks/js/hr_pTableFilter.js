@@ -28,18 +28,20 @@
                 
                 $( ".view-id-providers tbody tr" ).each(function( index ) {
                   if (index) {
-                    console.log('index #' . index);
+                    console.log('index #' + index);
                     //console.log(this);
                     
-                    price = $(this).find("td.views-field-php-2").html().replace('$','');
-                    
-                    console.log('price = ' + price);
-                    
-                    if (price < 3) {
-                      console.log(price + ' is less than 3');
-                    }
-                    else {
-                      console.log(price + ' is more than 3');
+                    price = $(this).find("td.views-field-php-2").html();
+                    if (price) {
+                      price = price.replace('$','')
+                      console.log('price = ' + price);
+
+                      if (price < 3) {
+                        console.log(price + ' is less than 3');
+                      }
+                      else {
+                        console.log(price + ' is more than 3');
+                      }
                     }
                   }
                 });
@@ -52,7 +54,7 @@
                 
                 $( ".view-id-providers tbody tr" ).each(function( index ) {
                   if (index) {
-                    console.log('index #' . index);
+                    console.log('index #' + index);
                     //console.log(this);
                     
                     price = $(this).find("td.views-field-php-2").html().replace('$','');

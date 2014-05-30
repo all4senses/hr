@@ -1103,14 +1103,14 @@ function hr_blocks_getPtableFilter() {
   drupal_add_js($path_to_custom_js . 'hr_pTableFilter.js');
     
     
-  $out = '<select name="p_filter" id="p_filter" class="input">
+  $out = '<div id="chart-filter"><div>Filter by:</div><select name="p_filter" id="p_filter" class="input">
     <option selected="selected" value="All">Show All</option>
     <option value="Top 5">Our Top 5</option>
     <option value="Best Refund">Best Refund Policy</option>
     <option value="Worst Refund">Worst Refund Policy</option>
     <option value="Best Under $3">Best Value Under $3/mo</option>
     <option value="Best Under $4">Best Value Under $4/mo</option>
-  </select>';
+  </select><div>';
   
   return $out;
 }

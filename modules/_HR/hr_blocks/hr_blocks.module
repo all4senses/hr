@@ -160,7 +160,10 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
-  
+  $blocks['p_table_filter'] = array(
+    'info' => 'Providers table filter',
+    'cache' => DRUPAL_NO_CACHE,
+  );
   
   return $blocks;
 }
@@ -292,6 +295,13 @@ function hr_blocks_block_view($delta = '') {
       $block['subject'] = '';
       $block['content'] = hr_blocks_getShopperapprovedCode();
       break;
+    
+    
+    case 'p_table_filter':
+      $block['subject'] = 'Providers table filter';
+      $block['content'] = hr_blocks_getPtableFilter();
+      break;
+    
     
     
     default:
@@ -1070,6 +1080,37 @@ function hr_blocks_getBlockThemed($block_data, $cache_on = FALSE, $cache_expire_
  */
 function hr_blocks_get_accessToFootprintBanner() {
   return '<div class="link">' . l(t('Learn more'), '<front>') . '</div>';
+}
+
+
+
+
+/**
+ * Block Request a quote with a multistep form v6.
+ */
+function hr_blocks_getPtableFilter() {
+  
+  drupal_add_library('system', 'ui.core');
+  drupal_add_library('system', 'ui.widget');
+  drupal_add_library('system', 'ui.position');  
+//  drupal_add_library('system', 'ui.draggable');
+//  drupal_add_library('system', 'ui.slider');  
+
+  
+  
+  
+  $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
+  drupal_add_js($path_to_custom_js . 'hr_pTableFilter.js');
+    
+    
+  $out = '<select name="p_filter" id="p_filter" class="input">
+                                    <option value="Top 5">Our Top 5 (should show just our top 5)</option>
+                                    <option value="Best Refund">Best Refund Policy (should show all providers with anytime money back)</option>
+                                    <option selected="selected" value="Worst Refund">Worst Refund Policy (should show all providers with 30 day money back)</option>
+                                    <option value="Best Under $3">Best Value Under $3/mo (should show all the hosts that are priced under $3/mo)</option>
+                                    <option value="21 - 50">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
+                                    <option value="More than 50">More than 50</option>
+                                  </select>';
 }
 
 

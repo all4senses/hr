@@ -3,7 +3,7 @@
   Drupal.behaviors.hr_tablePfilter = {
     attach: function (context, settings) {
         
-        var price = 0;
+        var data = 0;
         console.log('Initiate filter...');
         
         
@@ -63,9 +63,9 @@
                     console.log('index #' + index);
                     //console.log(this);
                     
-                    price = $(this).find("td.views-field-php-6").html().trim();
-                    console.log('Refund = <' + price + '>');
-                    if (price && price == 'Anytime') {
+                    data = $(this).find("td.views-field-php-6").html().trim();
+                    console.log('Refund = <' + data + '>');
+                    if (data && data == 'Anytime') {
                       $(this).removeClass('hidden');
                     }
                     else {
@@ -78,7 +78,27 @@
               
               
               
-              case "Worst Refund": console.log("a3"); break;
+              case "Worst Refund": 
+                console.log("a3"); 
+                
+                $( ".view-display-id-block_top_wp_p_table tbody tr, .view-display-id-block_h_top_sh_table tbody tr" ).each(function( index ) {
+
+                    console.log('index #' + index);
+                    //console.log(this);
+                    
+                    data = $(this).find("td.views-field-php-6").html().trim();
+                    console.log('Refund = <' + data + '>');
+                    if (data && data == '30 Days') {
+                      $(this).removeClass('hidden');
+                    }
+                    else {
+                      $(this).addClass('hidden');
+                    }
+                });
+                
+                break;
+                
+                
               
               case "Best Under $3": 
                 console.log("a4"); 
@@ -89,21 +109,21 @@
                     console.log('index #' + index);
                     //console.log(this);
                     
-                    price = $(this).find("td.views-field-php-2").html();
-                    if (price) {
+                    data = $(this).find("td.views-field-php-2").html();
+                    if (data) {
                       
-                      price = price.replace('$','');
-                      price = price.replace('<div class="price month non-crossed">','');
-                      price = price.replace('</div>','');
+                      data = data.replace('$','');
+                      data = data.replace('<div class="data month non-crossed">','');
+                      data = data.replace('</div>','');
                       
-                      console.log('price = ' + price);
+                      console.log('data = ' + data);
 
-                      if (price < 3) {
-                        console.log(price + ' is less than 3');
+                      if (data < 3) {
+                        console.log(data + ' is less than 3');
                         $(this).removeClass('hidden');
                       }
                       else {
-                        console.log(price + ' is more than 3');
+                        console.log(data + ' is more than 3');
                         $(this).addClass('hidden');
                       }
                     }
@@ -121,16 +141,16 @@
                     console.log('index #' + index);
                     //console.log(this);
                     
-                    price = $(this).find("td.views-field-php-2").html().replace('$','');
+                    data = $(this).find("td.views-field-php-2").html().replace('$','');
                     
-                    console.log('price = ' + price);
+                    console.log('data = ' + data);
                     
-                    if (price < 4) {
-                      console.log(price + ' is less than 4');
+                    if (data < 4) {
+                      console.log(data + ' is less than 4');
                       $(this).removeClass('hidden');
                     }
                     else {
-                      console.log(price + ' is more than 4');
+                      console.log(data + ' is more than 4');
                       $(this).addClass('hidden');
                     }
                   }

@@ -1111,6 +1111,8 @@ function hr_blocks_getPtableFilter() {
                                     <option value="21 - 50">Best Value Under $4/mo (Should show all the hosts that are priced under $4/mo)</option>
                                     <option value="More than 50">More than 50</option>
                                   </select>';
+  
+  return $out;
 }
 
 

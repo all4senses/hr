@@ -7,7 +7,7 @@
         console.log('xxx');
         
         
-        $('#p_filter').onclick(function() {
+        $('#p_filter').onClick(function() {
           console.log('zzz');
           //console.log($(this).val());
           //alert( this.value ); // or $(this).val()

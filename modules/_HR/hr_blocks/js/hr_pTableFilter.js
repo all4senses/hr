@@ -19,6 +19,7 @@
 //          });
           
           switch ($(this).val()) {
+            
               case "All": 
                 console.log("Show All"); 
                 
@@ -32,7 +33,25 @@
                 break;
                 
                 
-              case "Top 5": console.log("a1"); break;
+              case "Top 5": 
+                console.log("a1"); 
+                
+                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
+                  
+                  console.log('index #' + index);
+                  if (index > 4) 
+                  {
+                    $(this).addClass('hidden');
+                  }
+                  else {
+                    $(this).removeClass('hidden');
+                  }
+  
+                });
+                
+                
+                break;
+                
               case "Best Refund": console.log("a2"); break;
               case "Worst Refund": console.log("a3"); break;
               

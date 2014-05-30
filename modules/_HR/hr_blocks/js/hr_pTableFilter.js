@@ -26,7 +26,7 @@
               case "Best Under $3": 
                 console.log("a4"); 
                 
-                $( ".view-id-providers tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_top_wp_p_table tbody tr" ).each(function( index ) {
                   if (index) {
                     console.log('index #' + index);
                     //console.log(this);

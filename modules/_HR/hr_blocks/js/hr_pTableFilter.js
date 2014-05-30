@@ -43,9 +43,11 @@
 
                       if (price < 3) {
                         console.log(price + ' is less than 3');
+                        $(this).removeClass('hidden');
                       }
                       else {
                         console.log(price + ' is more than 3');
+                        $(this).addClass('hidden');
                       }
                     }
                   }

@@ -28,7 +28,7 @@
                 $( ".view-id-providers tr" ).each(function( index ) {
                   console.log(index);
                   console.log(this);
-                  console.log($(this).children("td.views-field-php").val());
+                  console.log($(this).children("td.views-field-php").html());
                 });
                 //
                 

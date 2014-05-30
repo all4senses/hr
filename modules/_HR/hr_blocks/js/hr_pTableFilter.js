@@ -9,8 +9,8 @@
         
         $('#p_filter').change(function() {
           console.log('zzz');
-          //console.log($(this).val());
-          //alert( this.value ); // or $(this).val()
+          console.log($(this).val());
+          alert( this.value ); // or $(this).val()
         });
        
        

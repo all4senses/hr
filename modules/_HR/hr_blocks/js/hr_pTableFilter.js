@@ -64,7 +64,7 @@
                     //console.log(this);
                     
                     price = $(this).find("td.views-field-php-6").html();
-                    console.log('Refund = ' + price);
+                    console.log('Refund = <' + price + '>');
                     if (price && price == 'Anytime') {
                       $(this).removeClass('hidden');
                     }

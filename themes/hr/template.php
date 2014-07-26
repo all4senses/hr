@@ -579,7 +579,7 @@ function hr_process_page(&$variables) {
       $variables['theme_hook_suggestions'][] = 'page__provider';
     }
     elseif ($variables['node']->type == 'preface') {
-      $pages_with_separate_tpl = array('canada', 'shared-hosting', 'vps-hosting', 'wp-hosting', 'website-builder');
+      $pages_with_separate_tpl = array('canada', 'shared-hosting', 'vps-hosting', 'wp-hosting', 'website-builder', 'start-blog');
       if (in_array(@$variables['node']->field_preface_key['und'][0]['value'], $pages_with_separate_tpl) && arg(2) != 'edit') {
         $variables['theme_hook_suggestions'][] = 'page__compare_providers';
       }

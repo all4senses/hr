@@ -2121,7 +2121,7 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 
 
-/* Home banner block 2 */
+/* Home banner block 2, cPanel page banner block */
 
 /* With last updated line */
 /*
@@ -2129,9 +2129,9 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 #block-hr-blocks-home-banner2 p {margin: 8px;}
 */
 /* Without...*/
-#block-hr-blocks-home-banner2 {text-align: center; position: absolute; top: 125px; width: 100%; color: white;}
+#block-hr-blocks-home-banner2, #block-hr-blocks-cpanel-banner {text-align: center; position: absolute; top: 125px; width: 100%; color: white;}
 
-#block-hr-blocks-home-banner2 .content {padding: 0 70px; font-family: Raleway;}
+#block-hr-blocks-home-banner2 .content, #block-hr-blocks-cpanel-banner .content {padding: 0 70px; font-family: Raleway;}
 
 
 

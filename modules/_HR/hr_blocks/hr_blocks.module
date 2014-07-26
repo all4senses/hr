@@ -249,7 +249,7 @@ function hr_blocks_block_view($delta = '') {
     
     case 'cPanel_banner':
       $block['subject'] = '';
-      $block['content'] = 'xxx ' . hr_blocks_getAdBlock('cPanel_banner');
+      $block['content'] = hr_blocks_getAdBlock('cPanel_banner');
       break;
     
     case 'editor_note':

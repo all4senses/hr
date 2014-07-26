@@ -93,6 +93,8 @@ input.blur, textarea.blur,
 
 #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back_home.jpg) no-repeat transparent; width: 100%; height: 274px;}
 .not-front #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back.png) no-repeat #eeeeee; width: 100%; height: 95px;}
+/* Same tall header on cPanel as on the front */
+.page-node-280 #header {padding: 0; z-index: 4; background: url(/sites/all/themes/hr_aqua/css/images/header_back_home.jpg) no-repeat transparent; width: 100%; height: 274px;}
 
 /* Search block */
 #block-search-form{color: lightgray; padding-bottom: 0;position: absolute; right: 0; top: 25px;}

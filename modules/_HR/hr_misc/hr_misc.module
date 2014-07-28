@@ -4911,6 +4911,7 @@ function hr_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_
       $query->leftJoin('field_data_field_p_listposition_wp', 'l_wp', "l_wp.entity_id = n.nid");
       $query->leftJoin('field_data_field_p_listposition_wb', 'l_wb', "l_wb.entity_id = n.nid");
       $query->leftJoin('field_data_field_p_listposition_sh', 'l_sh', "l_sh.entity_id = n.nid");
+      $query->leftJoin('field_data_field_p_listposition_cp', 'l_cp', "l_cp.entity_id = n.nid");
       
       $or = db_or()->isNotNull('field_p_listposition_value')
                    ->isNotNull('field_p_listposition_ch_value')
@@ -4919,6 +4920,7 @@ function hr_misc_getProviders(&$providers, $scope = 'all', $data = NULL, $cache_
                    ->isNotNull('field_p_listposition_wp_value')
                    ->isNotNull('field_p_listposition_wb_value')
                    ->isNotNull('field_p_listposition_sh_value')
+                   ->isNotNull('field_p_listposition_cp_value')
               ;
       $query->condition($or);
     }
@@ -5778,6 +5780,8 @@ function hr_misc_rebuildProvidersLogosSprites($listing_pos_fields = NULL, $all_d
       
     'top_wp_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wp_p_table'), 'listing_pos_fields' => array('field_p_listposition_wp')),
       
+    'top_cp_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_cp_p_table'), 'listing_pos_fields' => array('field_p_listposition_cp')),
+      
     'top_vps_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_vps_p_table'), 'listing_pos_fields' => array('field_p_listposition_vps')),
       
     'top_wb_providers' => array('image_style' => 'logo_provider_chart_main', 'providers_views_displays' => array('block_top_wb_p_table'), 'listing_pos_fields' => array('field_p_listposition_wb')),
@@ -6254,6 +6258,7 @@ function hr_misc_getProviderQuickData($target, $data) {
         'block_topwhost_small' => 'top_webhost_small_block',
         'block_top_sh_p_table' => 'top_sh_providers',
         'block_top_wp_p_table' => 'top_wp_providers',
+        'block_top_cp_p_table' => 'top_cp_providers',
         'block_top_vps_p_table' => 'top_vps_providers',
 
         'block_top_wb_p_table' => 'top_wb_providers',

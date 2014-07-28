@@ -707,20 +707,24 @@ td.views-field-php-7 a:hover {text-decoration: underline;}
 .views-field-field-p-listposition-sh,
 .views-field-field-p-listposition-vps,
 .views-field-field-p-listposition-wb,
-.views-field-field-p-listposition-wp
+.views-field-field-p-listposition-wp,
+.views-field-field-p-listposition-cp
 {width: 55px;}
 
 .views-field-field-p-listposition-ca div,
 .views-field-field-p-listposition-sh div, 
 .views-field-field-p-listposition-wb div, 
 .views-field-field-p-listposition-vps div,
-.views-field-field-p-listposition-wp div {font-size: 25px; font-weight: bold; color: gray;}
+.views-field-field-p-listposition-wp div,
+.views-field-field-p-listposition-cp div{font-size: 25px; font-weight: bold; color: gray;}
 
 .views-row-first .views-field-field-p-listposition-ca div,
 .views-row-first .views-field-field-p-listposition-sh div, 
 .views-row-first .views-field-field-p-listposition-wb div, 
 .views-row-first .views-field-field-p-listposition-vps div,
-.views-row-first .views-field-field-p-listposition-wp div
+.views-row-first .views-field-field-p-listposition-wp div,
+.views-row-first .views-field-field-p-listposition-sh div,
+.views-row-first .views-field-field-p-listposition-cp div
 {background: url("/sites/all/themes/hr_aqua/css/images/sprite-2.png") no-repeat -90px -885px transparent; height: 65px; text-indent: -9999px; width: 45px; margin: auto;}
 
 
@@ -2133,7 +2137,8 @@ body.one-sidebar.sidebar-second.page-get-iframe #main{background: none transpare
 
 #block-hr-blocks-home-banner2 .content, #block-hr-blocks-cpanel-banner .content {padding: 0 70px; font-family: Raleway;}
 
-.page-node-280 #block-views-providers-block-h-top-sh-table {padding: 0 20px;}
+/*.page-node-280 #block-views-providers-block-h-top-sh-table ,*/
+#block-views-providers-block-top-cp-table {padding: 0 20px;}
 
 
 

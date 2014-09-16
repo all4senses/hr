@@ -5,7 +5,7 @@
 
         
         console.log('hr_rotate_cached_page_table...');
-        console.log(Drupal.settings['hr_blocks']); 
+        console.log(Drupal.settings['hr_blocks']['hr_current_top_positions_counter']); 
         
         
     }

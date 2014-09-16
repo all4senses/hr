@@ -645,6 +645,15 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
     $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
   }
   
+  drupal_add_js(array('hr_blocks' => array(
+    'hr_current_top_positions_counter' => $current_top_positions_counter,
+  )), 'setting');
+  
+  
+  $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
+  drupal_add_js($path_to_custom_js . 'hr_rotate_cached_page_table.js');
+  
+  
   //-----------------------------------------
   
   

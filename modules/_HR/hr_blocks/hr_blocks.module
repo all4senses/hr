@@ -585,7 +585,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   $view->execute($view_n_display['display']);
 
   //dpm($view);
-  //dpm($view->result);
+  dpm($view->result);
   
   $fixed_positions = array();
   

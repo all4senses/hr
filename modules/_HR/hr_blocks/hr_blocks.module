@@ -645,8 +645,10 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
     $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
   }
   
+  global $user;
   drupal_add_js(array('hr_blocks' => array(
     'hr_current_top_positions_counter' => $current_top_positions_counter,
+    'current_uid' => $user->uid,
   )), 'setting');
   
   

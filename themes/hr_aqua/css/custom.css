@@ -2178,7 +2178,7 @@ body.sidebar-second .page-compare-providers #sidebar-second {padding: 0; margin-
 
 
 
-.front #block-views-providers-block-h-top-sh-table {padding: 0 20px;}
+.front #block-views-providers-block-h-top-sh-table,  .front #block-hr-blocks-h-sh-chart-alteredview {padding: 0 20px;}
 
 
 #block-hr-blocks-disclosure {background: #f6f4f5; border: none; padding-top: 5px;}

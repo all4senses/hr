@@ -634,22 +634,25 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   //dpm($current_top_positions_counter);
   
   
+  global $user;
   
+  if ($user->uid) {
   
-  if ($current_top_positions_counter['iPage_top']) {
-    $view->result[0] = $random_array[$fixed_positions['iPage_key']];
-    $view->result[1] = $random_array[$fixed_positions['Bluehost_key']];
-  }
-  else {
-    $view->result[1] = $random_array[$fixed_positions['iPage_key']];
-    $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
+    if ($current_top_positions_counter['iPage_top']) {
+      $view->result[0] = $random_array[$fixed_positions['iPage_key']];
+      $view->result[1] = $random_array[$fixed_positions['Bluehost_key']];
+    }
+    else {
+      $view->result[1] = $random_array[$fixed_positions['iPage_key']];
+      $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
+    }
   }
   
   variable_set('hr_current_top_positions_counter', $current_top_positions_counter);
 
   // Try to cope with cached pages table (just starting thoughts).
   
-//  global $user;
+
 //  $current_top_positions_counter['current_uid'] = $user->uid;
 //  drupal_add_js(array('hr_blocks' => array(
 //    'hr_current_top_positions_counter' => $current_top_positions_counter,

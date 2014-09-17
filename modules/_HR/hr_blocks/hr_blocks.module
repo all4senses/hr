@@ -170,6 +170,16 @@ function hr_blocks_block_info() {
     'cache' => DRUPAL_NO_CACHE,
   );
   
+  $blocks['p_tablefilter_h'] = array(
+    'info' => 'Providers table filter Home',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  $blocks['p_tablefilter_h_r'] = array(
+    'info' => 'Providers table filter Home Rotated',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
   
   $blocks['h_sh_chart_alteredview'] = array(
     'info' => 'Altered home sh chart from view - now with rotated first providers',
@@ -315,10 +325,18 @@ function hr_blocks_block_view($delta = '') {
     
     case 'p_table_filter':
       $block['subject'] = 'Providers table filter';
-      $block['content'] = hr_blocks_getPtableFilter();
+      $block['content'] = hr_blocks_getPtableFilter('hr_pTableFilter.js');
       break;
     
+    case 'p_tablefilter_h':
+      $block['subject'] = 'Providers table filter Home';
+      $block['content'] = hr_blocks_getPtableFilter('hr_pTableFilter_home.js');
+      break;
     
+    case 'p_tablefilter_h_r':
+      $block['subject'] = 'Providers table filter Home Rotated';
+      $block['content'] = hr_blocks_getPtableFilter('hr_pTableFilter_home_rotated.js');
+      break;
     
     default:
       
@@ -1311,7 +1329,7 @@ function hr_blocks_get_accessToFootprintBanner() {
 /**
  * Block Request a quote with a multistep form v6.
  */
-function hr_blocks_getPtableFilter() {
+function hr_blocks_getPtableFilter($js_filename) {
   
   drupal_add_library('system', 'ui.core');
   drupal_add_library('system', 'ui.widget');
@@ -1323,7 +1341,7 @@ function hr_blocks_getPtableFilter() {
   
   
   $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
-  drupal_add_js($path_to_custom_js . 'hr_pTableFilter.js');
+  drupal_add_js($path_to_custom_js . $js_filename);
     
     
   $out = '<div id="chart-filter"><div>Filter by:</div><select name="p_filter" id="p_filter" class="input">

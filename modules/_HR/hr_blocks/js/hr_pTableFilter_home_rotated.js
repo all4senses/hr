@@ -23,7 +23,7 @@
               case "All": 
                 //console.log("Show All"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
 
                     //console.log('index #' + index);
                     //console.log(this);
@@ -38,7 +38,7 @@
               case "Top 5": 
                 //console.log("a1"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
                   
                   //console.log('index #' + index);
                   if (index > 4) 
@@ -64,7 +64,7 @@
               case "Best Refund": 
                 //console.log("a2"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
 
                     ////console.log('index #' + index);
                     //console.log(this);
@@ -87,7 +87,7 @@
               case "Worst Refund": 
                 //console.log("a3"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
 
                     ////console.log('index #' + index);
                     //console.log(this);
@@ -109,7 +109,7 @@
               case "Best Under $3": 
                 //console.log("a4"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
                   //if (index) 
                   {
                     //console.log('index #' + index);
@@ -142,7 +142,7 @@
               case "Best Under $4": 
                 //console.log("a5"); 
                 
-                $( ".block-hr-blocks-h-sh-chart-alteredview tbody tr" ).each(function( index ) {
+                $( ".view-display-id-block_h_top_sh_rot tbody tr" ).each(function( index ) {
                   if (index) {
                     //console.log('index #' + index);
                     //console.log(this);

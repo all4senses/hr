@@ -963,11 +963,12 @@ function hr_misc_setReferer_ajax() {
 //  }
   
   $post['referer'] = check_plain(strip_tags($_POST['referer']));
+  $post['url'] = check_plain(strip_tags($_POST['url']));
   if (!empty($post['referer']) && strpos($post['referer'], 'http://www.hostingreview.org') === FALSE) {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
   }
   
-  drupal_json_output(array('status' => $status, 'post_referer' => $post['referer'], 'session_referer' => $_SESSION['hr_current_http_referer'] /*, 'data' => $output*/));
+  drupal_json_output(array('status' => $status, 'current_url' => $post['url'], 'post_referer' => $post['referer'], 'session_referer' => $_SESSION['hr_current_http_referer'] /*, 'data' => $output*/));
 }
 
 

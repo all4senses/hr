@@ -559,7 +559,7 @@ function hr_misc_process_html(&$vars) {
  * @param $javascript
  */
 function hr_misc_js_alter(&$javascript) {
-
+  // uncomment to minify
   return;
   ////global $user;
   ////if (!$user->uid) {
@@ -3405,7 +3405,7 @@ function hr_misc_testPage() {
   
   $out = '<div>Start test...</div>';
 
-  
+      /*
       $var_p_all_data_quick = array();
       $p_nid_to_reset = 86;
       
@@ -3430,7 +3430,10 @@ function hr_misc_testPage() {
       $var_p_all_data_quick = variable_get('p_all_data_quick');
       
       dpm($var_p_all_data_quick);
+      */
       
+  unlink('cache/normal/www.hostingreview.org/xo.gif');
+          
   return $out . '<br>End of Test';
 }
 

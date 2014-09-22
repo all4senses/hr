@@ -22,8 +22,8 @@
                     success: function(data) 
                             { 
                                 if(!data.error) {
-                                    console.log('The header is arrived!');
-                                    console.log(data);
+                                    //console.log('The header is arrived!');
+                                    //console.log(data);
                                 }
                                 return false;
                             } 

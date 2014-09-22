@@ -652,9 +652,10 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   //dpm($current_top_positions_counter);
   
   
-  global $user;
+  //global $user;
   
-  if ($user->uid) {
+  //if ($user->uid) 
+    {
   
     if ($current_top_positions_counter['iPage_top']) {
       $view->result[0] = $random_array[$fixed_positions['iPage_key']];
@@ -1114,7 +1115,7 @@ function hr_blocks_get_footerMenu() {
   else 
     {
     $menu = menu_build_tree('menu-footer-menu');
-    $out = theme('hr_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">© 2014 hostingreview.org | All Rights Reserved</div>';
+    $out = theme('hr_misc_submenuSimple_byColumns', array('submenu' => array('below' => $menu)/*, 'class' => 'menu'*/, 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2014 hostingreview.org | All Rights Reserved</div>';
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
   
@@ -1135,7 +1136,7 @@ function hr_blocks_get_footerLinks() {
   }
   else {
     $menu = menu_build_tree('menu-footer-links');
-    $out = theme('hr_misc_submenuSimple', array('submenu' => array('below' => $menu), 'class' => 'menu', 'delimiter' => '<li> | </li>')); // . '<div class="c">В© 2012 GetVoIP.com | All Rights Reserved</div>';
+    $out = theme('hr_misc_submenuSimple', array('submenu' => array('below' => $menu), 'class' => 'menu', 'delimiter' => '<li> | </li>')); // . '<div class="c">Р’В© 2012 GetVoIP.com | All Rights Reserved</div>';
     cache_set($cid, $out, 'cache', strtotime('+31 day'));
   } 
     

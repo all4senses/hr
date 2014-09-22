@@ -17,16 +17,17 @@
                       }, 
                     type: 'POST', 
                     dataType: 'json'
-                    /*
+                    
                     , 
                     success: function(data) 
                             { 
                                 if(!data.error) {
                                     console.log('The header is arrived!');
+                                    console.log(data);
                                 }
                                 return false;
                             } 
-                     */
+                     
             }); // end of (jQuery).ajax
         
 

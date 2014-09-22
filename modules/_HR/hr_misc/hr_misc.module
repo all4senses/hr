@@ -967,7 +967,7 @@ function hr_misc_setReferer_ajax() {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
   }
   
-  drupal_json_output(array('status' => $status, 'session_refferer' => $_SESSION['hr_current_http_referer'] /*, 'data' => $output*/));
+  drupal_json_output(array('status' => $status, 'post_referer' => $post['referer'], 'session_referer' => $_SESSION['hr_current_http_referer'] /*, 'data' => $output*/));
 }
 
 

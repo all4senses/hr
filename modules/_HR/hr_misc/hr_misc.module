@@ -560,7 +560,7 @@ function hr_misc_process_html(&$vars) {
  */
 function hr_misc_js_alter(&$javascript) {
 
-  return;
+  //return;
   ////global $user;
   ////if (!$user->uid) {
     

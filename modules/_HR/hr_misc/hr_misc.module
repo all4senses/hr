@@ -990,7 +990,7 @@ function hr_misc_setReferer_ajax() {
   }
   
   // Update cached home page for providers rotation in the table.
-  if ($post['url'] == 'http://www.hostingreview.org') {
+  if ($post['url'] == 'http://www.hostingreview.org/') {
     exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   }
   

@@ -652,6 +652,8 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   //dpm($current_top_positions_counter);
   
   
+  variable_set('hr_current_top_positions_counter', $current_top_positions_counter);
+  
   global $user;
   
   if ($user->uid) 
@@ -665,20 +667,20 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
       $view->result[1] = $random_array[$fixed_positions['iPage_key']];
       $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
     }
+    
+    // Try to cope with cached pages table (just starting thoughts).
+    $current_top_positions_counter['current_uid'] = $user->uid;
+    drupal_add_js(array('hr_blocks' => array(
+      'hr_current_top_positions_counter' => $current_top_positions_counter,
+    )), 'setting');
+
+    $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
+    drupal_add_js($path_to_custom_js . 'hr_rotate_cached_page_table.js');
   }
   
-  variable_set('hr_current_top_positions_counter', $current_top_positions_counter);
-
-  // Try to cope with cached pages table (just starting thoughts).
   
 
-  $current_top_positions_counter['current_uid'] = $user->uid;
-  drupal_add_js(array('hr_blocks' => array(
-    'hr_current_top_positions_counter' => $current_top_positions_counter,
-  )), 'setting');
   
-  $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
-  drupal_add_js($path_to_custom_js . 'hr_rotate_cached_page_table.js');
   
   
   //-----------------------------------------

@@ -102,6 +102,14 @@ function hr_misc_menu() {
     'type' => MENU_CALLBACK,
   ); 
   
+  $items['update-cached-homepage'] = array(
+    'title' => 'Update Boost cached homepage',
+    'page callback' => 'hr_misc_updateCachedHomepage',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  ); 
+  
+  
   $items['get-disqus-users'] = array(
     'title' => 'Get new Disqus users',
     'page callback' => 'hr_misc_disqus_getNewUsers',
@@ -950,6 +958,18 @@ function hr_misc_goToExternalUrl() {
 
 
 /**
+ * Update Boost cached homepage.
+ * To be called via exec(
+ */
+function hr_misc_updateCachedHomepage() {
+  
+   unlink('cache/normal/www.hostingreview.org/___.html');
+  
+  //hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
+}
+
+
+/**
  * Set a current user external referer.
  */
 function hr_misc_setReferer_ajax() {
@@ -966,6 +986,11 @@ function hr_misc_setReferer_ajax() {
   $post['url'] = check_plain(strip_tags($_POST['url']));
   if (!empty($post['referer']) && strpos($post['referer'], 'http://www.hostingreview.org') === FALSE) {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
+  }
+  
+  // Update cached home page for providers rotation in the table.
+  if ($post['url'] == 'http://www.hostingreview.org') {
+    exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   }
   
   drupal_json_output(array('status' => $status, 'current_url' => $post['url'], 'post_referer' => $post['referer'], 'session_referer' => $_SESSION['hr_current_http_referer'] /*, 'data' => $output*/));

@@ -652,9 +652,9 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   //dpm($current_top_positions_counter);
   
   
-  //global $user;
+  global $user;
   
-  //if ($user->uid) 
+  if ($user->uid) 
     {
   
     if ($current_top_positions_counter['iPage_top']) {

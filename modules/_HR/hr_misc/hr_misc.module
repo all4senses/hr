@@ -3464,10 +3464,12 @@ function hr_misc_testPage() {
       dpm($var_p_all_data_quick);
       */
       
-  unlink('cache/normal/www.hostingreview.org/___.html');
+  //unlink('cache/normal/www.hostingreview.org/___.html');
   
   //hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
-          
+    
+  $out .= exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+
   return $out . '<br>End of Test';
 }
 

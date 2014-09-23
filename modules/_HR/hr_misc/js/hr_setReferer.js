@@ -4,9 +4,21 @@
     attach: function (context, settings) {
       
       if (Drupal.settings['hr_blocks']['uid']) {
-        console.log('qqqqq');
-        //$.cookie('the_cookie', 'the_value');
-        console.log($.cookie('the_cookie')); // => "the_value"
+        //console.log('qqqqq');
+        ref = document.referrer;
+        // if the refferer is not the hr itself
+        if (ref.indexOf('hostingreview.org') < 0) {
+          console.log('Remote referrer!');
+          $.cookie('last_remote_referer', document.referrer, {
+              //expires: 5,
+              path: '/'
+          });
+        }
+        else {
+          console.log('Local referrer!');
+        }
+        
+        console.log($.cookie('last_remote_referer')); // => "the_value"
       }
       
        

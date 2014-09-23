@@ -601,7 +601,7 @@ function hr_process_page(&$variables) {
   drupal_add_js( $module_path_misc . '/js/hr_setReferer.js'); 
   drupal_add_library('system', 'jquery.cookie');
   
-  dpm(drupal_get_library('system'));
+  //dpm(drupal_get_library('system'));
   
   global $user;
   drupal_add_js(array('hr_blocks' => array(

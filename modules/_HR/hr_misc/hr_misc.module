@@ -109,6 +109,12 @@ function hr_misc_menu() {
     'type' => MENU_CALLBACK,
   ); 
   
+  $items['update-cached-homepage-ajax'] = array(
+    'title' => 'Update Boost cached homepage, to be called via ajax',
+    'page callback' => 'hr_misc_updateCachedHomepage_ajax',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  ); 
   
   $items['get-disqus-users'] = array(
     'title' => 'Get new Disqus users',
@@ -968,6 +974,20 @@ function hr_misc_updateCachedHomepage() {
    hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
    
    return '.';
+}
+
+
+/**
+ * Update Boost cached homepage.
+ * Middle function, To be called via ajax
+ */
+function hr_misc_updateCachedHomepage_ajax() {
+  
+  $status = TRUE;
+  
+  exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+  
+  drupal_json_output(array('status' => $status /*, 'data' => $output*/));
 }
 
 

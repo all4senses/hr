@@ -10,6 +10,31 @@
 //        if (Drupal.settings['hr_blocks']['hr_current_top_positions_counter']) {
 //            ;
 //        }
+
+
+        (jQuery).ajax({
+            
+                url: '/update-cached-homepage-ajax', 
+                data: {
+                        //op: 'set',
+                        url: window.location.href,
+                        //referer: document.referrer
+                       
+                      }, 
+                    type: 'POST', 
+                    dataType: 'json'
+                    
+                    , 
+                    success: function(data) 
+                            { 
+                                if(!data.error) {
+                                    console.log('The header is arrived!');
+                                    //console.log(data);
+                                }
+                                return false;
+                            } 
+                     
+            }); // end of (jQuery).ajax
         
         
     }

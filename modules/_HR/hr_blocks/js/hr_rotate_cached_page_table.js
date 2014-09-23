@@ -13,7 +13,7 @@
 
     ////return;
 
-    ////$('body').one('mouseover', function() {
+    $('body').one('mouseover', function() {
         //console.log('ooooover...');
 
         (jQuery).ajax({
@@ -21,13 +21,13 @@
                 url: '/update-cached-homepage-ajax', 
                 data: {
                         //op: 'set',
-                        url: window.location.href,
+                        //url: window.location.href,
                         //referer: document.referrer
                        
                       }, 
                     type: 'GET', 
                     dataType: 'json'
-                    
+                    /*
                     , 
                     success: function(data) 
                             { 
@@ -36,11 +36,12 @@
                                     //console.log(data);
                                 }
                                 return false;
-                            } 
+                            }
+                            */
                      
             }); // end of (jQuery).ajax
         
-        ////}); // End of hover 
+        }); // End of hover 
       
       
     }

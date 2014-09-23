@@ -985,6 +985,7 @@ function hr_misc_updateCachedHomepage_ajax() {
   
   $status = TRUE;
   
+  // launch and leave in background, let make everything in background
   exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   
   drupal_json_output(array('status' => $status /*, 'data' => $output*/));
@@ -999,13 +1000,15 @@ function hr_misc_setReferer_ajax() {
   $status = TRUE;
   $output = '';
   
-  $post = array();
-//  foreach ($_POST as $key => $value) {
+  //$post = $_POST;
+  $post = $_GET;
+  
+//  foreach ($post as $key => $value) {
 //    $post[$key] = check_plain(strip_tags($value));
 //  }
   
-  $post['referer'] = check_plain(strip_tags($_POST['referer']));
-  $post['url'] = check_plain(strip_tags($_POST['url']));
+  $post['referer'] = check_plain(strip_tags($post['referer']));
+  $post['url'] = check_plain(strip_tags($post['url']));
   if (!empty($post['referer']) && strpos($post['referer'], 'http://www.hostingreview.org') === FALSE) {
     $_SESSION['hr_current_http_referer'] = $post['referer'];
   }

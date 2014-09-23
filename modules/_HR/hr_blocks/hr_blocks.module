@@ -654,8 +654,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   
   variable_set('hr_current_top_positions_counter', $current_top_positions_counter);
   
-  global $user;
-  
+  //global $user;
   //if ($user->uid) 
     {
   
@@ -743,7 +742,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   
   $info = '<div class="info" style="display: none;">iPage_top = ' . $current_top_positions_counter['iPage_top'] . ', Bluehost_top = ' . $current_top_positions_counter['Bluehost_top'] . '</div>';
   
-  return $info . $chart_themed;
+  return /*$info . */$chart_themed;
 }
 
 

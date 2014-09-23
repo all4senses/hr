@@ -15,7 +15,7 @@
                         referer: document.referrer
                        
                       }, 
-                    type: 'POST', 
+                    type: 'GET', 
                     dataType: 'json'
                     
                     , 
@@ -23,7 +23,7 @@
                             { 
                                 if(!data.error) {
                                     //console.log('The header is arrived!');
-                                    //console.log(data);
+                                    console.log(data);
                                 }
                                 return false;
                             } 

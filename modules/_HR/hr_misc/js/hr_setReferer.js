@@ -5,7 +5,7 @@
       
       if (Drupal.settings['hr_blocks']['uid']) {
         console.log('qqqqq');
-        $.cookie('the_cookie', 'the_value');
+        //$.cookie('the_cookie', 'the_value');
         console.log($.cookie('the_cookie')); // => "the_value"
       }
       

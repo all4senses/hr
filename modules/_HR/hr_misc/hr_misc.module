@@ -971,7 +971,7 @@ function hr_misc_updateCachedHomepage() {
   
    unlink('cache/normal/www.hostingreview.org/___.html');
   
-   hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
+   //hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
    
    return '.';
 }
@@ -985,7 +985,7 @@ function hr_misc_updateCachedHomepage_ajax() {
   
   $status = TRUE;
   
-  exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+  //exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   
   drupal_json_output(array('status' => $status /*, 'data' => $output*/));
 }

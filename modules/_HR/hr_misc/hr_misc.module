@@ -814,7 +814,7 @@ function hr_misc_goToExternalUrl2() {
 
   $args = arg();
   
-  dpm($_COOKIE);
+  //dpm($_COOKIE);
   
   //dpm($args);
   
@@ -874,7 +874,7 @@ function hr_misc_goToExternalUrl2() {
                 'url' => $url,
                 'timestamp' => time(),
                   
-                'referer' => @$_SESSION['hr_current_http_referer'],
+                'referer' => @$_COOKIE['last_remote_referer'] , //@$_SESSION['hr_current_http_referer'],
                 'click_page' => @$_SERVER['HTTP_REFERER'],
                 'uname' => isset($user->name) ? $user->name : '',
                 'ip' => $user->hostname,

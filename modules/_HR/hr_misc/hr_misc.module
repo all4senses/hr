@@ -971,7 +971,7 @@ function hr_misc_updateCachedHomepage() {
   
    unlink('cache/normal/www.hostingreview.org/___.html');
   
-   //hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
+   hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
    
    return '.';
 }

@@ -985,7 +985,7 @@ function hr_misc_updateCachedHomepage_ajax() {
   
   $status = TRUE;
   
-  //exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+  exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   
   drupal_json_output(array('status' => $status /*, 'data' => $output*/));
 }

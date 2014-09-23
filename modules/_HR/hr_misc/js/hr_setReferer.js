@@ -3,7 +3,7 @@
   Drupal.behaviors.hr_setReferer = {
     attach: function (context, settings) {
       
-      if (Drupal.settings['hr_blocks']['uid']) {
+      //if (Drupal.settings['hr_blocks']['uid']) {
         //console.log('qqqqq');
         ref = document.referrer;
         // if the refferer is not the hr itself
@@ -19,7 +19,7 @@
         }
         
         console.log($.cookie('last_remote_referer')); // => "the_value"
-      }
+      //}
       
        
        $('body').one('mouseover', function() {

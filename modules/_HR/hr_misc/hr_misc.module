@@ -814,6 +814,8 @@ function hr_misc_goToExternalUrl2() {
 
   $args = arg();
   
+  dpm($_COOKIE);
+  
   //dpm($args);
   
   //if ($args[1] == 'reviews' && !empty($args[2])) {

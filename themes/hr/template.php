@@ -599,6 +599,12 @@ function hr_process_page(&$variables) {
   // Set a user referer.
   $module_path_misc = drupal_get_path('module', 'hr_misc');
   drupal_add_js( $module_path_misc . '/js/hr_setReferer.js'); 
+  drupal_add_library('system', 'jquery.cookie');
+  
+  global $user;
+  drupal_add_js(array('hr_blocks' => array(
+      'uid' => $user->uid,
+    )), 'setting');
   
   // Add a BounceX popup window
   //drupal_add_js( $module_path_misc . '/js/hr_addBounceX.js'); 

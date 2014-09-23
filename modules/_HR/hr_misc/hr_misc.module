@@ -988,6 +988,12 @@ function hr_misc_updateCachedHomepage_ajax() {
   // launch and leave in background, let make everything in background
   exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
   
+  // Problems with boost that doesn't cache pages if there are POST request from ajax on them.
+  // So make it GET somehow solve the problem.
+  // Here some discussing related to DRUPAL_UID set for anonimous users...
+  // https://www.drupal.org/node/1807818
+  
+  
   drupal_json_output(array('status' => $status /*, 'data' => $output*/));
 }
 
@@ -1002,6 +1008,10 @@ function hr_misc_setReferer_ajax() {
   
   //$post = $_POST;
   $post = $_GET;
+  // Problems with boost that doesn't cache pages if there are POST request from ajax on them.
+  // So make it GET somehow solve the problem.
+  // Here some discussing related to DRUPAL_UID set for anonimous users...
+  // https://www.drupal.org/node/1807818
   
 //  foreach ($post as $key => $value) {
 //    $post[$key] = check_plain(strip_tags($value));

@@ -2,6 +2,13 @@
 
   Drupal.behaviors.hr_setReferer = {
     attach: function (context, settings) {
+      
+      if (Drupal.settings['hr_blocks']['uid']) {
+        console.log('qqqqq');
+        $.cookie('the_cookie', 'the_value');
+        console.log($.cookie('the_cookie')); // => "the_value"
+      }
+      
        
        $('body').one('mouseover', function() {
           //console.log('ooooover...');

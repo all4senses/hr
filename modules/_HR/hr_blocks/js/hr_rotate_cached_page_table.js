@@ -27,7 +27,7 @@
                       }, 
                     type: 'GET', 
                     dataType: 'json'
-                    /*
+                    
                     , 
                     success: function(data) 
                             { 
@@ -37,7 +37,7 @@
                                 }
                                 return false;
                             } 
-                     */
+                     
             }); // end of (jQuery).ajax
         
         ////}); // End of hover 

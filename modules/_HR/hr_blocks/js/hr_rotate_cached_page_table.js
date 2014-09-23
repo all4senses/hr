@@ -11,9 +11,9 @@
 //            ;
 //        }
 
-    return;
+    ////return;
 
-    $('body').one('mouseover', function() {
+    ////$('body').one('mouseover', function() {
         //console.log('ooooover...');
 
         (jQuery).ajax({
@@ -40,7 +40,7 @@
                      */
             }); // end of (jQuery).ajax
         
-        }); // End of hover 
+        ////}); // End of hover 
       
       
     }

@@ -25,7 +25,7 @@
                         //referer: document.referrer
                        
                       }, 
-                    type: 'POST', 
+                    type: 'GET', 
                     dataType: 'json'
                     /*
                     , 

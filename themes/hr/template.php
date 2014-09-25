@@ -603,10 +603,10 @@ function hr_process_page(&$variables) {
   
   //dpm(drupal_get_library('system'));
   
-  global $user;
-  drupal_add_js(array('hr_blocks' => array(
-      'uid' => $user->uid,
-    )), 'setting');
+//  global $user;
+//  drupal_add_js(array('hr_blocks' => array(
+//      'uid' => $user->uid,
+//    )), 'setting');
   
   // Add a BounceX popup window
   //drupal_add_js( $module_path_misc . '/js/hr_addBounceX.js'); 

@@ -812,7 +812,7 @@ function hr_misc_trackClick_ajax() {
  */
 function hr_misc_goToExternalUrl2() {
 
-  
+  $args = arg();
   
   //if ($args[1] == 'reviews' && !empty($args[2])) {
   if (!empty($args[1])) {
@@ -848,7 +848,7 @@ function hr_misc_goToExternalUrl2() {
     }
     
     
-    $args = arg();
+    
   dpm($_COOKIE);
   dpm($_GET);
   dpm($args);

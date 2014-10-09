@@ -816,7 +816,12 @@ function hr_misc_goToExternalUrl2() {
   
   //dpm($_COOKIE);
   
-  //dpm($args);
+  
+  dpm($args);
+  global $user;
+  if ($user->uid == 1) {
+    return 'xxx';
+  }
   
   //if ($args[1] == 'reviews' && !empty($args[2])) {
   if (!empty($args[1])) {

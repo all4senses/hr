@@ -823,6 +823,7 @@ function hr_misc_goToExternalUrl2() {
     return 'xxx';
   }
   
+  
   //if ($args[1] == 'reviews' && !empty($args[2])) {
   if (!empty($args[1])) {
     
@@ -846,7 +847,12 @@ function hr_misc_goToExternalUrl2() {
       $object_name = $p_data_quick['name'];
       
       if (!empty($args[2]) && !empty($p_data_quick[$args[2]]['s-url'])) {
-        $url = $p_data_quick[$args[2]]['s-url'];
+        if (!empty($args[3])) {
+          $url = $p_data_quick[$args[2]]['s-url' . $args[3]];
+        }
+        else {
+          $url = $p_data_quick[$args[2]]['s-url'];
+        }
       }
       else {
         $url = $p_data_quick['i_web'];

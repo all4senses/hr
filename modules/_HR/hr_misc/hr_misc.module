@@ -812,16 +812,6 @@ function hr_misc_trackClick_ajax() {
  */
 function hr_misc_goToExternalUrl2() {
 
-//  $args = arg();
-  
-  //dpm($_COOKIE);
-  
-//  dpm($_GET);
-//  dpm($args);
-//  global $user;
-//  if ($user->uid == 1) {
-//    return 'xxx';
-//  }
   
   
   //if ($args[1] == 'reviews' && !empty($args[2])) {
@@ -853,8 +843,22 @@ function hr_misc_goToExternalUrl2() {
       else {
         $url = $p_data_quick['i_web' . @$_GET['alt']];
       }
+      
+      
     }
     
+    
+    $args = arg();
+  dpm($_COOKIE);
+  dpm($_GET);
+  dpm($args);
+  dpm($p_data_quick);
+  dpm($url);
+  global $user;
+  if ($user->uid == 1) {
+    return 'xxx';
+  }
+  
     
     if (@$url) {
           

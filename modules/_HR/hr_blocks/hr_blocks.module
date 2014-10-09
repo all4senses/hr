@@ -668,12 +668,16 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
       
       //Change urls to alternative.
       dpm($random_array[$fixed_positions['iPage_key']]);
+      dpm($random_array[$fixed_positions['iPage_key']]->views_php_4);
+      dpm(str_replace('/click/ipage/sh', '/click/ipage/sh?alt=2', $random_array[$fixed_positions['iPage_key']]->views_php_4));
       $iPage_p_data = unserialize($random_array[$fixed_positions['iPage_key']]->_field_data['nid']['entity']->field_p_data['und'][0]['value']);
       dpm($iPage_p_data);
+      
       $iPage_p_data_quick = unserialize($random_array[$fixed_positions['iPage_key']]->_field_data['nid']['entity']->field_p_data_quick['und'][0]['value']);
       dpm($iPage_p_data_quick);
       
       dpm($random_array[$fixed_positions['Bluehost_key']]);
+      dpm($random_array[$fixed_positions['Bluehost_key']]->views_php_4);
       $Bluehost_p_data = unserialize($random_array[$fixed_positions['Bluehost_key']]->_field_data['nid']['entity']->field_p_data['und'][0]['value']);
       dpm($Bluehost_p_data);
       $Bluehost_p_data_quick = unserialize($random_array[$fixed_positions['Bluehost_key']]->_field_data['nid']['entity']->field_p_data_quick['und'][0]['value']);

@@ -816,7 +816,7 @@ function hr_misc_goToExternalUrl2() {
   
   //dpm($_COOKIE);
   
-  
+  dpm($_GET);
   dpm($args);
   global $user;
   if ($user->uid == 1) {
@@ -846,13 +846,9 @@ function hr_misc_goToExternalUrl2() {
       $p_data_quick = unserialize($p_data_quick->field_p_data_quick_value);
       $object_name = $p_data_quick['name'];
       
+      // @$args[3] will show alternative url (e.g. s-url2 or i_web2)
       if (!empty($args[2]) && !empty($p_data_quick[$args[2]]['s-url'])) {
-        if (!empty($args[3])) {
-          $url = $p_data_quick[$args[2]]['s-url' . $args[3]];
-        }
-        else {
-          $url = $p_data_quick[$args[2]]['s-url'];
-        }
+        $url = $p_data_quick[$args[2]]['s-url'];
       }
       else {
         $url = $p_data_quick['i_web'];

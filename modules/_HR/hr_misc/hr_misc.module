@@ -812,16 +812,16 @@ function hr_misc_trackClick_ajax() {
  */
 function hr_misc_goToExternalUrl2() {
 
-  $args = arg();
+//  $args = arg();
   
   //dpm($_COOKIE);
   
-  dpm($_GET);
-  dpm($args);
-  global $user;
-  if ($user->uid == 1) {
-    return 'xxx';
-  }
+//  dpm($_GET);
+//  dpm($args);
+//  global $user;
+//  if ($user->uid == 1) {
+//    return 'xxx';
+//  }
   
   
   //if ($args[1] == 'reviews' && !empty($args[2])) {
@@ -848,10 +848,10 @@ function hr_misc_goToExternalUrl2() {
       
       // @$args[3] will show alternative url (e.g. s-url2 or i_web2)
       if (!empty($args[2]) && !empty($p_data_quick[$args[2]]['s-url'])) {
-        $url = $p_data_quick[$args[2]]['s-url'];
+        $url = $p_data_quick[$args[2]]['s-url' . @$_GET['alt']];
       }
       else {
-        $url = $p_data_quick['i_web'];
+        $url = $p_data_quick['i_web' . @$_GET['alt']];
       }
     }
     

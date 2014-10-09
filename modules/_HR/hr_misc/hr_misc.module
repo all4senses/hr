@@ -849,15 +849,15 @@ function hr_misc_goToExternalUrl2() {
     
     
     
-//  dpm($_COOKIE);
-//  dpm($_GET);
-//  dpm($args);
-//  dpm($p_data_quick);
-//  dpm($url);
-//  global $user;
-//  if ($user->uid == 1) {
-//    return 'xxx';
-//  }
+  dpm($_COOKIE);
+  dpm($_GET);
+  dpm($args);
+  dpm($p_data_quick);
+  dpm($url);
+  global $user;
+  if ($user->uid == 1) {
+    return 'xxx';
+  }
   
     
     if (@$url) {

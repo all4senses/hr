@@ -637,12 +637,14 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   }
   
   if ($current_top_positions_counter['iPage_top'] + 1 > 3) {
+    // 25%
     $current_top_positions_counter = array(
         'iPage_top' => 0,
         'Bluehost_top' => 1,
     );
   }
   else {
+    // 75%
     $current_top_positions_counter = array(
         'iPage_top' => $current_top_positions_counter['iPage_top'] + 1,
         'Bluehost_top' => 0,
@@ -663,6 +665,15 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
       $view->result[1] = $random_array[$fixed_positions['Bluehost_key']];
     }
     else {
+      
+      //Change urls to alternative.
+      dpm($random_array[$fixed_positions['iPage_key']]);
+      $iPage_p_data = unserialize($random_array[$fixed_positions['iPage_key']]->_field_data['nid']['entity']->field_p_data['und'][0]['value']);
+      dpm($iPage_p_data);
+      dpm($random_array[$fixed_positions['Bluehost_key']]);
+      $Bluehost_p_data = unserialize($random_array[$fixed_positions['Bluehost_key']]->_field_data['nid']['entity']->field_p_data['und'][0]['value']);
+      dpm($Bluehost_p_data);
+      
       $view->result[1] = $random_array[$fixed_positions['iPage_key']];
       $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
     }

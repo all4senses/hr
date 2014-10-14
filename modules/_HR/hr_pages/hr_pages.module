@@ -5104,9 +5104,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   dpm($hr_settings);
   
   if (empty($hr_settings['Alter Charts']['AB testing on home'])) {
-    if(!isset($hr_settings['Alter Charts'])) {
-      $hr_settings['Alter Charts'] = array('id' => 'section_alter_charts');
-    }
+    if($hr_settings['AlterCharts'])
     $hr_settings['Alter Charts']['AB testing on home'] = array(
       'description' => 'Turn On the Home chart ab-testing rotation',
       'loggedIn' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged In'),
@@ -5132,17 +5130,16 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
               
               
               if (!is_array($value_set)) {
-                $form[$section['id']][$value_set_name] = array(
+                $form['fieldset_' . $count][$value_set_name] = array(
                     '#type' => 'textfield',
                     '#title' => $value_set_name,
                     '#default_value' => $value_set,
                   );
               }
               else {
-                $form[$section['id']][$value_set_name]['title'] = array(
+                $form['fieldset_' . $count][$value_set_name]['title'] = array(
                   '#markup' => '<div class="title">' . $value_set_name . '</div><div class="description">' . @$value_set['description'] . '</div>',
                 );
-                unset($value_set['id']);
                 if (isset($value_set['description'])) {
                   unset($value_set['description']);
                 }
@@ -5159,7 +5156,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     $title = $key;
                   }
                   
-                  $form[$section['id']][$key] = array(
+                  $form['fieldset_' . $count][$key] = array(
                     '#type' => $field_type,
                     '#title' => $title,
                     '#default_value' => $value,

@@ -614,10 +614,11 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
     dpm('Cached: ' . $user->uid);
     //global $language;
     $cache_name = 'hr_homeOriginal_notAlteredChart_' . $view_n_display['display'];
-
+    
+    $info = '<div class="info cached" style="display: none;"></div>';
     $cache_content = cache_get($cache_name);
     if ($cache_content && !empty($cache_content->data) && $cache_content->expire > time()) {
-      return $cache_content->data;
+      return '<div class="info cached" style="display: none;"></div>'. $cache_content->data;
     }
     
     // Or build the original char, save and  return it.
@@ -631,7 +632,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   
     cache_set($cache_name, $chart_themed, 'cache', time() + 14400);
     
-    return $chart_themed;
+    return '<div class="info cached rebuilt" style="display: none;"></div>' . $chart_themed;
   }
   
   dpm('Not cached: ' . $user->uid);

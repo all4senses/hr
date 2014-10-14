@@ -5102,9 +5102,9 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
   $hr_settings = variable_get('hr_settings', NULL);
   
-  dpm($hr_settings);
+  //dpm($hr_settings);
   
-  variable_del('hr_settings');
+  //variable_del('hr_settings');
   
   if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(

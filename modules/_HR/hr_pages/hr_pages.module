@@ -5104,6 +5104,9 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   dpm($hr_settings);
   
   if (empty($hr_settings['Alter Charts']['AB testing on home'])) {
+    if(!isset($hr_settings['Alter Charts'])) {
+      $hr_settings['Alter Charts'] = array('id' => 'section_alter_charts');
+    }
     $hr_settings['Alter Charts']['AB testing on home'] = array(
       'description' => 'Turn On the Home chart ab-testing rotation',
       'loggedIn' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged In'),
@@ -5117,7 +5120,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
   $count = 0;
   foreach ($hr_settings as $section_label => $section) {
-      $form[$section_label] = array(
+      $form[$section['id']] = array(
         '#type' => 'fieldset',
         '#title' => $section_label,
         '#collapsible' => TRUE,

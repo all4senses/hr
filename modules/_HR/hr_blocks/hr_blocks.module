@@ -598,24 +598,43 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   $hr_settings = variable_set('hr_settings', NULL);
   
   
-  if (empty($hr_settings['Alter Charts']['ab_test_home_ON'])) {
-    $hr_settings['Alter Charts']['ab_test_home_ON'] = array(
+  if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
+    $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
       'description' => 'Turn On the Home chart ab-testing rotation',
-      'loggedIn' => array('field_type' => 'checkbox', 'value' => 0),
-      'loggedOut' => array('field_type' => 'checkbox', 'value' => 0),
+      'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0),
+      'Turn_On_for_logged_Out' => array('field_type' => 'checkbox', 'value' => 0),
     );
+    variable_set('hr_settings', $hr_settings);
   }
   
   global $user;
-  if ( ($user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedIn']) || (!$user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedOut'])) {
+  if ( ($user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_In']['value']) || (!$user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedOut'])) {
     // Show turned Off, simple chart without rotation
   
+    dpm('Not cached: ' . $user->uid);
+    //global $language;
+    $cache_name = 'hr_homeOriginal_notAlteredChart_' . $view_n_display['display'];
+
+    $cache_content = cache_get($cache_name);
+    if ($cache_content && !empty($cache_content->data) && $cache_content->expire > time()) {
+      return $cache_content->data;
+    }
+    
+    // Or build the original char, save and  return it.
+    $chart_themed = NULL;
+
+    $view = views_get_view($view_n_display['view']);
+    // Run view's query.
+    $view->execute($view_n_display['display']);
+    
+    $chart_themed = $view->preview($view_n_display['display']);
   
-  
-  
+    cache_set($cache_name, $chart_themed, 'cache', time() + 14400);
+    
+    return $chart_themed;
   }
   
-  
+  dpm('Cached: ' . $user->uid);
   
   // Else show rotating chart with ab-testing turned ON.
   
@@ -794,7 +813,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   //dpm($view->result);
   
   
-  $info = '<div class="info" style="display: none;">iPage_top = ' . $current_top_positions_counter['iPage_top'] . ', Bluehost_top = ' . $current_top_positions_counter['Bluehost_top'] . '</div>';
+  //$info = '<div class="info" style="display: none;">iPage_top = ' . $current_top_positions_counter['iPage_top'] . ', Bluehost_top = ' . $current_top_positions_counter['Bluehost_top'] . '</div>';
   
   return /*$info . */$chart_themed;
 }

@@ -5136,7 +5136,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                   );
               }
               else {
-                $form['fieldset_' . $count][$value_set_name]['title'] = array(
+                $form[$section_label][$value_set_name]['title'] = array(
                   '#markup' => '<div class="title">' . $value_set_name . '</div><div class="description">' . @$value_set['description'] . '</div>',
                 );
                 if (isset($value_set['description'])) {
@@ -5155,7 +5155,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     $title = $key;
                   }
                   
-                  $form['fieldset_' . $count][$key] = array(
+                  $form[$section_label][$key] = array(
                     '#type' => $field_type,
                     '#title' => $title,
                     '#default_value' => $value,

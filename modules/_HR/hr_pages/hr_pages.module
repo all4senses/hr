@@ -5132,7 +5132,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
               
               
               if (!is_array($value_set)) {
-                $form['fieldset_' . $count][$value_set_name] = array(
+                $form[$section['id'][$value_set_name] = array(
                     '#type' => 'textfield',
                     '#title' => $value_set_name,
                     '#default_value' => $value_set,
@@ -5158,7 +5158,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     $title = $key;
                   }
                   
-                  $form['fieldset_' . $count][$key] = array(
+                  $form[$section['id']][$key] = array(
                     '#type' => $field_type,
                     '#title' => $title,
                     '#default_value' => $value,

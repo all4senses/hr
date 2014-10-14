@@ -5104,7 +5104,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
   dpm($hr_settings);
   
-  variable_del('hr_settings');
+  //variable_del('hr_settings');
   
   if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
@@ -5115,8 +5115,8 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   }
   
   variable_set('hr_settings', $hr_settings);
-  $hr_settings = variable_get('hr_settings', NULL);
-  dpm($hr_settings);
+  //$hr_settings = variable_get('hr_settings', NULL);
+  //dpm($hr_settings);
   
   foreach ($hr_settings as $section_label => $section) {
       $form[$section_label] = array(
@@ -5186,7 +5186,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
  *   Return nothing.
  */
 function hr_pages_hrSettings_form_submit(&$form, &$form_state) {
-  dpm($form_state['values']);
+  //dpm($form_state['values']);
   
   $hr_settings = variable_get('hr_settings', NULL);
   //dpm($hr_settings);

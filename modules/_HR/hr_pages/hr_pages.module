@@ -5115,7 +5115,6 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   $hr_settings = variable_get('hr_settings', NULL);
   dpm($hr_settings);
   
-  $count = 0;
   foreach ($hr_settings as $section_label => $section) {
       $form[$section_label] = array(
         '#type' => 'fieldset',
@@ -5161,7 +5160,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     
                   );
                 }
-
+            }
   }
   
   $form['actions'] = array('#type' => 'actions');

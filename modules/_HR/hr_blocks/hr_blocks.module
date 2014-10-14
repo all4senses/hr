@@ -813,9 +813,9 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   //dpm($view->result);
   
   
-  //$info = '<div class="info" style="display: none;">iPage_top = ' . $current_top_positions_counter['iPage_top'] . ', Bluehost_top = ' . $current_top_positions_counter['Bluehost_top'] . '</div>';
+  $info = '<div class="info" style="display: none;">iPage_top = ' . $current_top_positions_counter['iPage_top'] . ', Bluehost_top = ' . $current_top_positions_counter['Bluehost_top'] . '</div>';
   
-  return /*$info . */$chart_themed;
+  return $info . $chart_themed;
 }
 
 

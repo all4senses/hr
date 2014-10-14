@@ -5200,6 +5200,7 @@ function hr_pages_hrSettings_form_submit(&$form, &$form_state) {
       }
     }
   }
+  drupal_set_message('The settings have been saved.', 'warning');
   variable_set('hr_settings', $hr_settings);
   //dpm($hr_settings);
   //drupal_goto('node/add/review', array('query' => array('id' => $form_state['values']['id'])));

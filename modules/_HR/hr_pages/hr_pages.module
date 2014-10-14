@@ -5127,21 +5127,20 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
       
             foreach($section as $value_set_name => $value_set) {
               
-              
-              if (!is_array($value_set)) {
-                $form[$section_label][$value_set_name] = array(
-                    '#type' => 'textfield',
-                    '#title' => $value_set_name,
-                    '#default_value' => $value_set,
-                  );
-              }
-              else {
+
                 $form[$section_label][$value_set_name]['title'] = array(
-                  '#markup' => '<div class="title">' . $value_set_name . '</div><div class="description">' . @$value_set['description'] . '</div>',
+                  '#markup' => '<div class="title">' . str_replace('_', ' ', $value_set_name) . '</div><div class="description">' . @$value_set['description'] . '</div>',
                 );
                 if (isset($value_set['description'])) {
                   unset($value_set['description']);
                 }
+                
+                $form[$section_label][$value_set_name] = array(
+                    '#type' => 'container',
+                    '#title' => str_replace('_', ' ', $value_set_name),
+                    '#default_value' => $value,
+                    '#description' => @$value_set['description'],
+                  );
                 foreach ($value_set as $key => $value) {
                   if (is_array($value)) {
                     $field_type = $value['field_type'];
@@ -5154,7 +5153,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                   }
                   $title = str_replace('_', ' ', $key);
                   
-                  $form[$section_label][$key] = array(
+                  $form[$section_label][$value_set_name][$key] = array(
                     '#type' => $field_type,
                     '#title' => $title,
                     '#default_value' => $value,
@@ -5162,11 +5161,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     
                   );
                 }
-              }
-              
-            }
-            
-            $count++;
+
   }
   
   $form['actions'] = array('#type' => 'actions');

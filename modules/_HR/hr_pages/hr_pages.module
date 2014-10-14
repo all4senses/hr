@@ -5157,7 +5157,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                   
                   $form['fieldset_' . $count][$key] = array(
                     '#type' => $field_type,
-                    '#title' => $key,
+                    '#title' => $title,
                     '#default_value' => $value,
                     '#description' => @$description,
                     

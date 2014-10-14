@@ -595,13 +595,13 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
 function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view_n_display_turnedOff = NULL) {
   
   
-  $hr_settings = variable_set('hr_settings', NULL);
+  $hr_settings = variable_get('hr_settings', NULL);
   
   
   if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
-      'description' => 'Turn On the Home chart ab-testing rotation',
-      'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0),
+      'descr' => 'Turn On the Home chart ab-testing rotation',
+      'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0, 'descr' => 'Turn on Rotation for logged In users'),
       'Turn_On_for_logged_Out' => array('field_type' => 'checkbox', 'value' => 0),
     );
     variable_set('hr_settings', $hr_settings);
@@ -611,7 +611,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   if ( ($user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_In']['value']) || (!$user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedOut'])) {
     // Show turned Off, simple chart without rotation
   
-    dpm('Not cached: ' . $user->uid);
+    dpm('Cached: ' . $user->uid);
     //global $language;
     $cache_name = 'hr_homeOriginal_notAlteredChart_' . $view_n_display['display'];
 
@@ -634,7 +634,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
     return $chart_themed;
   }
   
-  dpm('Cached: ' . $user->uid);
+  dpm('Not cached: ' . $user->uid);
   
   // Else show rotating chart with ab-testing turned ON.
   

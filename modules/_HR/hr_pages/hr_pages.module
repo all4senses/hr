@@ -5108,7 +5108,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
   if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
-      'description' => 'Turn On the Home chart ab-testing rotation',
+      'descr' => 'Turn On the Home chart ab-testing rotation',
       'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0),
       'Turn_On_for_logged_Out' => array('field_type' => 'checkbox', 'value' => 0),
     );
@@ -5141,16 +5141,16 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     //'#description' => @$value_set['description'],
                   );
                 $form[$section_label][$value_set_name]['title'] = array(
-                  '#markup' => '<div class="title">' . str_replace('_', ' ', $value_set_name) . '</div><div class="description">' . @$value_set['description'] . '</div>',
+                  '#markup' => '<div class="title">' . str_replace('_', ' ', $value_set_name) . '</div><div class="description">' . @$value_set['descr'] . '</div>',
                 );
-                if (isset($value_set['description'])) {
-                  unset($value_set['description']);
+                if (isset($value_set['descr'])) {
+                  unset($value_set['descr']);
                 }
                 foreach($value_set as $key => $value) {
                   if (is_array($value)) {
                     $field_type = $value['field_type'];
                     $default_value = $value['value'];
-                    $description = @$value['description'];
+                    $description = @$value['descr'];
                   }
                   else {
                     $field_type = 'textfield';

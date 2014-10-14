@@ -5136,8 +5136,11 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
               }
               else {
                 $form['fieldset_' . $count][$value_set_name]['title'] = array(
-                    '#markup' => '<div class="title">' . $value_set_name . '</div>',
-                  );
+                  '#markup' => '<div class="title">' . $value_set_name . '</div><div class="description">' . @$value_set['description'] . '</div>',
+                );
+                if (isset($value_set['description'])) {
+                  unset($value_set['description']);
+                }
                 foreach ($value_set as $key => $value) {
                   if (is_array($value)) {
                     $field_type = $value['field_type'];

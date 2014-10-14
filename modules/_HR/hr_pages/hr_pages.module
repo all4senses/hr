@@ -5142,6 +5142,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                 $form[$section['id']][$value_set_name]['title'] = array(
                   '#markup' => '<div class="title">' . $value_set_name . '</div><div class="description">' . @$value_set['description'] . '</div>',
                 );
+                unset($value_set['id']);
                 if (isset($value_set['description'])) {
                   unset($value_set['description']);
                 }

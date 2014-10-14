@@ -5103,11 +5103,11 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   $hr_settings = variable_get('hr_settings', NULL);
   dpm($hr_settings);
   
-  if (empty($hr_settings['Alter Charts']['AB testing on home'])) {
-    $hr_settings['AlterCharts']['AB testing on home'] = array(
+  if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
+    $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
       'description' => 'Turn On the Home chart ab-testing rotation',
-      'loggedIn' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged In'),
-      'loggedOut' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged Out'),
+      'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0),
+      'Turn_On_for_logged_Out' => array('field_type' => 'checkbox', 'value' => 0),
     );
   }
   
@@ -5147,13 +5147,12 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
                     $field_type = $value['field_type'];
                     $default_value = $value['value'];
                     $description = @$value['description'];
-                    $title = !empty($value['title']) ? @$value['title'] : $key;
                   }
                   else {
                     $field_type = 'textfield';
                     $default_value = $value;
-                    $title = $key;
                   }
+                  $title = str_replace('_', ' ', $key);
                   
                   $form[$section_label][$key] = array(
                     '#type' => $field_type,

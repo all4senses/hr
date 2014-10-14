@@ -5099,6 +5099,7 @@ function hr_pages_addReviewButton_form_submit(&$form, &$form_state) {
  */
 function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
+  variable_del('hr_settings');
   $hr_settings = variable_get('hr_settings', NULL);
   dpm($hr_settings);
   

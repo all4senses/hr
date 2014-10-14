@@ -608,7 +608,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   }
   
   global $user;
-  if ( ($user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_In']['value']) || (!$user->uid && !$$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_Out']['value'])) {
+  if ( ($user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_In']['value']) || (!$user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_Out']['value'])) {
     // Show turned Off, simple chart without rotation
   
     dpm('Cached: ' . $user->uid);

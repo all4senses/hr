@@ -5118,7 +5118,7 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   foreach ($hr_settings as $section_label => $section) {
       $form[$section_label] = array(
         '#type' => 'fieldset',
-        '#title' => $section_label,
+        '#title' => str_replace('_', ' ', $section_label),
         '#collapsible' => TRUE,
         '#collapsed' => FALSE,
         '#tree' => TRUE,

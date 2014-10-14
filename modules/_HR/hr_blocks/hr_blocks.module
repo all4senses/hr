@@ -592,7 +592,32 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
 /**
  * chartFromView_altered_rotatedProviders.
  */
-function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
+function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view_n_display_turnedOff = NULL) {
+  
+  
+  $hr_settings = variable_set('hr_settings', NULL);
+  
+  
+  if (!empty($hr_settings['Alter Charts']['ab_test_home_ON'])) {
+    $hr_settings['Alter Charts']['ab_test_home_ON'] = array(
+      'description' => 'Turn On the Home chart ab-testing rotation',
+      'loggedIn' => array('field_type' => 'checkbox', 'value' => 0),
+      'loggedOut' => array('field_type' => 'checkbox', 'value' => 0),
+    );
+  }
+  
+  global $user;
+  if ( ($user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedIn']) || (!$user->uid && !$hr_settings['Alter Charts']['ab_test_home_ON']['loggedOut'])) {
+    // Show turned Off, simple chart without rotation
+  
+  
+  
+  
+  }
+  
+  
+  
+  // Else show rotating chart with ab-testing turned ON.
   
   $chart_themed = NULL;
 

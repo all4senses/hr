@@ -16,6 +16,15 @@ module_load_include('inc', 'hr_misc', 'inc/constants');
  */
 function hr_pages_menu() {
   
+  $items['admin/content/hr_settings'] = array(
+    'title' => 'HR Settings',
+    'description' => 'Different HR values and settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('hr_pages_hrSettings_form'),
+    'access callback' => 'hr_misc_userIsAdmin',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
   $items['admin/content/requests'] = array(
     'title' => 'User Requests',
     'description' => 'Quote Requests, user messages, subscriptions, etc',
@@ -5039,7 +5048,6 @@ function hr_pages_addRatingsToNodeThemed($node, $votes, $counts = NULL, $semicol
 
 
 
-
 /**
  * Implements hook_form().
  *
@@ -5075,3 +5083,85 @@ function hr_pages_addReviewButton_form_submit(&$form, &$form_state) {
   drupal_goto('node/add/review', array('query' => array('id' => $form_state['values']['id'])));
 }
 
+
+
+
+
+
+
+/**
+ * Implements hook_form().
+ *
+ * HR global custom settings for admins.
+ * 
+ * @return $form
+ *   Return nothing.
+ */
+function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
+  
+  $hr_settings = variable_set('hr_settings', NULL);
+  
+  dpm($hr_settings);
+  
+  $count = 0;
+  foreach ($hr_settings as $section_label => $section) {
+      $form['fieldset_' . $count++] = array(
+        '#type' => 'fieldset',
+        '#title' => $section_label,
+        '#collapsible' => TRUE,
+        '#collapsed' => FALSE,
+        '#tree' => TRUE,
+        //'#weight' => 6,
+      );
+      
+            foreach($section as $value_set_name => $value_set) {
+              
+              if (!is_array($value_set)) {
+                
+              }
+              else {
+                foreach ($value_set as $key => $value) {
+                  if (is_array($value)) {
+                    $field_type = $value['field_type'];
+                    $default_value = $value['value'];
+                    $description = @$value['description'];
+                  }
+                  else {
+                    $field_type = 'textfield';
+                    $default_value = $value;
+                  }
+                  
+                  $form[$key] = array(
+                    '#type' => $field_type,
+                    '#default_value' => $default_value,
+                    '#description' => @$description,
+                    
+                  );
+                }
+              }
+              
+            }
+  }
+  
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save settings',
+  );
+  
+  return $form;
+}
+
+
+/**
+ * Implements hook_form_submit().
+ *
+ * 
+ * 
+ * @return $form
+ *   Return nothing.
+ */
+function hr_pages_hrSettings_form_submit(&$form, &$form_state) {
+  dpm($form_state['values']);
+  //drupal_goto('node/add/review', array('query' => array('id' => $form_state['values']['id'])));
+}

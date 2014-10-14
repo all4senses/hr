@@ -5102,11 +5102,11 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   $hr_settings = variable_get('hr_settings', NULL);
   dpm($hr_settings);
   
-  if (empty($hr_settings['Alter Charts']['ab_test_home_ON'])) {
-    $hr_settings['Alter Charts']['ab_test_home_ON'] = array(
+  if (empty($hr_settings['Alter Charts']['AB testing on home'])) {
+    $hr_settings['Alter Charts']['AB testing on home'] = array(
       'description' => 'Turn On the Home chart ab-testing rotation',
-      'loggedIn' => array('field_type' => 'checkbox', 'value' => 0),
-      'loggedOut' => array('field_type' => 'checkbox', 'value' => 0),
+      'loggedIn' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged In'),
+      'loggedOut' => array('field_type' => 'checkbox', 'value' => 0, 'title' => 'Turn on for logged Out'),
     );
   }
   
@@ -5116,35 +5116,45 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
   
   $count = 0;
   foreach ($hr_settings as $section_label => $section) {
-      $form['fieldset_' . $count++] = array(
+      $form['fieldset_' . $count] = array(
         '#type' => 'fieldset',
         '#title' => $section_label,
         '#collapsible' => TRUE,
         '#collapsed' => FALSE,
         '#tree' => TRUE,
-        //'#weight' => 6,
       );
       
             foreach($section as $value_set_name => $value_set) {
               
+              
               if (!is_array($value_set)) {
-                
+                $form['fieldset_' . $count][$value_set_name] = array(
+                    '#type' => 'textfield',
+                    '#title' => $value_set_name,
+                    '#default_value' => $value_set,
+                  );
               }
               else {
+                $form['fieldset_' . $count][$value_set_name]['title'] = array(
+                    '#markup' => '<div class="title">' . $value_set_name . '</div>',
+                  );
                 foreach ($value_set as $key => $value) {
                   if (is_array($value)) {
                     $field_type = $value['field_type'];
                     $default_value = $value['value'];
                     $description = @$value['description'];
+                    $title = !empty($value['title']) ? @$value['title'] : $key;
                   }
                   else {
                     $field_type = 'textfield';
                     $default_value = $value;
+                    $title = $key;
                   }
                   
-                  $form[$key] = array(
+                  $form['fieldset_' . $count][$key] = array(
                     '#type' => $field_type,
-                    '#default_value' => $default_value,
+                    '#title' => $key,
+                    '#default_value' => $value,
                     '#description' => @$description,
                     
                   );
@@ -5152,6 +5162,8 @@ function hr_pages_hrSettings_form($node, &$form_state, $provider_nid) {
               }
               
             }
+            
+            $count++;
   }
   
   $form['actions'] = array('#type' => 'actions');

@@ -722,6 +722,9 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
         $random_array[$fixed_positions['iPage_key']]->views_php_4 = str_replace('/click/ipage/sh', '/click/ipage/sh?alt=2', $random_array[$fixed_positions['iPage_key']]->views_php_4);
         $random_array[$fixed_positions['iPage_key']]->views_php_11 = str_replace('/click/ipage/sh', '/click/ipage/sh?alt=2', $random_array[$fixed_positions['iPage_key']]->views_php_11);
       }
+      // Change position list number to 2
+      $random_array[$fixed_positions['iPage_key']]->field_field_p_listposition_sh[0]['rendered']['#markup'] = 2;
+      $random_array[$fixed_positions['iPage_key']]->field_field_p_listposition_sh[0]['raw']['value'] = 2;
       
       //$iPage_p_data_quick = unserialize($random_array[$fixed_positions['iPage_key']]->_field_data['nid']['entity']->field_p_data_quick['und'][0]['value']);
       //dpm($iPage_p_data_quick);
@@ -734,6 +737,10 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
         $random_array[$fixed_positions['Bluehost_key']]->views_php_4 = str_replace('/click/bluehost/sh', '/click/bluehost/sh?alt=2', $random_array[$fixed_positions['Bluehost_key']]->views_php_4);
         $random_array[$fixed_positions['Bluehost_key']]->views_php_11 = str_replace('/click/bluehost/sh', '/click/bluehost/sh?alt=2', $random_array[$fixed_positions['Bluehost_key']]->views_php_11);
       }
+      // Change position list number to 1
+      $random_array[$fixed_positions['Bluehost_key']]->field_field_p_listposition_sh[0]['rendered']['#markup'] = 1;
+      $random_array[$fixed_positions['Bluehost_key']]->field_field_p_listposition_sh[0]['raw']['value'] = 1;
+      
       //$Bluehost_p_data_quick = unserialize($random_array[$fixed_positions['Bluehost_key']]->_field_data['nid']['entity']->field_p_data_quick['und'][0]['value']);
       //dpm($Bluehost_p_data_quick);
       dpm($random_array);

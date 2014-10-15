@@ -592,7 +592,7 @@ function hr_blocks_block_save($delta = '', $edit = array()) {
 /**
  * chartFromView_altered_rotatedProviders.
  */
-function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view_n_display_turnedOff = NULL) {
+function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   
   
   $hr_settings = variable_get('hr_settings', NULL);
@@ -701,7 +701,6 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
   
   variable_set('hr_current_top_positions_counter', $current_top_positions_counter);
   
-  //global $user;
   //if ($user->uid) 
     {
   
@@ -754,13 +753,19 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
     }
     
     // Try to cope with cached pages table (just starting thoughts).
-//    $current_top_positions_counter['current_uid'] = $user->uid;
+      $current_top_positions_counter['current_uid'] = $user->uid;
 //    drupal_add_js(array('hr_blocks' => array(
 //      'hr_current_top_positions_counter' => $current_top_positions_counter,
 //    )), 'setting');
 
-    $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
-    drupal_add_js($path_to_custom_js . 'hr_rotate_cached_page_table.js');
+    // Update (reRequest) the cached page only for logged out users.
+    // For admins cached copy is not created so no need to repeat recreate the page (and extra increment the counter), that would cause losing of steps.
+    if (!$user->uid) {
+      $path_to_custom_js = drupal_get_path('module', 'hr_blocks') . '/js/';
+      drupal_add_js($path_to_custom_js . 'hr_rotate_cached_page_table.js');
+    }
+    
+    watchdog('HR Home Rotation iteration', print_r($current_top_positions_counter, TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
   }
   
   

@@ -736,7 +736,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display, $view
       }
       //$Bluehost_p_data_quick = unserialize($random_array[$fixed_positions['Bluehost_key']]->_field_data['nid']['entity']->field_p_data_quick['und'][0]['value']);
       //dpm($Bluehost_p_data_quick);
-      
+      dpm($random_array);
       $view->result[1] = $random_array[$fixed_positions['iPage_key']];
       $view->result[0] = $random_array[$fixed_positions['Bluehost_key']];
     }

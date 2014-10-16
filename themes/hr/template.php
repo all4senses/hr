@@ -598,7 +598,7 @@ function hr_process_page(&$variables) {
   
   // Set a user referer.
   $module_path_misc = drupal_get_path('module', 'hr_misc');
-  ////drupal_add_js( $module_path_misc . '/js/hr_setReferer.js'); 
+  drupal_add_js( $module_path_misc . '/js/hr_setReferer.js'); 
   drupal_add_library('system', 'jquery.cookie');
   
   //dpm(drupal_get_library('system'));

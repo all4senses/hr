@@ -842,7 +842,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   
   
   //watchdog('HR Home Rotation iteration', print_r($current_top_positions_counter, TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
-    watchdog('i-' . $current_top_positions_counter['iPage_top'] . ',b-' . $current_top_positions_counter['iPage_top'] . ',u-' . $current_top_positions_counter['current_uid'], print_r($current_top_positions_counter, TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
+    watchdog('i-' . $current_top_positions_counter['iPage_top'] . ',b-' . $current_top_positions_counter['Bluehost_top'] . ',u-' . $current_top_positions_counter['current_uid'], print_r($current_top_positions_counter, TRUE) . ', $_server -------> '. print_r($_SERVER, TRUE), NULL, WATCHDOG_WARNING);
     
     // $current_top_positions_counter = array(
 //        'iPage_top' => $current_top_positions_counter['iPage_top'] + 1,

@@ -597,9 +597,9 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   
   $hr_settings = variable_get('hr_settings', NULL);
   
-  variable_del('hr_settings');
   
-  if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
+  //if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) 
+    {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
       'descr' => 'Turn On the Home chart ab-testing rotation',
       'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0, 'descr' => 'Turn on Rotation for logged In users'),

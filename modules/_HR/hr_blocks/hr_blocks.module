@@ -598,8 +598,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   $hr_settings = variable_get('hr_settings', NULL);
   
   
-  //if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) 
-    {
+  if (empty($hr_settings['Alter_Charts']['AB_Testing_on_Home'])) {
     $hr_settings['Alter_Charts']['AB_Testing_on_Home'] = array(
       'descr' => 'Turn On the Home chart ab-testing rotation',
       'Turn_On_for_logged_In' => array('field_type' => 'checkbox', 'value' => 0, 'descr' => 'Turn on Rotation for logged In users'),
@@ -608,6 +607,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
     );
     variable_set('hr_settings', $hr_settings);
   }
+  
   
   global $user;
   if ( ($user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_In']['value']) || (!$user->uid && !$hr_settings['Alter_Charts']['AB_Testing_on_Home']['Turn_On_for_logged_Out']['value'])) {
@@ -751,9 +751,11 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
       
       
       // Swap ratings to remain the better rating to the new top provider.
-      $old_bluehost_rating = $random_array[$fixed_positions['Bluehost_key']]->views_php_10;
-      $random_array[$fixed_positions['Bluehost_key']]->views_php_10 = $random_array[$fixed_positions['iPage_key']]->views_php_10;
-      $random_array[$fixed_positions['iPage_key']]->views_php_10 = $old_bluehost_rating;
+      if ($hr_settings['Alter_Charts']['AB_Testing_on_Home']['Remain_Top_Rating_For_First_Position']['value']) {
+        $old_bluehost_rating = $random_array[$fixed_positions['Bluehost_key']]->views_php_10;
+        $random_array[$fixed_positions['Bluehost_key']]->views_php_10 = $random_array[$fixed_positions['iPage_key']]->views_php_10;
+        $random_array[$fixed_positions['iPage_key']]->views_php_10 = $old_bluehost_rating;
+      }
       
       // And finally swap corrected rows.
       $view->result[1] = $random_array[$fixed_positions['iPage_key']];

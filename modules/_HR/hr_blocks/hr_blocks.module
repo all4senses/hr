@@ -684,7 +684,7 @@ function hr_blocks_chartFromView_altered_rotatedProviders($view_n_display) {
   }
   
   
-  if ($current_top_positions_counter['iPage_top'] + 1 > 2) { // 50/50 for i/b
+  if ($current_top_positions_counter['iPage_top'] + 1 > 1) { // 50/50 for i/b
   //if ($current_top_positions_counter['iPage_top'] + 1 > 3) { // 75/25 for i/b
     // 25%
     $current_top_positions_counter = array(

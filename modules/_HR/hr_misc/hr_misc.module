@@ -3520,6 +3520,7 @@ function hr_misc_testPage() {
   
   $schema = drupal_get_schema_unprocessed('views', 'cache_views');
   dpm($schema);
+  db_create_table('cache_views', $schema);
 
   return $out . '<br>End of Test';
 }

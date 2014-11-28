@@ -20,13 +20,7 @@
           
         ?>
         
-        <?php 
-        /*
-        <a href="<?php print $front_page; ?>" title="<?php print 'VoIP Now Home'; ?>" id="logo">
-          <img src="<?php echo '/sites/all/themes/hr/css/images/ch-logo-main-top.png'; ?>" alt="CloudHostingHQ" title="<?php print 'CloudHostingHQ Home'; ?>" />
-        </a>
-        */
-        ?>
+      
         
       </div>
       

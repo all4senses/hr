@@ -3516,7 +3516,10 @@ function hr_misc_testPage() {
   
   //hr_misc_curl_file_from_remote_site_likeBrowser('http://www.hostingreview.org/');
     
-  $out .= exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+  //$out .= exec('wget -O - -q -t 1 http://www.hostingreview.org/update-cached-homepage > /dev/null &');
+  
+  $schema = drupal_get_schema_unprocessed('views', 'cache_views');
+  dpm($schema);
 
   return $out . '<br>End of Test';
 }
